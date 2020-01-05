@@ -1,6 +1,2 @@
 git 1
-git dev
-git 2
-jin2
-jin2
-jin2
+
