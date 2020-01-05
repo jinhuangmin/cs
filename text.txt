@@ -5,4 +5,8 @@ git 4
 git 5
 git 6
 git 7
+<<<<<<< HEAD
 git 8888
+=======
+git 9999
+>>>>>>> dev1
