@@ -1,8 +1,4 @@
 git 1
-<<<<<<< HEAD
-
-git 2
-=======
 git dev
 git 2
 jin2
@@ -13,4 +9,3 @@ cs2
 分支上改了1111111
 master分支修改
 本地修改了，远程也修改了，测试push
->>>>>>> master
