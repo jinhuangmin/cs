@@ -1,0 +1,5 @@
+<conditions>
+  <condition type="==" left="$bTitle" right=""  executionType="1">
+    <styleBinding paddingBottom="0" height="0" invisible="true" />
+  </condition>
+</conditions>
