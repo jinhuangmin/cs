@@ -1,4 +1,4 @@
-editor.js
+editor.js 
             <ControlGroup label="商品图片填充" showError={showError} error={validation.goods_pic_fill}>
               <RadioGroup onChange={this.onInputChange} value={value.goods_pic_fill}>
                 <RadioButton name="goods_pic_fill" value="cover">
