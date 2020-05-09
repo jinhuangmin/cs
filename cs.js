@@ -1,6 +1,6 @@
 import { React, ReactDOM, openSdk, Button } from '@alife/icbu-mod-lib';
 import './index.scss';
-
+//4455
 class IntlIcbuSmodDemo extends React.Component {
 
   constructor(props) {
