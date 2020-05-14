@@ -218,3 +218,25 @@ editor.js
 
        name: 'extension-cnzoom-x2goods01-1',
   增加  mixins: [goods, goods_icon],
+
+
+
+
+              <MyImg2TxtLinkSelector
+                customName="background_image"
+                value={value}
+                minNum={0}
+                maxNum={1}
+                addText="添加图片"
+                showTitle={false}
+                showDesc={false}
+                showLink={false}
+                globalConfig={globalConfig}
+                showError={showError}
+                validation={validation}
+                settings={settings}
+                uploadConfig={uploadConfig}
+                linkMenuItems={linkMenuItems}
+                onCustomInputChange={this.onCustomInputChange}
+                onChange={onChange}
+              />         
