@@ -1,0 +1,1412 @@
+{
+  "components": {
+    "1591587205228_1": {
+      "type": "Radio",
+      "dataName": "mk_bgDis",
+      "label": {
+        "title": "模块背景图片设置",
+        "description": {
+          "desc": "",
+          "icon": ""
+        }
+      },
+      "wrapperStyle": {},
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "type": "",
+        "shape": "",
+        "size": "large",
+        "defaultValue": "1",
+        "confirm": {},
+        "dataSource": [
+          {
+            "value": "1",
+            "label": "显示"
+          },
+          {
+            "value": "2",
+            "label": "不显示"
+          }
+        ]
+      },
+      "validateProps": {
+        "required": false,
+        "dataType": "Number",
+        "validate": false
+      }
+    },
+    "1542598784180_1": {
+      "type": "SingleImage",
+      "dataName": "mk_bgImg",
+      "label": {
+        "description": {
+          "icon": "picture",
+          "desc": "背景图片：宽1920内，高不限"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "size": 2,
+        "saveImageSize": false,
+        "api": {
+          "uploadUrl": "/v1/image_upload.do"
+        },
+        "lang": {
+          "cropUploadLocale": {
+            "image": {
+              "cancel": "取消",
+              "addPhoto": "上传照片"
+            },
+            "file": {
+              "addPhoto": "上传照片"
+            },
+            "drag": {
+              "dropTips": "可以放手了",
+              "dragTips": "直接拖动文件到虚线框内即可上传"
+            },
+            "crop": {
+              "save": "保存并关闭",
+              "reset": "重新选择",
+              "title": "上传"
+            }
+          },
+          "acceptErrMsg": "不支持该类型的图片，请重新选择",
+          "cropSmallError": "您上传的图片超过大小限制，请重新选择图片",
+          "cropRecommend": "您上传的图片高度或者宽度太小，请选择尺寸足够的图片",
+          "uploadErrMsg": "图片上传失败，请重试"
+        }
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1591587205228_2": {
+      "type": "Radio",
+      "dataName": "mk_bgXg",
+      "label": {
+        "title": "",
+        "description": {
+          "desc": "背景图片效果",
+          "icon": ""
+        }
+      },
+      "wrapperStyle": {},
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "type": "",
+        "shape": "",
+        "size": "large",
+        "defaultValue": "scroll",
+        "confirm": {},
+        "dataSource": [
+          {
+            "value": "scroll",
+            "label": "不滑动"
+          },
+          {
+            "value": "fixed",
+            "label": "滑动效果"
+          }
+        ]
+      },
+      "validateProps": {
+        "required": false,
+        "dataType": "Number",
+        "validate": false
+      }
+    },
+    "1591587874555_1": {
+      "type": "Input",
+      "dataName": "btitle",
+      "label": {
+        "title": "模块标题设置",
+        "description": {
+          "desc": "请输入模块大标题",
+          "icon": "text"
+        }
+      },
+      "wrapperStyle": {
+        "paddingTop": "20px",
+        "borderTop": "1px solid #E1E1E1",
+        "marginTop": "20px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "placeholder": "Company Profile",
+        "defaultValue": true,
+        "useReg": false
+      },
+      "validateProps": {
+        "required": false,
+        "dataType": "",
+        "validate": false
+      }
+    },
+    "1591587874555_2": {
+      "type": "SingleImage",
+      "dataName": "title_icon",
+      "label": {
+        "title": "",
+        "description": {
+          "desc": "标题底部小图标，宽高不限",
+          "icon": "picture"
+        }
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "size": 2,
+        "api": {
+          "uploadUrl": "/v1/image_upload.do"
+        },
+        "saveImageSize": false,
+        "lang": {
+          "cropSmallError": "您上传的图片超过大小限制，请重新选择图片",
+          "cropRecommend": "您上传的图片高度或者宽度太小，请选择尺寸足够的图片",
+          "uploadErrMsg": "图片上传失败，请重试",
+          "acceptErrMsg": "不支持该类型的图片，请重新选择",
+          "cropUploadLocale": {
+            "file": {
+              "addPhoto": "上传照片"
+            },
+            "image": {
+              "cancel": "取消",
+              "addPhoto": "上传照片"
+            },
+            "crop": {
+              "title": "上传",
+              "reset": "重新选择",
+              "save": "保存并关闭"
+            },
+            "drag": {
+              "dragTips": "直接拖动文件到虚线框内即可上传",
+              "dropTips": "可以放手了"
+            }
+          }
+        }
+      },
+      "validateProps": {
+        "required": false,
+        "dataType": "",
+        "validate": false
+      }
+    },
+    "1533270687040_1": {
+      "type": "Radio",
+      "dataName": "video_dis",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "是否显示视频"
+        },
+        "title": "视频设置"
+      },
+      "wrapperStyle": {
+        "paddingTop": "20px",
+        "borderTop": "1px solid #E1E1E1",
+        "marginTop": "20px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "confirm": {},
+        "shape": "",
+        "size": "large",
+        "defaultValue": "1",
+        "type": "",
+        "dataSource": [
+          {
+            "label": "显示视频",
+            "value": "1"
+          },
+          {
+            "label": "只显示封面图片",
+            "value": "2"
+          }
+        ]
+      },
+      "validateProps": {
+        "dataType": "Number",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1524472819022_1": {
+      "type": "VideoSelect",
+      "dataName": "videoinfo",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": ""
+        },
+        "title": ""
+      },
+      "wrapperStyle": {},
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "text": "选择视频",
+        "url": "/section/selectVideo"
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1529919456111_1": {
+      "type": "Checkbox",
+      "dataName": "autoplay",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": ""
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "text": "自动播放"
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1529919456111_2": {
+      "type": "Checkbox",
+      "dataName": "muted",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": ""
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": false,
+        "text": "有声音"
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1529919456111_3": {
+      "type": "Checkbox",
+      "dataName": "controls",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": ""
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "text": "显示播放进度条"
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1526544030357_1": {
+      "type": "Input",
+      "dataName": "videoWidth",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "视频宽度，用来调整视频显示比例"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": ""
+      },
+      "validateProps": {
+        "dataType": "Number",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1524473330761_1": {
+      "type": "SingleImage",
+      "dataName": "poster",
+      "label": {
+        "description": {
+          "icon": "picture",
+          "desc": "封面图片：宽度为视频宽度，高度400"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "size": 2,
+        "saveImageSize": false,
+        "api": {
+          "uploadUrl": "/v1/image_upload.do"
+        },
+        "lang": {
+          "cropUploadLocale": {
+            "image": {
+              "cancel": "取消",
+              "addPhoto": "上传照片"
+            },
+            "file": {
+              "addPhoto": "上传照片"
+            },
+            "drag": {
+              "dropTips": "可以放手了",
+              "dragTips": "直接拖动文件到虚线框内即可上传"
+            },
+            "crop": {
+              "save": "保存并关闭",
+              "reset": "重新选择",
+              "title": "上传"
+            }
+          },
+          "acceptErrMsg": "不支持该类型的图片，请重新选择",
+          "cropSmallError": "您上传的图片超过大小限制，请重新选择图片",
+          "cropRecommend": "您上传的图片高度或者宽度太小，请选择尺寸足够的图片",
+          "uploadErrMsg": "图片上传失败，请重试"
+        }
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1521254875191_2": {
+      "type": "Input",
+      "dataName": "title",
+      "label": {
+        "description": {
+          "icon": "text",
+          "desc": "介绍文字标题"
+        },
+        "title": "文字介绍设置"
+      },
+      "wrapperStyle": {
+        "paddingTop": "20px",
+        "borderTop": "1px solid #E1E1E1",
+        "marginTop": "20px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": "ABOUT COMPANY"
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1521254875191_3": {
+      "type": "Input",
+      "dataName": "tex",
+      "label": {
+        "description": {
+          "icon": "text",
+          "desc": "介绍文字内容，按Enter换行"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "multiple": true,
+        "placeholder": ""
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1555653441966_1": {
+      "type": "Array",
+      "dataName": "imgs",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "图片设置"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {},
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": "placeholder"
+      },
+      "validateProps": {
+        "min": 1,
+        "max": 2,
+        "dataType": "Array",
+        "required": false,
+        "validate": false
+      },
+      "components": {
+        "1555653441966_3": {
+          "type": "Map",
+          "dataName": "map",
+          "label": {
+            "description": {
+              "icon": "",
+              "desc": ""
+            },
+            "title": ""
+          },
+          "wrapperStyle": {},
+          "style": {
+            "width": "auto",
+            "height": "auto"
+          },
+          "invisible": false,
+          "extension": {
+            "defaultValue": true,
+            "useReg": false,
+            "placeholder": "placeholder"
+          },
+          "validateProps": {
+            "dataType": "",
+            "required": false,
+            "validate": false
+          },
+          "components": {
+            "1555653441966_4": {
+              "type": "SingleImage",
+              "dataName": "img",
+              "label": {
+                "description": {
+                  "icon": "picture",
+                  "desc": "图片：宽320，高250"
+                },
+                "title": ""
+              },
+              "wrapperStyle": {},
+              "style": {
+                "width": "auto",
+                "height": "auto"
+              },
+              "invisible": false,
+              "extension": {
+                "size": 2,
+                "saveImageSize": false,
+                "api": {
+                  "uploadUrl": "/v1/image_upload.do"
+                },
+                "lang": {
+                  "cropUploadLocale": {
+                    "image": {
+                      "cancel": "取消",
+                      "addPhoto": "上传照片"
+                    },
+                    "file": {
+                      "addPhoto": "上传照片"
+                    },
+                    "drag": {
+                      "dropTips": "可以放手了",
+                      "dragTips": "直接拖动文件到虚线框内即可上传"
+                    },
+                    "crop": {
+                      "save": "保存并关闭",
+                      "reset": "重新选择",
+                      "title": "上传"
+                    }
+                  },
+                  "acceptErrMsg": "不支持该类型的图片，请重新选择",
+                  "cropSmallError": "您上传的图片超过大小限制，请重新选择图片",
+                  "cropRecommend": "您上传的图片高度或者宽度太小，请选择尺寸足够的图片",
+                  "uploadErrMsg": "图片上传失败，请重试"
+                }
+              },
+              "validateProps": {
+                "dataType": "",
+                "required": false,
+                "validate": false
+              }
+            },
+            "1555653441966_5": {
+              "type": "Input",
+              "dataName": "url",
+              "label": {
+                "description": {
+                  "icon": "link",
+                  "desc": "请输入链接地址"
+                },
+                "title": ""
+              },
+              "wrapperStyle": {},
+              "style": {
+                "width": "auto",
+                "height": "auto"
+              },
+              "invisible": false,
+              "extension": {
+                "defaultValue": true,
+                "useReg": false,
+                "placeholder": ""
+              },
+              "validateProps": {
+                "dataType": "",
+                "required": false,
+                "validate": false
+              }
+            }
+          },
+          "layout": [
+            {
+              "id": "1555653441966_4",
+              "root": true,
+              "children": []
+            },
+            {
+              "id": "1555653441966_5",
+              "root": true,
+              "children": []
+            }
+          ]
+        }
+      },
+      "layout": [
+        {
+          "id": "1555653441966_3",
+          "root": true,
+          "children": []
+        }
+      ]
+    },
+    "1526544030357_2": {
+      "type": "Radio",
+      "dataName": "mk_style",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": ""
+        },
+        "title": "自定义模块样式"
+      },
+      "wrapperStyle": {
+        "paddingTop": "20px",
+        "borderTop": "1px solid #E1E1E1",
+        "marginTop": "20px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "confirm": {},
+        "shape": "",
+        "size": "large",
+        "defaultValue": "2",
+        "type": "",
+        "dataSource": [
+          {
+            "label": "收起设置",
+            "value": "2"
+          },
+          {
+            "label": "展开设置",
+            "value": "1"
+          }
+        ]
+      },
+      "validateProps": {
+        "dataType": "Number",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1529920143184_1": {
+      "type": "Input",
+      "dataName": "paddingTop",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "模块上间距，填写数字，如20"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": ""
+      },
+      "validateProps": {
+        "dataType": "Number",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1524474977667_2": {
+      "type": "Input",
+      "dataName": "paddingBottom",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "模块下间距，填写数字，如20"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": ""
+      },
+      "validateProps": {
+        "dataType": "Number",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1521279397790_2": {
+      "type": "Input",
+      "dataName": "ct_bg",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "文字区域背景颜色值，如#ffffff"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": ""
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1556012229425_1": {
+      "type": "Input",
+      "dataName": "ct_linec",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "文字区域横线颜色值，如#ffffff"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": ""
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1521279397790_3": {
+      "type": "Input",
+      "dataName": "tit_c",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "文字介绍标题颜色值，如#ffffff"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": ""
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1521279397790_4": {
+      "type": "Input",
+      "dataName": "info_c",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "介绍文字颜色值，如#ffffff"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": ""
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1530065133974_1": {
+      "type": "Radio",
+      "dataName": "tit_style",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "自定义模块标题样式"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "confirm": {},
+        "shape": "",
+        "size": "large",
+        "defaultValue": "1",
+        "type": "",
+        "dataSource": [
+          {
+            "label": "收起设置",
+            "value": "1"
+          },
+          {
+            "label": "展开设置",
+            "value": "2"
+          }
+        ]
+      },
+      "validateProps": {
+        "dataType": "Number",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1526542282653_2": {
+      "type": "Select",
+      "dataName": "mk_titf",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "选择模块标题的字体"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": "Arial",
+        "placeholder": "Arial",
+        "dataSource": [
+          {
+            "label": "Arial",
+            "value": "Arial"
+          },
+          {
+            "label": "Roboto",
+            "value": "Roboto"
+          },
+          {
+            "label": "Helvetica",
+            "value": "Helvetica"
+          },
+          {
+            "label": "Neue",
+            "value": "Neue"
+          },
+          {
+            "label": "Tahoma",
+            "value": "Tahoma"
+          },
+          {
+            "label": "PingFang SC",
+            "value": "PingFang SC"
+          },
+          {
+            "label": "Microsoft YaHei",
+            "value": "Microsoft YaHei"
+          },
+          {
+            "label": "Century",
+            "value": "Century"
+          }
+        ]
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1529906866349_2": {
+      "type": "Input",
+      "dataName": "mk_tits",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "模块标题文字大小，输入数字"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": "48"
+      },
+      "validateProps": {
+        "dataType": "Number",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1521279026784_3": {
+      "type": "Input",
+      "dataName": "mk_titc",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": "模块标题颜色值 ，如#ffffff"
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "useReg": false,
+        "placeholder": ""
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1524474977667_1": {
+      "type": "Checkbox",
+      "dataName": "target",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": ""
+        },
+        "title": "其它设置"
+      },
+      "wrapperStyle": {
+        "paddingTop": "20px",
+        "borderTop": "1px solid #E1E1E1",
+        "marginTop": "20px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "text": "链接新窗口打开"
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    },
+    "1532314773869_1": {
+      "type": "Checkbox",
+      "dataName": "hideBottom",
+      "label": {
+        "description": {
+          "icon": "",
+          "desc": ""
+        },
+        "title": ""
+      },
+      "wrapperStyle": {
+        "marginTop": "10px"
+      },
+      "style": {
+        "width": "auto",
+        "height": "auto"
+      },
+      "invisible": false,
+      "extension": {
+        "defaultValue": true,
+        "text": "去除模块自带的下间距"
+      },
+      "validateProps": {
+        "dataType": "",
+        "required": false,
+        "validate": false
+      }
+    }
+  },
+  "layout": [
+    {
+      "id": "1591587205228_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1542598784180_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1591587205228_2",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1591587874555_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1591587874555_2",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1533270687040_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1524472819022_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1529919456111_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1529919456111_2",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1529919456111_3",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1526544030357_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1524473330761_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1521254875191_2",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1521254875191_3",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1555653441966_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1526544030357_2",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1529920143184_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1524474977667_2",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1521279397790_2",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1556012229425_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1521279397790_3",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1521279397790_4",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1530065133974_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1526542282653_2",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1529906866349_2",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1521279026784_3",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1524474977667_1",
+      "root": true,
+      "children": []
+    },
+    {
+      "id": "1532314773869_1",
+      "root": true,
+      "children": []
+    }
+  ],
+  "globalData": {},
+  "rules": [
+    {
+      "condition": "${moduleData.mk_style}=='2'",
+      "components": {
+        "1552373082919_1": {
+          "invisible": true
+        },
+        "1556012229425_1": {
+          "invisible": true
+        },
+        "1529920143184_1": {
+          "invisible": true
+        },
+        "1524474977667_2": {
+          "invisible": true
+        },
+        "1542597865119_1": {
+          "invisible": true
+        },
+        "1521279397790_1": {
+          "invisible": true
+        },
+        "1521279397790_2": {
+          "invisible": true
+        },
+        "1521279397790_3": {
+          "invisible": true
+        },
+        "1521279397790_4": {
+          "invisible": true
+        },
+        "1555915192210_1": {
+          "invisible": true
+        },
+        "1552010887881_1": {
+          "invisible": true
+        },
+        "1551952522344_1": {
+          "invisible": true
+        },
+        "1551952522344_2": {
+          "invisible": true
+        }
+      },
+      "desc": "模块样式"
+    },
+    {
+      "condition": "${moduleData.mk_style}=='1'",
+      "components": {
+        "1537855011262_1": {
+          "invisible": true
+        },
+        "1537855011262_2": {
+          "invisible": true
+        },
+        "1523612881420_1": {
+          "invisible": true
+        }
+      },
+      "desc": "模块样式"
+    },
+    {
+      "condition": "${moduleData.video_dis}=='2'",
+      "components": {
+        "1524472819022_1": {
+          "invisible": true
+        },
+        "1529919456111_1": {
+          "invisible": true
+        },
+        "1529919456111_2": {
+          "invisible": true
+        },
+        "1529919456111_3": {
+          "invisible": true
+        },
+        "1526544030357_1": {
+          "invisible": true
+        }
+      },
+      "desc": "视频"
+    },
+    {
+      "condition": "${moduleData.pic_dis}=='2'",
+      "components": {
+        "1529919456111_4": {
+          "invisible": true
+        }
+      },
+      "desc": "图片"
+    },
+    {
+      "condition": "${moduleData.tit_style}=='1'",
+      "components": {
+        "1542595699394_4": {
+          "invisible": true
+        },
+        "1542595699394_5": {
+          "invisible": true
+        },
+        "1542595699394_6": {
+          "invisible": true
+        },
+        "1542595699394_7": {
+          "invisible": true
+        },
+        "1542595699394_8": {
+          "invisible": true
+        }
+      },
+      "desc": "模块文字标题样式"
+    },
+    {
+      "desc": "模块背景",
+      "condition": "${moduleData.mk_bgDis}=='2'",
+      "components": {
+        "1542598784180_1": {
+          "invisible": true
+        },
+        "1591587205228_2": {
+          "invisible": true
+        }
+      }
+    }
+  ],
+  "moduleData": {
+    "imgs": [
+      ""
+    ],
+    "controls": true,
+    "tex": "",
+    "mk_titf": "Arial",
+    "hideBottom": true,
+    "tit_style": "1",
+    "video": "http://cloud.video.taobao.com/play/u/1734086020/p/1/e/6/t/1/79271064.mp4",
+    "title": "",
+    "autoplay": "1",
+    "target": true,
+    "videoWidth": "",
+    "mk_style": "2",
+    "video_dis": "1",
+    "paddingBottom": "",
+    "box_bg": "",
+    "tit_c": "",
+    "info_c": "",
+    "paddingTop": "",
+    "tex1": "",
+    "muted": false,
+    "autoplay1": false,
+    "pic_dis": "1",
+    "mk_bgXg": "scroll",
+    "mk_bgDis": "1"
+  }
+}
