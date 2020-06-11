@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ui>
+  <view>
+    <container>
+      <layout type="linearLayout" />
+      <editProperty>
+        <dataDefines>
+          <dataDefine name="hongbao" type="radio"  isNull="true" propertyName="------------------------ ▼ 红包动图设置 ▼ ------------------------">
+            <config type="sync">
+              <data text="收起" value="1" defaultSelect="true"/>
+              <data text="展开设置" value="2" defaultSelect="false"/>
+              <data text="隐藏" value="3" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="hbStyle" type="radio"  isNull="true" propertyName="内置风格选择" refer="hongbao:2">
+            <config type="sync">
+              <data text="风格1" value="1" defaultSelect="true"/>
+              <data text="风格2" value="2" defaultSelect="false"/>
+              <data text="风格3" value="3" defaultSelect="false"/>
+              <data text="风格4" value="4" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="hbUrl" type="url" validateType="taokeurl||wirelessurl" propertyName="红包链接地址" isNull="true"  refer="hongbao:2"/>
+          <dataDefine name="hbImg" type="text" isNull="true" propertyName="┏ 自定义红包图片地址(支持gif)" refer="hongbao:2"/>
+          <dataDefine name="hbImgWidth" type="text" isNull="true" propertyName="┣ 红包图片宽度" refer="hongbao:2"/>
+          <dataDefine name="hbImgHeight" type="text" isNull="true" propertyName="┣ 红包图片高度" refer="hongbao:2"/>
+          <dataDefine name="hbImgTop" type="text" isNull="true" propertyName="┣ 红包图片顶部位置，默认300" refer="hongbao:2"/>
+          <dataDefine name="hbImgRight" type="text" isNull="true" propertyName="┗ 红包图片右侧位置，默认50" refer="hongbao:2"/>
+
+
+          <dataDefine name="kcShow" type="radio"  isNull="true" propertyName="------------------------ ▼ 开场动图设置 ▼ ------------------------">
+            <config type="sync">
+              <data text="收起" value="1" defaultSelect="false"/>
+              <data text="快捷文字" value="2" defaultSelect="false"/>
+              <data text="自定图片" value="3" defaultSelect="false"/>
+              <data text="隐藏" value="4" defaultSelect="true"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="kcStyle" type="radio"  isNull="true" propertyName="内置风格选择" refer="kcShow:2">
+            <config type="sync">
+              <data text="风格1" value="2" defaultSelect="true"/>
+              <data text="风格2" value="1" defaultSelect="false"/>
+              <data text="风格3" value="3" defaultSelect="false"/>
+              <data text="风格4" value="4" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="kcWord1" type="text" isNull="true" propertyName="┏ 活动文案1" refer="kcShow:2"/>
+          <dataDefine name="kcWord2" type="text" isNull="true" propertyName="┣ 活动文案2" refer="kcShow:2"/>
+          <dataDefine name="kcWord3" type="text" isNull="true" propertyName="┣ 活动文案3" refer="kcShow:2"/>
+          <dataDefine name="kcWord4" type="text" isNull="true" propertyName="┣ 按钮文字" refer="kcShow:2"/>
+          <dataDefine name="kcUrl" type="url" validateType="taokeurl||wirelessurl" propertyName="┗ 关注链接（咨询客服领取关注送券链接）" isNull="true"  refer="kcShow:2"/>
+          <dataDefine name="kcBg" type="select"  isNull="true" propertyName="背景颜色透明度"  refer="kcShow:2">
+            <config type="sync">
+               <data text="0%" value="0" defaultSelect="false"/>
+              <data text="10%" value="0.1" defaultSelect="false"/>
+              <data text="20%" value="0.2" defaultSelect="false"/>
+              <data text="30%" value="0.3" defaultSelect="false"/>
+              <data text="40%" value="0.4" defaultSelect="false"/>
+              <data text="50%" value="0.5" defaultSelect="true"/>
+              <data text="60%" value="0.6" defaultSelect="false"/>
+              <data text="70%" value="0.7" defaultSelect="false"/>
+              <data text="80%" value="0.8" defaultSelect="false"/>
+              <data text="90%" value="0.9" defaultSelect="false"/>
+              <data text="100%" value="1" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="kcImg" type="text" isNull="true" propertyName="┏ 自定义开场图片地址(宽640，支持gif)" refer="kcShow:3"/>
+          <dataDefine name="kcImgHeight" type="text" isNull="true" propertyName="┣ 开场图片高度(必须填写)" refer="kcShow:3"/>
+          <dataDefine name="kcUrl" type="url" validateType="taokeurl||wirelessurl" propertyName="┗ 关注链接（咨询客服领取关注送券链接）" isNull="true"  refer="kcShow:3"/>
+          <dataDefine name="kcBg" type="select"  isNull="true" propertyName="背景颜色透明度"  refer="kcShow:3">
+            <config type="sync">
+              <data text="0%" value="0" defaultSelect="false"/>
+              <data text="10%" value="0.1" defaultSelect="false"/>
+              <data text="20%" value="0.2" defaultSelect="false"/>
+              <data text="30%" value="0.3" defaultSelect="false"/>
+              <data text="40%" value="0.4" defaultSelect="false"/>
+              <data text="50%" value="0.5" defaultSelect="true"/>
+              <data text="60%" value="0.6" defaultSelect="false"/>
+              <data text="70%" value="0.7" defaultSelect="false"/>
+              <data text="80%" value="0.8" defaultSelect="false"/>
+              <data text="90%" value="0.9" defaultSelect="false"/>
+              <data text="100%" value="1" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+
+          <dataDefine name="isScrolltrue" type="radio"  isNull="true" propertyName="------------------------ ▼ 轮播图片设置 ▼ ------------------------">
+            <config type="sync">
+              <data text="自动轮播" value="true" defaultSelect="true"/>
+              <data text="手指滑动" value="false" defaultSelect="false"/>
+              <data text="平铺展示" value="3" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="pointDisplay" type="radio"  isNull="true" propertyName="轮播圆点" refer="isScrolltrue:true">
+            <config type="sync">
+              <data text="显示" value="true" defaultSelect="true"/>
+              <data text="隐藏" value="false" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="pointDisplay" type="radio"  isNull="true" propertyName="轮播圆点" refer="isScrolltrue:false">
+            <config type="sync">
+              <data text="显示" value="true" defaultSelect="true"/>
+              <data text="隐藏" value="false" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="picHeight" type="text"  isNull="true" propertyName="轮播图片高度(默认450)"/>
+          <dataDefine name="lbArray" type="jsonArray" min="1" max="10" propertyName="★ 轮播图片设置" isNull="true">
+            <param name="image" type="image" isNull="true"  propertyName="┏图片选择(宽640)" />
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true"  propertyName="┣链接地址"/>
+            <param name="imgUrl" type="text" propertyName="┗图片地址(填写后会显示该图，支持gif)" isNull="true"/>
+          </dataDefine>
+          <dataDefine name="zhezhao" type="select"  isNull="true" propertyName="底部遮罩效果">
+            <config type="sync">
+              <data text="1：下弧样式" value="1" defaultSelect="false"/>
+              <data text="2：大波浪纹" value="2" defaultSelect="false"/>
+              <data text="3：小波浪纹" value="3" defaultSelect="false"/>
+              <data text="4：拱形" value="4" defaultSelect="false"/>
+              <data text="5:无遮罩" value="100" defaultSelect="true"/>
+              <data text="6:自定义图片" value="0" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="zhezhaoImg" type="image" isNull="true" propertyName="自定义遮罩图片(宽640，高40)" refer="zhezhao:0" />
+
+          <dataDefine name="mk_style" type="radio"  isNull="true"  propertyName="★ 自定义模块样式">
+            <config type="sync">
+              <data text="收起设置" value="true" defaultSelect="true"/>
+              <data text="展开设置" value="false" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="mkBg" type="text" isNull="true"  propertyName="模块背景颜色(如：#ffffff)" refer="mk_style:false"/>
+          <dataDefine name="marginBottom" type="text" isNull="true"  propertyName="模块下间距(默认0)" refer="mk_style:false"/>
+        </dataDefines>
+      </editProperty>
+      <styleBinding>
+        <attribute name="width" value="640"/>
+        <attribute name="backgroundColor" value="#f5f5f5"/>
+      </styleBinding>
+      <conditions>
+        <condition type="!=" left="$mkBg" right="null" executionType="1">
+          <styleBinding backgroundColor="$mkBg"/>
+        </condition>
+      </conditions>
+      <subViews>
+        <!--轮播-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="640"/>
+            <attribute name="height" value="450"/>
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$picHeight" right="null" executionType="1">
+              <styleBinding height="$picHeight"/>
+            </condition>
+            <condition type="==" left="$isScrolltrue" right="3" executionType="1">
+              <styleBinding height="0"/>
+            </condition>
+          </conditions>
+          <subViews>
+            <!--海报轮播-->
+            <sliderView>
+              <styleBinding>
+                <attribute name="width" value="640"/>
+                <attribute name="height" value="450"/>
+                <attribute name="isPointHide" value="false"/>
+                <attribute name="marginLeft" value="0" />
+                <attribute name="marginTop" value="0" />
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$picHeight" right="null" executionType="1">
+                  <styleBinding height="$picHeight"/>
+                </condition>
+                <condition type="==" left="$pointDisplay" right="false" executionType="1">
+                  <styleBinding isPointHide="true"/>
+                </condition>
+                <condition type="==" left="$isScrolltrue" right="true" executionType="1">
+                  <dataBinding>
+                    <data name="autoScrollEnabled" value="true" type="boolean"/>
+                  </dataBinding>
+                </condition>
+              </conditions>
+              <foreach start="0" step="1" >
+                <array value="$lbArray"/>
+                <template>
+                  <container>
+                    <layout type="linearLayout"/>
+                    <styleBinding>
+                      <attribute name="width" value="640"/>
+                      <attribute name="height" value="450"/>
+                    </styleBinding>
+                    <conditions>
+                      <condition type="!=" left="$picHeight" right="null" executionType="1">
+                        <styleBinding height="$picHeight"/>
+                      </condition>
+                    </conditions>
+                    <subViews>
+                      <image url="$lbArray.[?].image">
+                        <styleBinding>
+                          <attribute name="width" value="640"/>
+                          <attribute name="height" value="450"/>
+                        </styleBinding>
+                        <conditions>
+                          <condition type="!=" left="$lbArray.[?].imgUrl" right="null" executionType="1">
+                            <dataBinding>
+                              <data name="url" value="$lbArray.[?].imgUrl"/>
+                            </dataBinding>
+                          </condition>
+                          <condition type="!=" left="$picHeight" right="null" executionType="1">
+                            <styleBinding height="$picHeight"/>
+                          </condition>
+                        </conditions>
+                      </image>
+                    </subViews>
+                    <events>
+                      <event type="click">
+                        <actions type="openURL">
+                          <userTrack>
+                            <utParams>
+                              <params>
+                              <param name="wp_p" value="1"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <openURL url="$lbArray.[?].url"/>
+                        </actions>
+                      </event>
+                    </events>
+                  </container>
+                </template>
+              </foreach>
+            </sliderView>
+            <!--海报轮播end-->
+
+            <!--遮罩图片-->
+            <image url="https://img.alicdn.com/imgextra/i2/800803731/O1CN011dQqApNn4NRvCy4_!!800803731.png">
+              <styleBinding>
+                <attribute name="width" value="640"/>
+                <attribute name="height" value="40"/>
+                <attribute name="position" value="absolute" />
+                <attribute name="left" value="0"/>
+                <attribute name="bottom" value="0"/>
+              </styleBinding>
+              <conditions>
+                <condition type="==" left="$zhezhao" right="100" executionType="1">
+                  <styleBinding width="0" height="0" />
+                </condition>
+                <condition type="==" left="$zhezhao" right="2" executionType="1">
+                  <dataBinding>
+                    <data name="url" value="https://img.alicdn.com/imgextra/i1/800803731/O1CN011dQqAn2FQULE1gF_!!800803731.png"/>
+                  </dataBinding>
+                </condition>
+                <condition type="==" left="$zhezhao" right="3"  executionType="1">
+                  <dataBinding>
+                    <data name="url" value="https://img.alicdn.com/imgextra/i4/800803731/O1CN011dQqAp2EQ1NobsV_!!800803731.png"/>
+                  </dataBinding>
+                </condition>
+                <condition type="==" left="$zhezhao" right="4" executionType="1">
+                  <dataBinding>
+                    <data name="url" value="https://img.alicdn.com/imgextra/i2/800803731/O1CN011dQqAo8VvfptGUC_!!800803731.png"/>
+                  </dataBinding>
+                </condition>
+                <andCondition executionType="1">
+                  <condition type="==" left="$zhezhao" right="0"/>
+                  <condition type="!=" left="$zhezhaoImg" right="null"/>
+                  <dataBinding>
+                    <data name="url" value="$zhezhaoImg"/>
+                  </dataBinding>
+                </andCondition>
+              </conditions>
+            </image>
+
+          </subViews>
+        </container>
+
+        <!-- 平铺 -->  
+        <grid unScroll="true" gridColumn="1" needDownRefresh="false" needNextPage="false" dataSource="$lbArray"> 
+          <styleBinding> 
+            <attribute name="width" value="0"/>  
+            <attribute name="invisible" value="true"/> 
+          </styleBinding>  
+          <conditions> 
+            <condition type="==" left="$isScrolltrue" right="3" executionType="1">
+              <styleBinding width="640" invisible="false"/>
+            </condition>
+          </conditions>  
+          <array value="$lbArray"/>  
+          <cell> 
+            <container> 
+              <layout type="linearLayout"/>  
+              <styleBinding> 
+                <attribute name="width" value="640"/>  
+              </styleBinding>  
+              <subViews> 
+                <image url="$lbArray.[?].image"> 
+                  <styleBinding> 
+                    <attribute name="width" value="640"/>  
+                    <attribute name="height" value="450"/>  
+                  </styleBinding>  
+                  <conditions> 
+                    <condition type="!=" left="$lbArray.[?].imgUrl" right="null" executionType="1"> 
+                      <dataBinding> 
+                        <data name="url" value="$lbArray.[?].imgUrl"/> 
+                      </dataBinding> 
+                    </condition>  
+                    <condition type="!=" left="$picHeight" right="null" executionType="1">
+                      <styleBinding height="$picHeight"/>
+                    </condition>
+                  </conditions> 
+                </image>  
+              </subViews>  
+              <events> 
+                <event type="click"> 
+                  <actions> 
+                    <userTrack> 
+                      <utParams> 
+                        <params> 
+                          <param name="wp_p" value="1"/> 
+                        </params> 
+                      </utParams> 
+                    </userTrack>  
+                    <openURL url="$lbArray.[?].url"/> 
+                  </actions> 
+                </event> 
+              </events> 
+            </container> 
+          </cell> 
+        </grid>  
+
+
+        <!--红包图片-->
+        <image url="https://tb.cn/1yNsFqv">
+          <styleBinding>
+            <attribute name="width" value="110"/>
+            <attribute name="height" value="110"/>
+            <attribute name="position" value="absolute" />
+            <attribute name="right" value="50"/>
+            <attribute name="top" value="320"/>
+          </styleBinding>
+          <conditions>
+            
+            <condition type="==" left="$hbStyle" right="2" executionType="1">
+              <dataBinding>
+                <data name="url" value="https://tb.cn/JfRsFqv"/>
+              </dataBinding>
+            </condition>
+            <condition type="==" left="$hbStyle" right="3" executionType="1">
+              <dataBinding>
+                <data name="url" value="https://tb.cn/Q0DsFqv"/>
+              </dataBinding>
+            </condition>
+            <condition type="==" left="$hbStyle" right="4" executionType="1">
+              <dataBinding>
+                <data name="url" value="https://tb.cn/dPCsFqv"/>
+              </dataBinding>
+            </condition>
+            <condition type="!=" left="$hbImg" right="null" executionType="1">
+              <dataBinding>
+                <data name="url" value="$hbImg"/>
+              </dataBinding>
+            </condition>
+            <condition type="!=" left="$hbImgWidth" right="null" executionType="1">
+              <styleBinding width="$hbImgWidth"/>
+            </condition>
+            <condition type="!=" left="$hbImgHeight" right="null" executionType="1">
+              <styleBinding height="$hbImgHeight"/>
+            </condition>
+            <condition type="!=" left="$hbImgTop" right="null" executionType="1">
+              <styleBinding top="$hbImgTop"/>
+            </condition>
+            <condition type="!=" left="$hbImgRight" right="null" executionType="1">
+              <styleBinding right="$hbImgRight"/>
+            </condition>
+            <condition type="==" left="$hongbao" right="3" executionType="1">
+              <styleBinding width="0" height="0" />
+            </condition>
+          </conditions>
+          <events>
+            <event type="click">
+              <actions>
+                <userTrack  utType="Image" utName="image">
+                  <utParams>
+                    <params>
+                    <param name="wp_p" value="1"/>
+                  </params>
+                </utParams>
+              </userTrack>
+              <openURL url="$hbUrl"/>
+            </actions>
+          </event>
+        </events>
+        </image>
+
+
+
+        <!--开场图片-->
+        <container viewId="MODULE_KEY_PLACE_HOLDER_0_hideView">
+          <layout type="linearLayout" />
+          <styleBinding>
+            <attribute name="width" value="640"/>
+            <attribute name="height" value="450"/>
+            <attribute name="position" value="absolute" />
+            <attribute name="left" value="0"/>
+            <attribute name="top" value="0"/>
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$picHeight" right="null" executionType="1">
+              <styleBinding height="$picHeight"/>
+            </condition>
+            <condition type="==" left="$kcShow" right="4" executionType="1">
+              <styleBinding width="0" height="0"/>
+            </condition>  
+          </conditions>
+          <subViews>
+            <!--背景-->  
+            <container >
+              <layout type="linearLayout" />
+              <styleBinding>
+                <attribute name="width" value="640"/>
+                <attribute name="height" value="450"/>
+                <attribute name="position" value="absolute" />
+                <attribute name="left" value="0"/>
+                <attribute name="top" value="0"/>
+                <attribute name="backgroundColor" value="#000000"/>
+                <attribute name="opacity" value="0.5"/>
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$picHeight" right="null" executionType="1">
+                  <styleBinding height="$picHeight"/>
+                </condition>
+                <condition type="!=" left="$kcBg" right="null" executionType="1">
+                  <styleBinding opacity="$kcBg"/>
+                </condition>  
+              </conditions>
+            </container>
+            
+            <!--内容-->  
+            <container >
+              <layout type="linearLayout" />
+              <styleBinding>
+                <attribute name="width" value="640"/>
+                <attribute name="height" value="450"/>
+                <attribute name="position" value="absolute" />
+                <attribute name="left" value="0"/>
+                <attribute name="top" value="0"/>
+                <attribute name="justifyContent" value="center" />
+                <attribute name="alignItems" value="center" />
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$picHeight" right="null" executionType="1">
+                  <styleBinding height="$picHeight"/>
+                </condition> 
+              </conditions>
+              <subViews>
+                <!--文字-->  
+                <container>
+                  <layout type="linearLayout" />
+                  <styleBinding>
+                    <attribute name="width" value="640"/>
+                    <attribute name="height" value="472"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="==" left="$kcStyle" right="2" executionType="1">
+                      <styleBinding height="290"/>
+                    </condition>
+                    <condition type="==" left="$kcStyle" right="3" executionType="1">
+                      <styleBinding height="508"/>
+                    </condition>
+                    <condition type="==" left="$kcStyle" right="4" executionType="1">
+                      <styleBinding height="520"/>
+                    </condition>
+                    <condition type="!=" left="$kcImg" right="null" executionType="1">
+                      <styleBinding width="0" height="0"/>
+                    </condition> 
+                  </conditions>
+                  <subViews>
+                    <image url="https://tb.cn/Mah2Gqv">
+                      <styleBinding>
+                        <attribute name="width" value="640"/>
+                        <attribute name="height" value="472"/>
+                        <attribute name="position" value="absolute" />
+                        <attribute name="left" value="0"/>
+                        <attribute name="top" value="0"/>
+                      </styleBinding>
+                      <conditions>   
+                        <condition type="==" left="$kcStyle" right="2" executionType="1">
+                          <dataBinding>
+                            <data name="url" value="https://tb.cn/Bqb1Gqv"/>
+                          </dataBinding>
+                          <styleBinding height="290"/>
+                        </condition>
+                        <condition type="==" left="$kcStyle" right="3" executionType="1">
+                          <dataBinding>
+                            <data name="url" value="https://tb.cn/oQW1Gqv"/>
+                          </dataBinding>
+                          <styleBinding height="508"/>
+                        </condition>
+                        <condition type="==" left="$kcStyle" right="4" executionType="1">
+                          <dataBinding>
+                            <data name="url" value="https://tb.cn/S7X1Gqv"/>
+                          </dataBinding>
+                          <styleBinding height="520"/>
+                        </condition>
+                      </conditions>
+                    </image>
+                    <image url="https://img.alicdn.com/imgextra/i4/800803731/O1CN01vH3JeE1dQqIv8ZYwF_!!800803731.png">
+                      <styleBinding>
+                        <attribute name="width" value="640"/>
+                        <attribute name="height" value="290"/>
+                        <attribute name="position" value="absolute" />
+                        <attribute name="left" value="0"/>
+                        <attribute name="top" value="0"/>
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$kcStyle" right="2" executionType="1">
+                          <styleBinding width="0" height="0"/>
+                        </condition>
+                      </conditions>
+                    </image>
+                    <label value="20元优惠券" lines="1"> 
+                      <styleBinding>
+                        <attribute name="width" value="640"/>
+                        <attribute name="height" value="55"/>
+                        <attribute name="marginTop" value="75"/>
+                        <attribute name="textAlign" value="center"/>
+                        <attribute name="lineHeight" value="60"/>
+                        <attribute name="fontSize" value="32"/>
+                        <attribute name="fontWeight" value="700"/>
+                        <attribute name="color" value="#ff0000"/>
+                      </styleBinding>
+                      <conditions>   
+                        <condition type="!=" left="$kcWord1" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$kcWord1"/>
+                          </dataBinding>
+                        </condition>
+                        <condition type="==" left="$kcStyle" right="2" executionType="1">
+                          <styleBinding marginTop="60" color="#ff1d2e" fontSize="32"/>
+                        </condition> 
+                        <condition type="==" left="$kcStyle" right="3" executionType="1">
+                          <styleBinding marginTop="130" height="36" lineHeight="36" color="#fffbd4" fontSize="36"/>
+                        </condition>
+                        <condition type="==" left="$kcStyle" right="4" executionType="1">
+                          <styleBinding marginTop="130" height="36" lineHeight="36" color="#d3211c" fontSize="36"/>
+                        </condition>        
+                      </conditions>
+                    </label>
+                    <label value="年货节全场有礼" lines="1"> 
+                      <styleBinding>
+                        <attribute name="width" value="640"/>
+                        <attribute name="height" value="60"/>
+                        <attribute name="marginTop" value="105"/>
+                        <attribute name="textAlign" value="center"/>
+                        <attribute name="lineHeight" value="60"/>
+                        <attribute name="fontSize" value="32"/>
+                        <attribute name="fontWeight" value="700"/>
+                        <attribute name="color" value="#ffffff"/>
+                      </styleBinding>
+                      <conditions>   
+                        <condition type="!=" left="$kcWord2" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$kcWord2"/>
+                          </dataBinding>
+                        </condition>
+                        <condition type="==" left="$kcStyle" right="2" executionType="1">
+                          <styleBinding marginTop="0" height="30" lineHeight="30" color="#ff1d2e" fontSize="28"/>
+                        </condition>  
+                        <condition type="==" left="$kcStyle" right="3" executionType="1">
+                          <styleBinding marginTop="0" height="32" lineHeight="32" color="#fffbd4" fontSize="28"/>
+                        </condition>
+                        <condition type="==" left="$kcStyle" right="4" executionType="1">
+                          <styleBinding marginTop="40" height="32" lineHeight="32" color="#d3211c" fontSize="28"/>
+                        </condition>           
+                      </conditions>
+                    </label>  
+                    <label value="全场满199减20" lines="1"> 
+                      <styleBinding>
+                        <attribute name="width" value="640"/>
+                        <attribute name="height" value="60"/>
+                        <attribute name="textAlign" value="center"/>
+                        <attribute name="lineHeight" value="60"/>
+                        <attribute name="fontSize" value="32"/>
+                        <attribute name="fontWeight" value="700"/>
+                        <attribute name="color" value="#ffe567"/>
+                      </styleBinding>
+                      <conditions>   
+                        <condition type="!=" left="$kcWord3" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$kcWord3"/>
+                          </dataBinding>
+                        </condition>  
+                        <condition type="==" left="$kcStyle" right="2" executionType="1">
+                          <styleBinding marginTop="0" height="30" lineHeight="30" color="#666666" fontSize="24"/>
+                        </condition> 
+                        <condition type="==" left="$kcStyle" right="3" executionType="1">
+                          <styleBinding marginTop="68" height="60" lineHeight="60" color="#ff0000" fontSize="36"/>
+                        </condition> 
+                        <condition type="==" left="$kcStyle" right="4" executionType="1">
+                          <styleBinding marginTop="10" height="30" lineHeight="30" color="#ff0000" fontSize="26"/>
+                        </condition>       
+                      </conditions>
+                    </label>
+                    <label value="关注送券" lines="1"> 
+                      <styleBinding>
+                        <attribute name="width" value="640"/>
+                        <attribute name="height" value="60"/>
+                        <attribute name="marginTop" value="14"/>
+                        <attribute name="textAlign" value="center"/>
+                        <attribute name="lineHeight" value="60"/>
+                        <attribute name="fontSize" value="20"/>
+                        <attribute name="fontWeight" value="700"/>
+                        <attribute name="color" value="#ff0000"/>
+                      </styleBinding>
+                      <conditions>   
+                        <condition type="!=" left="$kcWord4" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$kcWord4"/>
+                          </dataBinding>
+                        </condition>
+                        <condition type="==" left="$kcStyle" right="2" executionType="1">
+                          <styleBinding marginTop="24" color="#ff0000" fontSize="20"/>
+                        </condition> 
+                        <condition type="==" left="$kcStyle" right="3" executionType="1">
+                          <styleBinding marginTop="12" color="#ffffff" fontSize="20"/>
+                        </condition> 
+                        <condition type="==" left="$kcStyle" right="4" executionType="1">
+                          <styleBinding width="120" height="30" marginTop="35" marginLeft="260" backgroundColor="#ff6600" borderRadius="30" lineHeight="30" color="#ffffff" fontSize="20"/>
+                        </condition>         
+                      </conditions>
+                    </label>  
+                  </subViews>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                            <param name="wp_p" value="1"/>
+                          </params>
+                        </utParams>
+                      </userTrack>
+                      <openURL url="$kcUrl"/>
+                    </actions>
+                  </event>
+                  </events>
+                </container>
+
+                <!--图片-->  
+                <image url="$kcImg">
+                  <styleBinding>
+                    <attribute name="width" value="640"/>
+                    <attribute name="height" value="0"/>
+                  </styleBinding>
+                  <conditions>
+                    <andCondition executionType="1" >  
+                      <condition type="!=" left="$kcImg" right="null"/> 
+                      <condition type="!=" left="$kcImgHeight" right="null"/> 
+                      <styleBinding height="$kcImgHeight" />
+                    </andCondition>
+                  </conditions>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack  utType="Image" utName="image">
+                          <utParams>
+                            <params>
+                            <param name="wp_p" value="1"/>
+                          </params>
+                        </utParams>
+                      </userTrack>
+                      <openURL url="$kcUrl"/>
+                    </actions>
+                  </event>
+                  </events>
+                </image>
+
+
+                <!--关闭按钮-->
+                <image url="https://img.alicdn.com/imgextra/i4/800803731/O1CN01GVxLXX1dQqIsJgP1T_!!800803731.png" viewId="MODULE_KEY_PLACE_HOLDER_m_0_hideView">
+                  <styleBinding>
+                    <attribute name="width" value="54"/>
+                    <attribute name="height" value="54"/>
+                    <attribute name="marginTop" value="10"/>
+                  </styleBinding>
+                  <conditions>   
+                    <andCondition executionType="1">
+                      <condition type="==" left="$kcImg" right="null"/>
+                      <condition type="==" left="$kcStyle" right="3"/>
+                      <styleBinding marginTop="-80"/>
+                    </andCondition>
+                    <andCondition executionType="1">
+                      <condition type="==" left="$kcImg" right="null"/>
+                      <condition type="==" left="$kcStyle" right="4"/>
+                      <styleBinding marginTop="-60"/>
+                    </andCondition>          
+                  </conditions>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="1"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <!--让对应的大图显示，其他大图隐藏-->
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_0_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0,"height":0} 
+                            </param> 
+                          </params> 
+                        </changeStyle>
+                        <!--刷新所有大图状态,break-->
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_0_hideView" isBreak="true"/>
+                      </actions>
+                    </event>
+                  </events> 
+                </image>
+              </subViews>
+            </container>
+
+          </subViews> 
+        </container>
+
+
+        <!--上间距-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="640"/>
+            <attribute name="height" value="0"/>
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$marginBottom" right="null" executionType="1">
+              <styleBinding height="$marginBottom"/>
+            </condition>
+          </conditions>
+        </container>
+
+      </subViews>
+    </container>
+</view>
+</ui>
