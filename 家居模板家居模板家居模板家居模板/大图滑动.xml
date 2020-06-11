@@ -1,0 +1,338 @@
+<ui>
+  <!--ma014-->
+  <view>
+    <container>
+      <layout type="linearLayout"/>
+      <editProperty moduleType="fcoupon_image">
+        <dataDefines>
+          <dataDefine name="mkTitleWord" type="radio"  isNull="true"  propertyName="★ 文字标题设置">
+            <config type="sync">
+              <data text="居左" value="left" defaultSelect="true"/>
+              <data text="居中" value="center" defaultSelect="false"/>
+              <data text="隐藏" value="none" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="bTitle" type="text"  isNull="true" propertyName="大标题" refer="mkTitleWord:left"/>
+          <dataDefine name="sTitle" type="text"  isNull="true" propertyName="副标题" refer="mkTitleWord:left"/>
+          <dataDefine name="moreLink" type="url"  isNull="true" propertyName="查看更多链接" validateType="taokeurl||wirelessurl" refer="mkTitleWord:left"/>
+          <dataDefine name="bTitle" type="text"  isNull="true" propertyName="大标题" refer="mkTitleWord:center"/>
+          <dataDefine name="sTitle" type="text"  isNull="true" propertyName="副标题" refer="mkTitleWord:center"/>
+
+          <dataDefine name="bgImgDis" type="radio"  isNull="true"  propertyName="★ 模块背景图片设置">
+            <config type="sync">
+              <data text="显示" value="true" defaultSelect="true"/>
+              <data text="隐藏" value="false" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="bgImgHeight" type="text"  isNull="true" propertyName="背景图片高度，默认(720)" refer="bgImgDis:true"/>
+          <dataDefine name="bgImg" type="image" isNull="true" propertyName="背景图片选择，宽640" refer="bgImgDis:true"/>
+          <dataDefine name="pic_t" type="text" isNull="true"  propertyName="滑动图片与顶部距离(默认20)" refer="bgImgDis:true"/>
+
+          <dataDefine name="pic_w" type="text" isNull="true"  propertyName="★ 滑动图片宽度(默认450)"/>
+          <dataDefine name="pic_h" type="text" isNull="true"  propertyName="图片高度(默认560)"/>
+          <dataDefine name="pic_m" type="text" isNull="true"  propertyName="图片间距(默认30)"/>
+          <dataDefine name="slide_m" type="radio"  isNull="true" propertyName="滑动区块左侧边距" >
+            <config type="sync">
+              <data text="有间距" value="16" defaultSelect="true"/>
+              <data text="无间距" value="0" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="imgArray" type="jsonArray" min="1" max="20" propertyName="内容设置" isNull="true">
+            <param name="image" type="image" propertyName="┏图片选择" isNull="true"/>
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true" propertyName="┣链接地址"/>
+            <param name="imgUrl" type="text"  propertyName="┗图片地址(填写后会显示该图,支持gif)" isNull="true"/>
+          </dataDefine>
+
+          <dataDefine name="mk_style" type="radio"  isNull="true" propertyName="★ 自定义模块样式" >
+            <config type="sync">
+              <data text="收起设置" value="false" defaultSelect="true"/>
+              <data text="展开设置" value="true" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="mkBg" type="text" isNull="true"  propertyName="模块背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="bColor" type="text" isNull="true"  propertyName="模块大标题文字颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="sColor" type="text" isNull="true"  propertyName="模块副标题文字颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="moreName" type="text" isNull="true"  propertyName="模块查看更多文字" refer="mk_style:true"/>
+          <dataDefine name="moreColor" type="text" isNull="true"  propertyName="模块查看更多颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="marginTop" type="text" isNull="true"  propertyName="模块上间距(默认0)" refer="mk_style:true"/>
+          <dataDefine name="marginBottom" type="text" isNull="true"  propertyName="模块下间距(默认20)" refer="mk_style:true"/>
+        </dataDefines>
+      </editProperty>
+      <styleBinding>
+        <attribute name="backgroundColor" value="#f5f5f5"/>
+      </styleBinding>
+      <conditions>
+        <condition type="!=" left="$mkBg" right="null">
+          <styleBinding backgroundColor="$mkBg"/>
+        </condition>
+      </conditions>
+      <subViews>
+        <!--上间距-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="640"/>
+            <attribute name="height" value="0"/>
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$marginTop" right="null" executionType="1">
+              <styleBinding height="$marginTop"/>
+            </condition>
+          </conditions>
+        </container>
+        
+        <container>
+          <layout type="linearLayout" />
+          <styleBinding>
+            <attribute name="width" value="640"/>
+          </styleBinding>
+          <subViews>
+            <image url="https://img.alicdn.com/imgextra/i2/800803731/O1CN01IanmMc1dQqH5WzOV3_!!800803731.jpg">
+              <styleBinding>
+                <attribute name="width" value="640"/>
+                <attribute name="height" value="720"/>
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$bgImg" right="null" executionType="1">
+                  <dataBinding>
+                    <data name="url" value="$bgImg"/>
+                  </dataBinding>
+                </condition>
+                <condition type="!=" left="$bgImgHeight" right="null" executionType="1">
+                  <styleBinding height="$bgImgHeight" />
+                </condition>
+                <condition type="==" left="$bgImgDis" right="false" executionType="1">
+                  <styleBinding width="0" height="0"/>
+                </condition>
+              </conditions>
+            </image>
+            <container>
+              <layout type="linearLayout" />
+              <styleBinding>
+                <attribute name="width" value="640"/>
+                <attribute name="position" value="absolute"/>
+                <attribute name="top" value="20"/>
+                <attribute name="left" value="0"/>
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$pic_t" right="null" executionType="1">
+                  <styleBinding top="$pic_t" />
+                </condition>
+                <condition type="==" left="$bgImgDis" right="false" executionType="1">
+                  <styleBinding position="static" top="0"/>
+                </condition>
+              </conditions>
+              <subViews>
+                <!-- 文字标题居左 -->
+                <container>
+                  <layout type="linearLayout" orientation="horizontal" />
+                  <styleBinding>
+                    <attribute name="width" value="608"/>
+                    <attribute name="height" value="80"/>
+                    <attribute name="marginLeft" value="16" />        
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$mkTitleWord" right="left" executionType="1">
+                      <styleBinding width="0" height="0" invisible="true"/>
+                    </condition>
+                  </conditions>
+                  <subViews>
+                    <label value="$bTitle" lines="1">
+                      <styleBinding>
+                        <attribute name="height" value="80"/>
+                        <attribute name="lineHeight" value="90"/>
+                        <attribute name="fontSize" value="36"/>
+                        <attribute name="fontWeight" value="600"/>
+                        <attribute name="color" value="#ffffff"/>
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$bColor" right="null" executionType="1">
+                          <styleBinding color="$bColor" />
+                        </condition>
+                      </conditions>
+                    </label>
+                    <label value="$sTitle" lines="1">
+                      <styleBinding>
+                        <attribute name="lineHeight" value="102"/>
+                        <attribute name="fontSize" value="20"/>
+                        <attribute name="color" value="#ffffff"/>
+                        <attribute name="marginLeft" value="6" />       
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$sColor" right="null">
+                          <styleBinding color="$sColor" />
+                        </condition>
+                      </conditions>
+                    </label>
+                    <label value="查看更多>" lines="1">
+                      <styleBinding>
+                        <attribute name="height" value="90"/>
+                        <attribute name="lineHeight" value="102"/>
+                        <attribute name="fontSize" value="20"/>
+                        <attribute name="color" value="#ffffff"/>
+                        <attribute name="position" value="absolute"/>
+                        <attribute name="right" value="0"/>
+                        <attribute name="top" value="0"/>
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$moreName" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$moreName"/>
+                          </dataBinding>
+                        </condition>
+                        <condition type="!=" left="$moreColor" right="null">
+                          <styleBinding color="$moreColor" />
+                        </condition>
+                      </conditions>
+                    </label>
+                  </subViews>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="1"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <openURL url="$moreLink"/>
+                      </actions>
+                    </event>
+                  </events>
+                </container>
+                <!-- 文字标题居中 -->
+                <container>
+                  <layout type="linearLayout"  />
+                  <styleBinding>
+                    <attribute name="width" value="608"/>
+                    <attribute name="height" value="120"/>
+                    <attribute name="marginLeft" value="16" />        
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$mkTitleWord" right="center" executionType="1">
+                      <styleBinding width="0" height="0" invisible="true"/>
+                    </condition>
+                  </conditions>
+                  <subViews>
+                    <label value="$bTitle" lines="1">
+                      <styleBinding>
+                        <attribute name="height" value="70"/>
+                        <attribute name="lineHeight" value="80"/>
+                        <attribute name="fontSize" value="36"/>
+                        <attribute name="fontWeight" value="600"/>
+                        <attribute name="color" value="#333333"/>
+                        <attribute name="textAlign" value="center"/>
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$bColor" right="null" executionType="1">
+                          <styleBinding color="$bColor" />
+                        </condition>
+                      </conditions>
+                    </label>
+                    <label value="$sTitle" lines="1">
+                      <styleBinding>
+                        <attribute name="textAlign" value="center"/>
+                        <attribute name="fontSize" value="20"/>
+                        <attribute name="color" value="#999999"/>
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$sColor" right="null">
+                          <styleBinding color="$sColor" />
+                        </condition>
+                      </conditions>
+                    </label>
+                  </subViews>
+                </container>  
+
+                <!-- 图片滑动 -->
+                <container>
+                  <layout type="linearLayout" orientation="horizontal" scroll="2"/>
+                  <styleBinding>
+                    <attribute name="width" value="640"/>
+                  </styleBinding>
+                  <subViews>
+                    <container>
+                      <layout type="linearLayout" orientation="horizontal"/>
+                      <styleBinding>
+                        <attribute name="paddingLeft" value="16"/>
+                      </styleBinding>
+                      <conditions>
+                        <condition type="==" left="$slide_m" right="0" executionType="1">
+                          <styleBinding paddingLeft="0" />
+                        </condition>
+                      </conditions>
+                      <foreach start="0" step="1" >
+                        <array value="$imgArray"/>
+                        <template>
+                          <image url="https://img.alicdn.com/imgextra/i4/800803731/O1CN01inzl0U1dQqFs49J3f_!!800803731.png">
+                            <styleBinding>
+                              <attribute name="width" value="450"/>
+                              <attribute name="height" value="560"/>
+                              <attribute name="marginRight" value="30"/>
+                            </styleBinding>
+                            <conditions>
+                              <condition type="!=" left="$imgArray.[?].image" right="null" executionType="1">
+                                <dataBinding>
+                                  <data name="url" value="$imgArray.[?].image"/>
+                                </dataBinding>
+                              </condition>
+                              <condition type="!=" left="$imgArray.[?].imgUrl" right="null" executionType="1">
+                                <dataBinding>
+                                  <data name="url" value="$imgArray.[?].imgUrl"/>
+                                </dataBinding>
+                              </condition>
+                              <condition type="!=" left="$pic_m" right="null" executionType="1">
+                                <styleBinding marginRight="$pic_m" />
+                              </condition>
+                              <condition type="!=" left="$pic_w" right="null" executionType="1">
+                                <styleBinding width="$pic_w" />
+                              </condition>
+                              <condition type="!=" left="$pic_h" right="null" executionType="1">
+                                <styleBinding height="$pic_h" />
+                              </condition>
+                            </conditions>
+                            <events>
+                              <event type="click">
+                                <actions>
+                                  <userTrack utType="Image" utName="image">
+                                    <utParams>
+                                      <params>
+                                      <param name="wp_p" value="1"/>
+                                      </params>
+                                    </utParams>
+                                  </userTrack>
+                                  <openURL url="$imgArray.[?].url"/>
+                                </actions>
+                              </event>
+                            </events>
+                          </image>
+                        </template>
+                      </foreach>
+                    </container>
+                  </subViews>
+                </container>
+                
+              </subViews>
+            </container>
+          </subViews>
+        </container>
+
+        <!--下间距-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="640"/>
+            <attribute name="height" value="20"/>
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$marginBottom" right="null" executionType="1">
+              <styleBinding height="$marginBottom"/>
+            </condition>
+          </conditions>
+        </container>
+
+      </subViews>
+    </container>
+  </view>
+</ui>

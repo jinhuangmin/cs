@@ -1,0 +1,1410 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ui> 
+  <!--ma014-->  
+  <view> 
+    <container> 
+      <layout type="linearLayout"/>  
+      <editProperty moduleType="fcoupon_image"> 
+        <dataDefines> 
+          <dataDefine name="xf_off" type="radio" isNull="true" propertyName="★ 显示方式选择"> 
+            <config type="sync"> 
+              <data text="吸顶显示(添加在顶部)" value="fixed" defaultSelect="false"/>  
+              <data text="固定显示(位置随意)" value="none" defaultSelect="true"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="xf_zw" type="radio" isNull="true" propertyName="吸顶时是否占位" refer="xf_off:fixed"> 
+            <config type="sync"> 
+              <data text="占位" value="1" defaultSelect="true"/>  
+              <data text="不占位(会叠在其他模块上)" value="2" defaultSelect="false"/> 
+            </config> 
+          </dataDefine> 
+          <dataDefine name="xf_type" type="radio" isNull="true" propertyName="内容显示方式"> 
+            <config type="sync"> 
+              <data text="图片+文字" value="1" defaultSelect="true"/>  
+              <data text="图片" value="2" defaultSelect="false"/>  
+              <data text="文字" value="3" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="line_num" type="radio" isNull="true" propertyName="每屏显示数量"> 
+            <config type="sync"> 
+              <data text="每屏1张" value="1" defaultSelect="false"/>  
+              <data text="每屏3张" value="3" defaultSelect="false"/>  
+              <data text="每屏3张半" value="3_5" defaultSelect="false"/>  
+              <data text="每屏4张" value="4" defaultSelect="false"/>  
+              <data text="每屏4张半" value="4_5" defaultSelect="false"/>  
+              <data text="每屏5张" value="5" defaultSelect="false"/>  
+              <data text="每屏5张半" value="5_5" defaultSelect="false"/>  
+              <data text="每屏6张" value="6" defaultSelect="true"/>  
+              <data text="自定图片宽高" value="0" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="pic_size1" type="radio" isNull="true" propertyName="图片尺寸选择" refer="line_num:1"> 
+            <config type="sync"> 
+              <data text="640x100" value="100" defaultSelect="true"/>  
+              <data text="640x110" value="110" defaultSelect="false"/>  
+              <data text="640x120" value="120" defaultSelect="false"/>  
+              <data text="640x130" value="130" defaultSelect="false"/>  
+              <data text="640x140" value="140" defaultSelect="false"/>  
+              <data text="640x150" value="150" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="pic_size3" type="radio" isNull="true" propertyName="图片尺寸选择" refer="line_num:3"> 
+            <config type="sync"> 
+              <data text="200x70" value="70" defaultSelect="false"/>  
+              <data text="200x80" value="80" defaultSelect="false"/>  
+              <data text="200x90" value="90" defaultSelect="false"/>  
+              <data text="200x100" value="100" defaultSelect="true"/>  
+              <data text="200x110" value="110" defaultSelect="false"/>  
+              <data text="200x120" value="120" defaultSelect="false"/>  
+              <data text="200x130" value="130" defaultSelect="false"/>  
+              <data text="200x150" value="150" defaultSelect="false"/>  
+              <data text="200x170" value="170" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="pic_size3_5" type="radio" isNull="true" propertyName="图片尺寸选择" refer="line_num:3_5"> 
+            <config type="sync"> 
+              <data text="170x70" value="70" defaultSelect="false"/>  
+              <data text="170x80" value="80" defaultSelect="false"/>  
+              <data text="170x90" value="90" defaultSelect="false"/>  
+              <data text="170x100" value="100" defaultSelect="true"/>  
+              <data text="170x110" value="110" defaultSelect="false"/>  
+              <data text="170x120" value="120" defaultSelect="false"/>  
+              <data text="170x130" value="130" defaultSelect="false"/>  
+              <data text="170x150" value="150" defaultSelect="false"/>  
+              <data text="170x170" value="170" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="pic_size4" type="radio" isNull="true" propertyName="图片尺寸选择" refer="line_num:4"> 
+            <config type="sync"> 
+              <data text="148x70" value="70" defaultSelect="false"/>  
+              <data text="148x80" value="80" defaultSelect="false"/>  
+              <data text="148x90" value="90" defaultSelect="false"/>  
+              <data text="148x100" value="100" defaultSelect="true"/>  
+              <data text="148x110" value="110" defaultSelect="false"/>  
+              <data text="148x120" value="120" defaultSelect="false"/>  
+              <data text="148x130" value="130" defaultSelect="false"/>  
+              <data text="148x140" value="140" defaultSelect="false"/>  
+              <data text="148x148" value="148" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="pic_size4_5" type="radio" isNull="true" propertyName="图片尺寸选择" refer="line_num:4_5"> 
+            <config type="sync"> 
+              <data text="130x60" value="60" defaultSelect="false"/>  
+              <data text="130x70" value="70" defaultSelect="false"/>  
+              <data text="130x80" value="80" defaultSelect="false"/>  
+              <data text="130x90" value="90" defaultSelect="false"/>  
+              <data text="130x100" value="100" defaultSelect="true"/>  
+              <data text="130x110" value="110" defaultSelect="false"/>  
+              <data text="130x120" value="120" defaultSelect="false"/>  
+              <data text="130x130" value="130" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="pic_size5" type="radio" isNull="true" propertyName="图片尺寸选择" refer="line_num:5"> 
+            <config type="sync"> 
+              <data text="116x60" value="60" defaultSelect="false"/>  
+              <data text="116x70" value="70" defaultSelect="false"/>  
+              <data text="116x80" value="80" defaultSelect="false"/>  
+              <data text="116x90" value="90" defaultSelect="false"/>  
+              <data text="116x100" value="100" defaultSelect="false"/>  
+              <data text="116x110" value="110" defaultSelect="false"/>  
+              <data text="116x116" value="116" defaultSelect="true"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="pic_size5_5" type="radio" isNull="true" propertyName="图片尺寸选择" refer="line_num:5_5"> 
+            <config type="sync"> 
+              <data text="110x60" value="60" defaultSelect="false"/>  
+              <data text="110x70" value="70" defaultSelect="false"/>  
+              <data text="110x80" value="80" defaultSelect="false"/>  
+              <data text="110x90" value="90" defaultSelect="false"/>  
+              <data text="110x100" value="100" defaultSelect="false"/>  
+              <data text="110x110" value="110" defaultSelect="true"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="pic_size6" type="radio" isNull="true" propertyName="图片尺寸选择" refer="line_num:6"> 
+            <config type="sync"> 
+              <data text="95x60" value="60" defaultSelect="false"/>  
+              <data text="95x70" value="70" defaultSelect="false"/>  
+              <data text="95x80" value="80" defaultSelect="false"/>  
+              <data text="95x90" value="90" defaultSelect="false"/>  
+              <data text="95x95" value="95" defaultSelect="true"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="pic_w" type="text" isNull="true" propertyName="图片宽度(默认95)" refer="line_num:0"/>  
+          <dataDefine name="pic_h" type="text" isNull="true" propertyName="图片高度(默认95)" refer="line_num:0"/>  
+          <dataDefine name="pic_m" type="text" isNull="true" propertyName="图片间距(默认10)" refer="line_num:0"/>  
+          <dataDefine name="picRadius" type="radio" isNull="true" propertyName="图片圆角效果"> 
+            <config type="sync"> 
+              <data text="小圆角" value="1" defaultSelect="true"/>  
+              <data text="大圆角" value="2" defaultSelect="false"/>  
+              <data text="圆形" value="3" defaultSelect="false"/>  
+              <data text="直角" value="0" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="imgArray" type="jsonArray" min="1" max="20" propertyName="内容设置" isNull="true" refer="xf_type:1"> 
+            <param name="image" type="image" propertyName="┏图片选择" isNull="true"/>  
+            <param name="title" type="text" propertyName="┣分类标题" isNull="true"/>  
+            <param name="color" type="text" propertyName="┣标题颜色" isNull="true"/>  
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true" propertyName="┣链接地址"/>  
+            <param name="imgUrl" type="text" propertyName="┗图片地址(填写后会显示该图,支持gif)" isNull="true"/> 
+          </dataDefine> 
+
+          <dataDefine name="imgArray" type="jsonArray" min="1" max="20" propertyName="内容设置" isNull="true" refer="xf_type:2"> 
+            <param name="image" type="image" propertyName="┏图片选择" isNull="true"/>  
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true" propertyName="┣链接地址"/>  
+            <param name="imgUrl" type="text" propertyName="┗图片地址(填写后会显示该图,支持gif)" isNull="true"/> 
+          </dataDefine> 
+
+          <dataDefine name="imgArray" type="jsonArray" min="1" max="20" propertyName="内容设置" isNull="true" refer="xf_type:3"> 
+            <param name="title" type="text" propertyName="┏分类标题" isNull="true"/>  
+            <param name="color" type="text" propertyName="┣标题颜色" isNull="true"/>  
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true" propertyName="┗链接地址"/>  
+          </dataDefine> 
+
+          <dataDefine name="more" type="radio" isNull="true" propertyName="★ 右侧更多设置"> 
+            <config type="sync"> 
+              <data text="收起设置" value="sq" defaultSelect="false"/>  
+              <data text="展开设置" value="zk" defaultSelect="false"/>  
+              <data text="不显示" value="false" defaultSelect="true"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="moreLink" type="url" isNull="true" propertyName="跳转链接" validateType="taokeurl||wirelessurl" refer="more:zk"/>  
+          <dataDefine name="mkType" type="radio" isNull="true" propertyName="★ 自定义模块样式"> 
+            <config type="sync"> 
+              <data text="收起设置" value="false" defaultSelect="true"/>  
+              <data text="展开设置" value="true" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="mkBg" type="text" isNull="true" propertyName="模块背景颜色(如：#ffffff)" refer="mkType:true"/>  
+          <dataDefine name="itemColor" type="text" isNull="true" propertyName="分类标题统一颜色(如：#ffffff)" refer="mkType:true"/> 
+          <dataDefine name="fontSize" type="radio" isNull="true" propertyName="分类标题大小" refer="mkType:true"> 
+            <config type="sync"> 
+              <data text="20" value="20" defaultSelect="true"/>  
+              <data text="22" value="22" defaultSelect="false"/> 
+              <data text="24" value="24" defaultSelect="false"/> 
+              <data text="26" value="26" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="weight" type="radio" isNull="true" propertyName="分类标题粗细" refer="mkType:true"> 
+            <config type="sync"> 
+              <data text="加粗" value="700" defaultSelect="true"/>  
+              <data text="不加粗" value="100" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="mk_h" type="text" isNull="true" propertyName="模块高度(用来调整悬浮挡住其他模块时产生的间距,不明白请咨询客服)" refer="mkType:true"/>  
+          <dataDefine name="marginTop" type="text" isNull="true" propertyName="模块上间距(默认10)" refer="mkType:true"/>  
+          <dataDefine name="marginBottom" type="text" isNull="true" propertyName="模块下间距(默认10)" refer="mkType:true"/> 
+        </dataDefines> 
+      </editProperty>  
+      <subViews> 
+        <!-- 此处用来撑开模块-->  
+        <container> 
+          <layout type="linearLayout"/>  
+          <styleBinding> 
+            <attribute name="width" value="640"/> 
+            <attribute name="zIndex" value="99"/> 
+          </styleBinding>  
+          <conditions> 
+            <andCondition executionType="1" >  
+              <condition type="==" left="$xf_off" right="fixed"/> 
+              <condition type="==" left="$xf_zw" right="2"/> 
+              <styleBinding height="0"/> 
+            </andCondition>
+            <condition type="!=" left="$mk_h" right="null" executionType="1"> 
+              <styleBinding height="$mk_h"/> 
+            </condition> 
+          </conditions>  
+          <subViews> 
+            <container> 
+              <layout type="linearLayout"/>  
+              <styleBinding> 
+                <attribute name="width" value="640"/>  
+                <attribute name="height" value="10"/> 
+              </styleBinding>  
+              <conditions> 
+                <condition type="!=" left="$marginTop" right="null" executionType="1"> 
+                  <styleBinding height="$marginTop"/> 
+                </condition> 
+              </conditions> 
+            </container>  
+            <container> 
+              <layout type="linearLayout"/>  
+              <styleBinding> 
+                <attribute name="width" value="640"/>  
+                <attribute name="height" value="95"/> 
+              </styleBinding>  
+              <conditions>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="140"/> 
+                  <styleBinding height="140"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="150"/> 
+                  <styleBinding height="150"/> 
+                </andCondition>
+
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="150"/> 
+                  <styleBinding height="150"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="170"/> 
+                  <styleBinding height="170"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="150"/> 
+                  <styleBinding height="150"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="170"/> 
+                  <styleBinding height="170"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="140"/> 
+                  <styleBinding height="140"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="148"/> 
+                  <styleBinding height="148"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="60"/> 
+                  <styleBinding height="60"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="60"/> 
+                  <styleBinding height="60"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="116"/> 
+                  <styleBinding height="116"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="60"/> 
+                  <styleBinding height="60"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="60"/> 
+                  <styleBinding height="60"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="95"/> 
+                  <styleBinding height="95"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="0"/> 
+                  <condition type="!=" left="$pic_h" right="null"/> 
+                  <styleBinding height="$pic_h"/> 
+                </andCondition>
+                <condition type="==" left="$xf_type" right="3" executionType="1"> 
+                  <styleBinding height="0" invisible="true"/> 
+                </condition>  
+              </conditions> 
+            </container>  
+            <container> 
+              <layout type="linearLayout"/>  
+              <styleBinding> 
+                <attribute name="width" value="640"/>  
+                <attribute name="height" value="40"/> 
+              </styleBinding>  
+              <conditions> 
+                <condition type="==" left="$xf_type" right="2" executionType="1"> 
+                  <styleBinding width="0" height="0" invisible="true"/> 
+                </condition>
+                <condition type="==" left="$xf_type" right="3" executionType="1"> 
+                  <styleBinding height="60"/> 
+                </condition>  
+              </conditions> 
+            </container>  
+            <container> 
+              <layout type="linearLayout"/>  
+              <styleBinding> 
+                <attribute name="width" value="640"/>  
+                <attribute name="height" value="10"/> 
+              </styleBinding>  
+              <conditions> 
+                <condition type="!=" left="$marginBottom" right="null" executionType="1"> 
+                  <styleBinding height="$marginBottom"/> 
+                </condition> 
+              </conditions> 
+            </container> 
+          </subViews> 
+        </container>  
+
+        <container> 
+          <layout type="linearLayout"/>  
+          <styleBinding> 
+            <attribute name="position" value="absolute"/>  
+            <attribute name="width" value="640"/>  
+            <attribute name="left" value="0"/> 
+            <attribute name="backgroundColor" value="#ffffff"/> 
+            <attribute name="zIndex" value="99"/> 
+          </styleBinding>  
+          <conditions> 
+            <condition type="!=" left="$mkBg" right="null" executionType="1"> 
+              <styleBinding backgroundColor="$mkBg"/> 
+            </condition> 
+            <condition type="==" left="$xf_off" right="fixed" executionType="1"> 
+              <styleBinding position="fixed"/> 
+            </condition> 
+          </conditions>  
+          <subViews> 
+            <!-- 图文-->  
+            <container> 
+              <layout type="linearLayout" orientation="horizontal" scroll="2"/>  
+              <styleBinding> 
+                <attribute name="width" value="640"/>  
+              </styleBinding>  
+              <subViews> 
+                <container> 
+                  <layout type="linearLayout" orientation="horizontal"/>  
+                   <styleBinding> 
+                    <attribute name="paddingTop" value="10"/>  
+                    <attribute name="paddingBottom" value="10"/>  
+                    <attribute name="paddingLeft" value="10"/>  
+                  </styleBinding>  
+                  <conditions> 
+                    <condition type="!=" left="$marginTop" right="null" executionType="1"> 
+                      <styleBinding paddingTop="$marginTop"/> 
+                    </condition>  
+                    <condition type="!=" left="$marginBottom" right="null" executionType="1"> 
+                      <styleBinding paddingBottom="$marginBottom"/> 
+                    </condition>  
+                    <condition type="==" left="$line_num" right="1" executionType="1"> 
+                      <styleBinding paddingLeft="0"/> 
+                    </condition> 
+                    <andCondition executionType="1" >  
+                      <condition type="==" left="$line_num" right="0"/> 
+                      <condition type="!=" left="$pic_m" right="null"/> 
+                      <styleBinding paddingLeft="$pic_m"/> 
+                    </andCondition>
+                    <condition type="==" left="$xf_type" right="3" executionType="1"> 
+                      <styleBinding paddingLeft="0"/> 
+                    </condition> 
+                  </conditions> 
+                  <foreach start="0" step="1"> 
+                    <array value="$imgArray"/>  
+                    <template> 
+                      <container> 
+                        <layout type="linearLayout"/>  
+                        <styleBinding> 
+                          <attribute name="marginRight" value="10"/> 
+                        </styleBinding>  
+                        <conditions> 
+                           <andCondition executionType="1" >  
+                            <condition type="==" left="$line_num" right="0"/> 
+                            <condition type="!=" left="$pic_m" right="null"/> 
+                            <styleBinding marginRight="$pic_m"/> 
+                          </andCondition>
+                          <condition type="==" left="$xf_type" right="3" executionType="1"> 
+                            <styleBinding marginRight="0"/> 
+                          </condition> 
+                        </conditions>  
+                        <subViews> 
+                          <image url="$imgArray.[?].image"> 
+                            <styleBinding> 
+                              <attribute name="width" value="95"/>  
+                              <attribute name="height" value="95"/>  
+                              <attribute name="borderRadius" value="0"/> 
+                            </styleBinding>  
+                            <conditions> 
+                              <condition type="!=" left="$imgArray.[?].imgUrl" right="null" executionType="1"> 
+                                <dataBinding> 
+                                  <data name="url" value="$imgArray.[?].imgUrl"/> 
+                                </dataBinding> 
+                              </condition>  
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="1"/> 
+                                <condition type="==" left="$pic_size1" right="100"/> 
+                                <styleBinding width="640" height="100"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="1"/> 
+                                <condition type="==" left="$pic_size1" right="110"/> 
+                                <styleBinding width="640" height="110"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="1"/> 
+                                <condition type="==" left="$pic_size1" right="120"/> 
+                                <styleBinding width="640" height="120"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="1"/> 
+                                <condition type="==" left="$pic_size1" right="130"/> 
+                                <styleBinding width="640" height="130"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="1"/> 
+                                <condition type="==" left="$pic_size1" right="140"/> 
+                                <styleBinding width="640" height="140"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="1"/> 
+                                <condition type="==" left="$pic_size1" right="150"/> 
+                                <styleBinding width="640" height="150"/> 
+                              </andCondition>
+
+
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3"/> 
+                                <condition type="==" left="$pic_size3" right="70"/> 
+                                <styleBinding width="200" height="70"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3"/> 
+                                <condition type="==" left="$pic_size3" right="80"/> 
+                                <styleBinding width="200" height="80"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3"/> 
+                                <condition type="==" left="$pic_size3" right="90"/> 
+                                <styleBinding width="200" height="90"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3"/> 
+                                <condition type="==" left="$pic_size3" right="100"/> 
+                                <styleBinding width="200" height="100"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3"/> 
+                                <condition type="==" left="$pic_size3" right="110"/> 
+                                <styleBinding width="200" height="110"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3"/> 
+                                <condition type="==" left="$pic_size3" right="120"/> 
+                                <styleBinding width="200" height="120"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3"/> 
+                                <condition type="==" left="$pic_size3" right="130"/> 
+                                <styleBinding width="200" height="130"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3"/> 
+                                <condition type="==" left="$pic_size3" right="150"/> 
+                                <styleBinding width="200" height="150"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3"/> 
+                                <condition type="==" left="$pic_size3" right="170"/> 
+                                <styleBinding width="200" height="170"/> 
+                              </andCondition>
+
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3_5"/> 
+                                <condition type="==" left="$pic_size3_5" right="70"/> 
+                                <styleBinding width="170" height="70"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3_5"/> 
+                                <condition type="==" left="$pic_size3_5" right="80"/> 
+                                <styleBinding width="170" height="80"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3_5"/> 
+                                <condition type="==" left="$pic_size3_5" right="90"/> 
+                                <styleBinding width="170" height="90"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3_5"/> 
+                                <condition type="==" left="$pic_size3_5" right="100"/> 
+                                <styleBinding width="170" height="100"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3_5"/> 
+                                <condition type="==" left="$pic_size3_5" right="110"/> 
+                                <styleBinding width="170" height="110"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3_5"/> 
+                                <condition type="==" left="$pic_size3_5" right="120"/> 
+                                <styleBinding width="170" height="120"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3_5"/> 
+                                <condition type="==" left="$pic_size3_5" right="130"/> 
+                                <styleBinding width="170" height="130"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3_5"/> 
+                                <condition type="==" left="$pic_size3_5" right="150"/> 
+                                <styleBinding width="170" height="150"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="3_5"/> 
+                                <condition type="==" left="$pic_size3_5" right="170"/> 
+                                <styleBinding width="170" height="170"/> 
+                              </andCondition>
+
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4"/> 
+                                <condition type="==" left="$pic_size4" right="70"/> 
+                                <styleBinding width="148" height="70"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4"/> 
+                                <condition type="==" left="$pic_size4" right="80"/> 
+                                <styleBinding width="148" height="80"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4"/> 
+                                <condition type="==" left="$pic_size4" right="90"/> 
+                                <styleBinding width="148" height="90"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4"/> 
+                                <condition type="==" left="$pic_size4" right="100"/> 
+                                <styleBinding width="148" height="100"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4"/> 
+                                <condition type="==" left="$pic_size4" right="110"/> 
+                                <styleBinding width="148" height="110"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4"/> 
+                                <condition type="==" left="$pic_size4" right="120"/> 
+                                <styleBinding width="148" height="120"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4"/> 
+                                <condition type="==" left="$pic_size4" right="130"/> 
+                                <styleBinding width="148" height="130"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4"/> 
+                                <condition type="==" left="$pic_size4" right="140"/> 
+                                <styleBinding width="148" height="140"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4"/> 
+                                <condition type="==" left="$pic_size4" right="148"/> 
+                                <styleBinding width="148" height="148"/> 
+                              </andCondition>
+
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4_5"/> 
+                                <condition type="==" left="$pic_size4_5" right="60"/> 
+                                <styleBinding width="130" height="60"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4_5"/> 
+                                <condition type="==" left="$pic_size4_5" right="70"/> 
+                                <styleBinding width="130" height="70"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4_5"/> 
+                                <condition type="==" left="$pic_size4_5" right="80"/> 
+                                <styleBinding width="130" height="80"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4_5"/> 
+                                <condition type="==" left="$pic_size4_5" right="90"/> 
+                                <styleBinding width="130" height="90"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4_5"/> 
+                                <condition type="==" left="$pic_size4_5" right="100"/> 
+                                <styleBinding width="130" height="100"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4_5"/> 
+                                <condition type="==" left="$pic_size4_5" right="110"/> 
+                                <styleBinding width="130" height="110"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4_5"/> 
+                                <condition type="==" left="$pic_size4_5" right="120"/> 
+                                <styleBinding width="130" height="120"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="4_5"/> 
+                                <condition type="==" left="$pic_size4_5" right="130"/> 
+                                <styleBinding width="130" height="130"/> 
+                              </andCondition>
+
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5"/> 
+                                <condition type="==" left="$pic_size5" right="60"/> 
+                                <styleBinding width="116" height="60"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5"/> 
+                                <condition type="==" left="$pic_size5" right="70"/> 
+                                <styleBinding width="116" height="70"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5"/> 
+                                <condition type="==" left="$pic_size5" right="80"/> 
+                                <styleBinding width="116" height="80"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5"/> 
+                                <condition type="==" left="$pic_size5" right="90"/> 
+                                <styleBinding width="116" height="90"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5"/> 
+                                <condition type="==" left="$pic_size5" right="100"/> 
+                                <styleBinding width="116" height="100"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5"/> 
+                                <condition type="==" left="$pic_size5" right="110"/> 
+                                <styleBinding width="116" height="110"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5"/> 
+                                <condition type="==" left="$pic_size5" right="116"/> 
+                                <styleBinding width="116" height="116"/> 
+                              </andCondition>
+
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5_5"/> 
+                                <condition type="==" left="$pic_size5_5" right="60"/> 
+                                <styleBinding width="110" height="60"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5_5"/> 
+                                <condition type="==" left="$pic_size5_5" right="70"/> 
+                                <styleBinding width="110" height="70"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5_5"/> 
+                                <condition type="==" left="$pic_size5_5" right="80"/> 
+                                <styleBinding width="110" height="80"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5_5"/> 
+                                <condition type="==" left="$pic_size5_5" right="90"/> 
+                                <styleBinding width="110" height="90"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5_5"/> 
+                                <condition type="==" left="$pic_size5_5" right="100"/> 
+                                <styleBinding width="110" height="100"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="5_5"/> 
+                                <condition type="==" left="$pic_size5_5" right="110"/> 
+                                <styleBinding width="110" height="110"/> 
+                              </andCondition>
+
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="6"/> 
+                                <condition type="==" left="$pic_size6" right="60"/> 
+                                <styleBinding width="95" height="60"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="6"/> 
+                                <condition type="==" left="$pic_size6" right="70"/> 
+                                <styleBinding width="95" height="70"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="6"/> 
+                                <condition type="==" left="$pic_size6" right="80"/> 
+                                <styleBinding width="95" height="80"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="6"/> 
+                                <condition type="==" left="$pic_size6" right="90"/> 
+                                <styleBinding width="95" height="90"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="6"/> 
+                                <condition type="==" left="$pic_size6" right="95"/> 
+                                <styleBinding width="95" height="95"/> 
+                              </andCondition>
+
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="0"/> 
+                                <condition type="!=" left="$pic_w" right="null"/> 
+                                <styleBinding width="$pic_w"/> 
+                              </andCondition>
+                              <andCondition executionType="1" >  
+                                <condition type="==" left="$line_num" right="0"/> 
+                                <condition type="!=" left="$pic_h" right="null"/> 
+                                <styleBinding height="$pic_h"/> 
+                              </andCondition>
+
+                              <condition type="==" left="$picRadius" right="1" executionType="1"> 
+                                <styleBinding borderRadius="16"/> 
+                              </condition>  
+                              <condition type="==" left="$picRadius" right="2" executionType="1"> 
+                                <styleBinding borderRadius="24"/> 
+                              </condition>  
+                              <condition type="==" left="$picRadius" right="3" executionType="1"> 
+                                <styleBinding borderRadius="300"/> 
+                              </condition> 
+
+                              <condition type="==" left="$xf_type" right="3" executionType="1"> 
+                                <styleBinding height="0"/> 
+                              </condition> 
+                            </conditions> 
+                          </image>  
+                          <label value="$imgArray.[?].title" lines="1"> 
+                            <styleBinding> 
+                              <attribute name="marginTop" value="10"/>  
+                              <attribute name="height" value="30"/>  
+                              <attribute name="lineHeight" value="30"/>  
+                              <attribute name="fontSize" value="20"/>  
+                              <attribute name="fontWeight" value="700"/>  
+                              <attribute name="color" value="#7c7c7c"/>  
+                              <attribute name="textAlign" value="center"/> 
+                            </styleBinding>  
+                            <conditions> 
+                              <condition type="!=" left="$itemColor" right="null" executionType="1"> 
+                                <styleBinding color="$itemColor"/> 
+                              </condition> 
+                              <condition type="==" left="$fontSize" right="22" executionType="1"> 
+                                <styleBinding fontSize="22"/> 
+                              </condition>
+                              <condition type="==" left="$fontSize" right="24" executionType="1"> 
+                                <styleBinding fontSize="24"/> 
+                              </condition>
+                              <condition type="==" left="$fontSize" right="26" executionType="1"> 
+                                <styleBinding fontSize="26"/> 
+                              </condition>  
+                              <condition type="==" left="$weight" right="100" executionType="1"> 
+                                <styleBinding fontWeight="100"/> 
+                              </condition>  
+                              <condition type="!=" left="$imgArray.[?].color" right="null" executionType="1"> 
+                                <styleBinding color="$imgArray.[?].color"/> 
+                              </condition>  
+                              <condition type="==" left="$xf_type" right="2" executionType="1"> 
+                                <styleBinding width="0" height="0" invisible="true"/> 
+                              </condition> 
+                              <condition type="==" left="$xf_type" right="3" executionType="1"> 
+                                <styleBinding height="60" lineHeight="60" paddingLeft="10" paddingRight="10" /> 
+                              </condition> 
+                            </conditions> 
+                          </label> 
+                        </subViews>  
+                        <events> 
+                          <event type="click"> 
+                            <actions type="openURL"> 
+                              <userTrack> 
+                                <utParams> 
+                                  <params> 
+                                    <param name="wp_p" value="1"/> 
+                                  </params> 
+                                </utParams> 
+                              </userTrack>  
+                              <openURL url="$imgArray.[?].url"/> 
+                            </actions> 
+                          </event> 
+                        </events> 
+                      </container> 
+                    </template> 
+                  </foreach> 
+                </container>
+              </subViews>
+            </container>  
+            <!-- 更多 -->  
+            <container> 
+              <layout type="linearLayout"/>  
+              <styleBinding> 
+                <attribute name="width" value="30"/>  
+                <attribute name="height" value="95"/>  
+                <attribute name="position" value="absolute"/>  
+                <attribute name="top" value="10"/>  
+                <attribute name="right" value="0"/> 
+                <attribute name="justifyContent" value="center" />
+                <attribute name="alignItems" value="center" />
+                <attribute name="backgroundColor" value="#80ffffff" />
+              </styleBinding>   
+              <conditions> 
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="140"/> 
+                  <styleBinding height="140"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="1"/> 
+                  <condition type="==" left="$pic_size1" right="150"/> 
+                  <styleBinding height="150"/> 
+                </andCondition>
+
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="150"/> 
+                  <styleBinding height="150"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3"/> 
+                  <condition type="==" left="$pic_size3" right="170"/> 
+                  <styleBinding height="170"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="150"/> 
+                  <styleBinding height="150"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="3_5"/> 
+                  <condition type="==" left="$pic_size3_5" right="170"/> 
+                  <styleBinding height="170"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="140"/> 
+                  <styleBinding height="140"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4"/> 
+                  <condition type="==" left="$pic_size4" right="148"/> 
+                  <styleBinding height="148"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="60"/> 
+                  <styleBinding height="60"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="120"/> 
+                  <styleBinding height="120"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="4_5"/> 
+                  <condition type="==" left="$pic_size4_5" right="130"/> 
+                  <styleBinding height="130"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="60"/> 
+                  <styleBinding height="60"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5"/> 
+                  <condition type="==" left="$pic_size5" right="116"/> 
+                  <styleBinding height="116"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="60"/> 
+                  <styleBinding height="60"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="100"/> 
+                  <styleBinding height="100"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="5_5"/> 
+                  <condition type="==" left="$pic_size5_5" right="110"/> 
+                  <styleBinding height="110"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="60"/> 
+                  <styleBinding height="60"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="70"/> 
+                  <styleBinding height="70"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="80"/> 
+                  <styleBinding height="80"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="90"/> 
+                  <styleBinding height="90"/> 
+                </andCondition>
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="6"/> 
+                  <condition type="==" left="$pic_size6" right="95"/> 
+                  <styleBinding height="95"/> 
+                </andCondition>
+
+                <andCondition executionType="1" >  
+                  <condition type="==" left="$line_num" right="0"/> 
+                  <condition type="!=" left="$pic_h" right="null"/> 
+                  <styleBinding height="$pic_h"/> 
+                </andCondition>
+                <condition type="!=" left="$marginTop" right="null" executionType="1"> 
+                  <styleBinding top="$marginTop"/> 
+                </condition> 
+                <condition type="==" left="$more" right="false" executionType="1"> 
+                  <styleBinding widtn="0" height="0" invisible="true"/> 
+                </condition> 
+              </conditions>  
+              <subViews> 
+                <image url="https://img.alicdn.com/imgextra/i2/800803731/O1CN01TAioST1dQqH2CjM58_!!800803731.png"> 
+                  <styleBinding> 
+                    <attribute name="width" value="30"/>  
+                    <attribute name="height" value="20"/>  
+                  </styleBinding>  
+                </image>
+              </subViews>
+              <events>
+                  <event type="click">
+                    <actions>
+                      <userTrack>
+                        <utParams>
+                          <params>
+                          <param name="wp_p" value="1"/>
+                        </params>
+                      </utParams>
+                    </userTrack>
+                    <openURL url="$moreLink"/>
+                  </actions>
+                </event>
+              </events>
+            </container> 
+          </subViews> 
+        </container> 
+
+      </subViews> 
+    </container> 
+  </view> 
+</ui>

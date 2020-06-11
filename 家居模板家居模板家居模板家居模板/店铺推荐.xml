@@ -1,0 +1,1358 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ui>
+  <view>
+    <container>
+      <layout type="linearLayout" />
+      <!-- 编辑属性 -->
+      <editProperty>
+        <dataDefines>
+          <dataDefine name="itemDis0" type="radio"  isNull="true" propertyName="[第1组]分类设置">
+            <config type="sync">
+              <data text="收起设置" value="sq" defaultSelect="false"/>
+              <data text="展开设置" value="zk" defaultSelect="true"/>
+              <data text="隐藏" value="true" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="img0" type="image" isNull="true"  propertyName="★ 分类图标(宽50，高50)" refer="itemDis0:zk"/>
+          <dataDefine name="tit_b0" type="text" isNull="true"  propertyName="大标题" refer="itemDis0:zk"/>
+          <dataDefine name="tit_s0" type="text" isNull="true"  propertyName="小标题" refer="itemDis0:zk"/>
+          <dataDefine name="url_0" type="url" description="分类链接" validateType="taokeurl||wirelessurl" propertyName="跳转链接" isNull="true" refer="itemDis0:zk" />
+          <dataDefine name="type0" type="radio"  isNull="true"  propertyName="★ 子分类状态" refer="itemDis0:zk">
+            <config type="sync">
+              <data text="默认展开" value="true" defaultSelect="true"/>
+              <data text="默认不展开" value="false" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="itemArray0" type="jsonArray" min="0" max="15" propertyName="子分类设置"  isNull="true"  refer="itemDis0:zk">
+            <param name="title" type="text" description="请输入文字"  isNull="true"  propertyName="┏分类标题" />
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true"  propertyName="┗分类链接" />
+          </dataDefine>
+
+          <dataDefine name="itemDis1" type="radio"  isNull="true" propertyName="[第2组]分类设置">
+            <config type="sync">
+              <data text="收起设置" value="sq" defaultSelect="true"/>
+              <data text="展开设置" value="zk" defaultSelect="false"/>
+              <data text="隐藏" value="true" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="img1" type="image" isNull="true"  propertyName="★ 分类图标(宽50，高50)" refer="itemDis1:zk"/>
+          <dataDefine name="tit_b1" type="text" isNull="true"  propertyName="大标题" refer="itemDis1:zk"/>
+          <dataDefine name="tit_s1" type="text" isNull="true"  propertyName="小标题" refer="itemDis1:zk"/>
+          <dataDefine name="url_1" type="url" description="分类链接" validateType="taokeurl||wirelessurl" propertyName="跳转链接" isNull="true" refer="itemDis1:zk" />
+          <dataDefine name="type1" type="radio"  isNull="true"  propertyName="★ 子分类状态" refer="itemDis1:zk">
+            <config type="sync">
+              <data text="默认展开" value="true" defaultSelect="true"/>
+              <data text="默认不展开" value="false" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="itemArray1" type="jsonArray" min="0" max="15" propertyName="子分类设置"  isNull="true"  refer="itemDis1:zk">
+            <param name="title" type="text" description="请输入文字"  isNull="true"  propertyName="┏分类标题" />
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true"  propertyName="┗分类链接" />
+          </dataDefine>
+
+          <dataDefine name="itemDis2" type="radio"  isNull="true" propertyName="[第3组]分类设置">
+            <config type="sync">
+              <data text="收起设置" value="sq" defaultSelect="true"/>
+              <data text="展开设置" value="zk" defaultSelect="false"/>
+              <data text="隐藏" value="true" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="img2" type="image" isNull="true"  propertyName="★ 分类图标(宽50，高50)" refer="itemDis2:zk"/>
+          <dataDefine name="tit_b2" type="text" isNull="true"  propertyName="大标题" refer="itemDis2:zk"/>
+          <dataDefine name="tit_s2" type="text" isNull="true"  propertyName="小标题" refer="itemDis2:zk"/>
+          <dataDefine name="url_2" type="url" description="分类链接" validateType="taokeurl||wirelessurl" propertyName="跳转链接" isNull="true" refer="itemDis2:zk" />
+          <dataDefine name="type2" type="radio"  isNull="true"  propertyName="★ 子分类状态" refer="itemDis2:zk">
+            <config type="sync">
+              <data text="默认展开" value="true" defaultSelect="false"/>
+              <data text="默认不展开" value="false" defaultSelect="true"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="itemArray2" type="jsonArray" min="0" max="15" propertyName="子分类设置"  isNull="true"  refer="itemDis2:zk">
+            <param name="title" type="text" description="请输入文字"  isNull="true"  propertyName="┏分类标题" />
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true"  propertyName="┗分类链接" />
+          </dataDefine>
+
+          <dataDefine name="itemDis3" type="radio"  isNull="true" propertyName="[第4组]分类设置">
+            <config type="sync">
+              <data text="收起设置" value="sq" defaultSelect="true"/>
+              <data text="展开设置" value="zk" defaultSelect="false"/>
+              <data text="隐藏" value="true" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="img3" type="image" isNull="true"  propertyName="★ 分类图标(宽50，高50)" refer="itemDis3:zk"/>
+          <dataDefine name="tit_b3" type="text" isNull="true"  propertyName="大标题" refer="itemDis3:zk"/>
+          <dataDefine name="tit_s3" type="text" isNull="true"  propertyName="小标题" refer="itemDis3:zk"/>
+          <dataDefine name="url_3" type="url" description="分类链接" validateType="taokeurl||wirelessurl" propertyName="跳转链接" isNull="true" refer="itemDis3:zk" />
+          <dataDefine name="type3" type="radio"  isNull="true"  propertyName="★ 子分类状态" refer="itemDis3:zk">
+            <config type="sync">
+              <data text="默认展开" value="true" defaultSelect="false"/>
+              <data text="默认不展开" value="false" defaultSelect="true"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="itemArray3" type="jsonArray" min="0" max="15" propertyName="子分类设置"  isNull="true"  refer="itemDis3:zk">
+            <param name="title" type="text" description="请输入文字"  isNull="true"  propertyName="┏分类标题" />
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true"  propertyName="┗分类链接" />
+          </dataDefine>
+
+          <dataDefine name="mk_style" type="radio"  isNull="true" propertyName="★ 自定义模块样式" >
+            <config type="sync">
+              <data text="收起设置" value="false" defaultSelect="true"/>
+              <data text="展开设置" value="true" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="mkBg" type="text"  isNull="true"  propertyName="模块背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="b_titc" type="text"  isNull="true"  propertyName="分类大标题颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="s_titc" type="text"  isNull="true"  propertyName="分类小标题颜色(如：#ffffff)" refer="mk_style:true"/>
+
+          <dataDefine name="subTitleBg0" type="text" isNull="true"  propertyName="┏[第1组]分类标题背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subItemBg0" type="text" isNull="true"  propertyName="┣子分类整体背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subBg0" type="text" isNull="true"  propertyName="┣子分类背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subColor0" type="text" isNull="true"  propertyName="┗子分类文字颜色(如：#ffffff)" refer="mk_style:true"/>
+
+          <dataDefine name="subTitleBg1" type="text" isNull="true"  propertyName="┏[第2组]分类标题背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subItemBg1" type="text" isNull="true"  propertyName="┣子分类整体背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subBg1" type="text" isNull="true"  propertyName="┣子分类背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subColor1" type="text" isNull="true"  propertyName="┗子分类文字颜色(如：#ffffff)" refer="mk_style:true"/>
+
+          <dataDefine name="subTitleBg2" type="text" isNull="true"  propertyName="┏[第3组]分类标题背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subItemBg2" type="text" isNull="true"  propertyName="┣子分类整体背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subBg2" type="text" isNull="true"  propertyName="┣子分类背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subColor2" type="text" isNull="true"  propertyName="┗子分类文字颜色(如：#ffffff)" refer="mk_style:true"/>
+
+          <dataDefine name="subTitleBg3" type="text" isNull="true"  propertyName="┏[第4组]分类标题背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subItemBg3" type="text" isNull="true"  propertyName="┣子分类整体背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subBg3" type="text" isNull="true"  propertyName="┣子分类背景颜色(如：#ffffff)" refer="mk_style:true"/>
+          <dataDefine name="subColor3" type="text" isNull="true"  propertyName="┗子分类文字颜色(如：#ffffff)" refer="mk_style:true"/>
+
+          <dataDefine name="marginTop" type="text" isNull="true"  propertyName="模块上间距(默认8)" refer="mk_style:true"/>
+          <dataDefine name="marginBottom" type="text" isNull="true"  propertyName="模块下间距(默认8)" refer="mk_style:true"/>
+
+        </dataDefines>
+      </editProperty>
+      <styleBinding>
+        <attribute name="width" value="640"/>
+        <attribute name="backgroundColor" value="#f5f5f5"/>
+      </styleBinding>
+      <conditions>
+        <condition type="!=" left="$mkBg" right="null">
+          <styleBinding backgroundColor="$mkBg"/>
+        </condition>
+      </conditions>
+      <subViews>
+        <!--上间距-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="640"/>
+            <attribute name="height" value="8"/>
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$marginTop" right="null" executionType="1">
+              <styleBinding height="$marginTop"/>
+            </condition>
+          </conditions>
+        </container>
+
+        <!--第1组分类-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="608"/>
+            <attribute name="backgroundColor" value="#c7e0cb"/>
+            <attribute name="borderRadius" value="16"/>
+            <attribute name="marginBottom" value="8"/>  
+            <attribute name="marginLeft" value="16"/>  
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$subItemBg0" right="null" executionType="1">
+              <styleBinding backgroundColor="$subItemBg0"/>
+            </condition>
+            <condition type="==" left="$itemDis0" right="true">
+              <styleBinding width="0" height="0" marginBottom="0"/>
+            </condition>
+          </conditions>
+          <subViews>
+            <!-- 标题 -->
+            <container>
+              <layout type="linearLayout" orientation="horizontal" />
+              <styleBinding>
+                <attribute name="width" value="608"/>
+                <attribute name="height" value="80"/>
+                <attribute name="borderTopLeftRadius" value="16" />
+                <attribute name="borderTopRightRadius" value="16" />
+                <attribute name="backgroundColor" value="#60a06e"/>
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$subTitleBg0" right="null" executionType="1">
+                  <styleBinding backgroundColor="$subTitleBg0"/>
+                </condition>
+              </conditions>
+              <subViews>
+                <!-- 图片标题 -->
+                <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN011dQqAxY7Qge1l9q_!!800803731.png" >
+                  <styleBinding>
+                    <attribute name="width" value="50"/>
+                    <attribute name="height" value="50"/>
+                    <attribute name="marginTop" value="15" />        
+                    <attribute name="marginLeft" value="15" />  
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$img0" right="null">
+                      <dataBinding>
+                        <data name="url" value="$img0"/>
+                      </dataBinding>
+                    </condition>
+                  </conditions>
+                </image>
+                <label value="$tit_b0" lines="1">
+                  <styleBinding>
+                    <attribute name="height" value="80"/>
+                    <attribute name="lineHeight" value="80"/>
+                    <attribute name="fontSize" value="32"/>
+                    <attribute name="color" value="#ffffff"/>
+                    <attribute name="marginLeft" value="10"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$b_titc" right="null" executionType="1">
+                      <styleBinding color="$b_titc" />
+                    </condition>
+                  </conditions>
+                </label>
+                <label value="$tit_s0" lines="1">
+                  <styleBinding>
+                    <attribute name="height" value="80"/>
+                    <attribute name="lineHeight" value="90"/>
+                    <attribute name="fontSize" value="20"/>
+                    <attribute name="color" value="#ffffff"/>
+                    <attribute name="marginLeft" value="10"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$s_titc" right="null">
+                      <styleBinding color="$s_titc" />
+                    </condition>
+                  </conditions>
+                </label>
+              </subViews>
+              <events>
+                <event type="click">
+                  <actions>
+                    <userTrack>
+                      <utParams>
+                        <params>
+                          <param name="wp_p" value="1"/>
+                        </params>
+                      </utParams>
+                    </userTrack>
+                    <openURL url="$url_0"/>
+                  </actions>
+                </event>
+              </events>
+            </container>
+            <!--展开折叠按钮-->
+            <container>
+              <layout type="absoluteLayout" />
+              <styleBinding>
+                <attribute name="width" value="80"/>
+                <attribute name="height" value="80"/>
+                <attribute name="position" value="absolute"/>
+                <attribute name="top" value="0"/>
+                <attribute name="right" value="0"/>
+              </styleBinding>
+              <subViews>  
+                <!--展开按钮-->
+                <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN011dQqAxLHp1P9HPf_!!800803731.png" viewId="MODULE_KEY_PLACE_HOLDER_m_0_hideView">
+                  <styleBinding>
+                    <attribute name="width" value="0"/>
+                    <attribute name="height" value="80"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="==" left="$type0" right="false">
+                      <styleBinding width="80"/>
+                    </condition>
+                  </conditions>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="0"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0}
+                            </param> 
+                          </params>
+                        </changeStyle>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":80} 
+                            </param> 
+                          </params>
+                        </changeStyle>
+
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/>
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/>
+                        <!--让对应的大图显示，其他大图隐藏-->
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_0_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":608} 
+                            </param> 
+                          </params> 
+                        </changeStyle>
+                        <!--刷新所有大图状态,break-->
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_0_hideView" isBreak="true"/>
+                      </actions>
+                    </event>
+                  </events> 
+                </image>
+                <!--折叠按钮-->
+                <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN011dQqAx8vLHTO65e_!!800803731.png" viewId="MODULE_KEY_PLACE_HOLDER_m_1_hideView">
+                  <styleBinding>
+                    <attribute name="width" value="80"/>
+                    <attribute name="height" value="80"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="==" left="$type0" right="false" executionType="1">
+                      <styleBinding width="0"/>
+                    </condition>
+                  </conditions>
+                  <events>
+                  <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="0"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0,}
+                            </param> 
+                          </params>
+                        </changeStyle>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":80} 
+                            </param> 
+                          </params>
+                        </changeStyle>
+
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/>
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/>
+                        <!--让对应的大图显示，其他大图隐藏-->
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_0_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0} 
+                            </param> 
+                          </params> 
+                        </changeStyle>
+                        <!--刷新所有大图状态,break-->
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_0_hideView" isBreak="true"/>
+                      </actions>
+                    </event>
+                  </events> 
+                </image>
+              </subViews>
+            </container>
+            <!--折叠展开的内容-->
+            <container viewId="MODULE_KEY_PLACE_HOLDER_0_hideView">
+              <layout type="linearLayout" />
+              <styleBinding>
+                <attribute name="width" value="608"/>
+              </styleBinding>
+              <conditions>
+                <condition type="==" left="$type0" right="false" executionType="1">
+                  <styleBinding width="0"/>
+                </condition>
+              </conditions>
+              <subViews>
+                <!-- 1行3列 -->
+                <grid unScroll="true" gridColumn="3" needDownRefresh="false" needNextPage="false" dataSource="$itemArray0">
+                  <styleBinding>
+                    <attribute name="width" value="582"/>
+                    <attribute name="marginBottom" value="24" />
+                    <attribute name="marginLeft" value="1" />
+                  </styleBinding>
+                  <conditions>
+                    <condition type="==" left="$itemArray0._size_" right="0" executionType="1">
+                      <styleBinding height="0" marginBottom="0"/>
+                    </condition>
+                  </conditions>
+                  <array value="$itemArray0"/>
+                  <cell>
+                    <container>
+                      <layout type="linearLayout" />
+                      <styleBinding>
+                        <attribute name="width" value="170" />
+                        <attribute name="height" value="50"/>
+                        <attribute name="marginTop" value="24"/>
+                        <attribute name="marginLeft" value="24"/>
+                      </styleBinding>
+                      <subViews>
+                        <label value="$itemArray0.[?].title" lines="1"> 
+                          <styleBinding>
+                            <attribute name="width" value="170"/>
+                            <attribute name="height" value="50"/>
+                            <attribute name="textAlign" value="center"/>
+                            <attribute name="lineHeight" value="50"/>
+                            <attribute name="fontSize" value="22"/>
+                            <attribute name="color" value="#60a06e"/>
+                            <attribute name="backgroundColor" value="#ffffff"/>
+                            <attribute name="borderRadius" value="16"/>
+                          </styleBinding>
+                          <conditions>   
+                            <condition type="!=" left="$subBg0" right="null" executionType="1">
+                              <styleBinding backgroundColor="$subBg0"/>
+                            </condition>                 
+                            <condition type="!=" left="$subColor0" right="null" executionType="1">
+                              <styleBinding color="$subColor0"/>
+                            </condition>
+                          </conditions>
+                        </label>
+                      </subViews>
+                      <events>
+                        <event type="click">
+                          <actions>
+                            <userTrack>
+                              <utParams>
+                                <params>
+                                  <param name="wp_p" value="1"/>
+                                </params>
+                              </utParams>
+                            </userTrack>
+                            <openURL url="$itemArray0.[?].url"/>
+                          </actions>
+                        </event>
+                      </events>
+                    </container>
+                  </cell>
+                </grid>
+              </subViews>
+            </container>
+          </subViews>
+        </container>
+
+        <!--第2组分类-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="608"/>
+            <attribute name="backgroundColor" value="#fdd9cd"/>
+            <attribute name="borderRadius" value="16"/>
+            <attribute name="marginTop" value="8"/> 
+            <attribute name="marginBottom" value="8"/> 
+            <attribute name="marginLeft" value="16"/>  
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$subItemBg1" right="null" executionType="1">
+              <styleBinding backgroundColor="$subItemBg1"/>
+            </condition>
+            <condition type="==" left="$itemDis1" right="true">
+              <styleBinding width="0" height="0" marginBottom="0"/>
+            </condition>
+          </conditions>
+          <subViews>
+            <!-- 标题 -->
+            <container>
+              <layout type="linearLayout" orientation="horizontal" />
+              <styleBinding>
+                <attribute name="width" value="608"/>
+                <attribute name="height" value="80"/>
+                <attribute name="borderTopLeftRadius" value="16" />
+                <attribute name="borderTopRightRadius" value="16" />
+                <attribute name="backgroundColor" value="#fa978a"/>
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$subTitleBg1" right="null" executionType="1">
+                  <styleBinding backgroundColor="$subTitleBg1"/>
+                </condition>
+              </conditions>
+              <subViews>
+                <!-- 图片标题 -->
+                <image url="https://img.alicdn.com/imgextra/i4/800803731/O1CN011dQqAy7XPFm1cjj_!!800803731.png" >
+                  <styleBinding>
+                    <attribute name="width" value="50"/>
+                    <attribute name="height" value="50"/>
+                    <attribute name="marginTop" value="15" />        
+                    <attribute name="marginLeft" value="15" />  
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$img1" right="null">
+                      <dataBinding>
+                        <data name="url" value="$img1"/>
+                      </dataBinding>
+                    </condition>
+                  </conditions>
+                </image>
+                <label value="$tit_b1" lines="1">
+                  <styleBinding>
+                    <attribute name="height" value="80"/>
+                    <attribute name="lineHeight" value="80"/>
+                    <attribute name="fontSize" value="32"/>
+                    <attribute name="color" value="#ffffff"/>
+                    <attribute name="marginLeft" value="10"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$b_titc" right="null" executionType="1">
+                      <styleBinding color="$b_titc" />
+                    </condition>
+                  </conditions>
+                </label>
+                <label value="$tit_s1" lines="1">
+                  <styleBinding>
+                    <attribute name="height" value="80"/>
+                    <attribute name="lineHeight" value="90"/>
+                    <attribute name="fontSize" value="20"/>
+                    <attribute name="color" value="#ffffff"/>
+                    <attribute name="marginLeft" value="10"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$s_titc" right="null">
+                      <styleBinding color="$s_titc" />
+                    </condition>
+                  </conditions>
+                </label>
+              </subViews>
+              <events>
+                <event type="click">
+                  <actions>
+                    <userTrack>
+                      <utParams>
+                        <params>
+                          <param name="wp_p" value="1"/>
+                        </params>
+                      </utParams>
+                    </userTrack>
+                    <openURL url="$url_1"/>
+                  </actions>
+                </event>
+              </events>
+            </container>
+            <!--展开折叠按钮-->
+            <container>
+              <layout type="absoluteLayout" />
+              <styleBinding>
+                <attribute name="width" value="80"/>
+                <attribute name="height" value="80"/>
+                <attribute name="position" value="absolute"/>
+                <attribute name="top" value="0"/>
+                <attribute name="right" value="0"/>
+              </styleBinding>
+              <subViews>  
+                <!--展开按钮-->
+                <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN011dQqAxLHp1P9HPf_!!800803731.png" viewId="MODULE_KEY_PLACE_HOLDER_m_2_hideView">
+                  <styleBinding>
+                    <attribute name="width" value="0"/>
+                    <attribute name="height" value="80"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="==" left="$type1" right="false">
+                      <styleBinding width="80"/>
+                    </condition>
+                  </conditions>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="0"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0}
+                            </param> 
+                          </params>
+                        </changeStyle>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":80} 
+                            </param> 
+                          </params>
+                        </changeStyle>
+
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/>
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/>
+                        <!--让对应的大图显示，其他大图隐藏-->
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_1_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":608} 
+                            </param> 
+                          </params> 
+                        </changeStyle>
+                        <!--刷新所有大图状态,break-->
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_1_hideView" isBreak="true"/>
+                      </actions>
+                    </event>
+                  </events> 
+                </image>
+                <!--折叠按钮-->
+                <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN011dQqAx8vLHTO65e_!!800803731.png" viewId="MODULE_KEY_PLACE_HOLDER_m_3_hideView">
+                  <styleBinding>
+                    <attribute name="width" value="80"/>
+                    <attribute name="height" value="80"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="==" left="$type1" right="false" executionType="1">
+                      <styleBinding width="0"/>
+                    </condition>
+                  </conditions>
+                  <events>
+                  <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="0"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0,}
+                            </param> 
+                          </params>
+                        </changeStyle>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":80} 
+                            </param> 
+                          </params>
+                        </changeStyle>
+
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/>
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/>
+                        <!--让对应的大图显示，其他大图隐藏-->
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_1_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0} 
+                            </param> 
+                          </params> 
+                        </changeStyle>
+                        <!--刷新所有大图状态,break-->
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_1_hideView" isBreak="true"/>
+                      </actions>
+                    </event>
+                  </events> 
+                </image>
+              </subViews>
+            </container>
+            <!--折叠展开的内容-->
+            <container viewId="MODULE_KEY_PLACE_HOLDER_1_hideView">
+              <layout type="linearLayout" />
+              <styleBinding>
+                <attribute name="width" value="608"/>
+              </styleBinding>
+              <conditions>
+                <condition type="==" left="$type1" right="false" executionType="1">
+                  <styleBinding width="0"/>
+                </condition>
+              </conditions>
+              <subViews>
+                <!-- 1行3列 -->
+                <grid unScroll="true" gridColumn="3" needDownRefresh="false" needNextPage="false" dataSource="$itemArray1">
+                  <styleBinding>
+                    <attribute name="width" value="582"/>
+                    <attribute name="marginBottom" value="24" />
+                    <attribute name="marginLeft" value="1" />
+                  </styleBinding>
+                  <conditions>
+                    <condition type="==" left="$itemArray1._size_" right="0" executionType="1">
+                      <styleBinding height="0" marginBottom="0"/>
+                    </condition>
+                  </conditions>
+                  <array value="$itemArray1"/>
+                  <cell>
+                    <container>
+                      <layout type="linearLayout" />
+                      <styleBinding>
+                        <attribute name="width" value="170" />
+                        <attribute name="height" value="50"/>
+                        <attribute name="marginTop" value="24"/>
+                        <attribute name="marginLeft" value="24"/>
+                      </styleBinding>
+                      <subViews>
+                        <label value="$itemArray1.[?].title" lines="1"> 
+                          <styleBinding>
+                            <attribute name="width" value="170"/>
+                            <attribute name="height" value="50"/>
+                            <attribute name="textAlign" value="center"/>
+                            <attribute name="lineHeight" value="50"/>
+                            <attribute name="fontSize" value="22"/>
+                            <attribute name="color" value="#fa978a"/>
+                            <attribute name="backgroundColor" value="#ffffff"/>
+                            <attribute name="borderRadius" value="16"/>
+                          </styleBinding>
+                          <conditions>   
+                            <condition type="!=" left="$subBg1" right="null" executionType="1">
+                              <styleBinding backgroundColor="$subBg1"/>
+                            </condition>                 
+                            <condition type="!=" left="$subColor1" right="null" executionType="1">
+                              <styleBinding color="$subColor1"/>
+                            </condition>
+                          </conditions>
+                        </label>
+                      </subViews>
+                      <events>
+                        <event type="click">
+                          <actions>
+                            <userTrack>
+                              <utParams>
+                                <params>
+                                  <param name="wp_p" value="1"/>
+                                </params>
+                              </utParams>
+                            </userTrack>
+                            <openURL url="$itemArray1.[?].url"/>
+                          </actions>
+                        </event>
+                      </events>
+                    </container>
+                  </cell>
+                </grid>
+              </subViews>
+            </container>
+          </subViews>
+        </container>
+
+        <!--第3组分类-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="608"/>
+            <attribute name="backgroundColor" value="#ceddff"/>
+            <attribute name="borderRadius" value="16"/>
+            <attribute name="marginTop" value="8"/> 
+            <attribute name="marginBottom" value="8"/> 
+            <attribute name="marginLeft" value="16"/>  
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$subItemBg2" right="null" executionType="1">
+              <styleBinding backgroundColor="$subItemBg2"/>
+            </condition>
+            <condition type="==" left="$itemDis2" right="true">
+              <styleBinding width="0" height="0" marginBottom="0"/>
+            </condition>
+          </conditions>
+          <subViews>
+            <!-- 标题 -->
+            <container>
+              <layout type="linearLayout" orientation="horizontal" />
+              <styleBinding>
+                <attribute name="width" value="608"/>
+                <attribute name="height" value="80"/>
+                <attribute name="borderTopLeftRadius" value="16" />
+                <attribute name="borderTopRightRadius" value="16" />
+                <attribute name="backgroundColor" value="#709ccb"/>
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$subTitleBg2" right="null" executionType="1">
+                  <styleBinding backgroundColor="$subTitleBg2"/>
+                </condition>
+              </conditions>
+              <subViews>
+                <!-- 图片标题 -->
+                <image url="https://img.alicdn.com/imgextra/i4/800803731/O1CN011dQqAxY6DwaVxEU_!!800803731.png" >
+                  <styleBinding>
+                    <attribute name="width" value="50"/>
+                    <attribute name="height" value="50"/>
+                    <attribute name="marginTop" value="15" />        
+                    <attribute name="marginLeft" value="15" />  
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$img2" right="null">
+                      <dataBinding>
+                        <data name="url" value="$img2"/>
+                      </dataBinding>
+                    </condition>
+                  </conditions>
+                </image>
+                <label value="$tit_b2" lines="1">
+                  <styleBinding>
+                    <attribute name="height" value="80"/>
+                    <attribute name="lineHeight" value="80"/>
+                    <attribute name="fontSize" value="32"/>
+                    <attribute name="color" value="#ffffff"/>
+                    <attribute name="marginLeft" value="10"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$b_titc" right="null" executionType="1">
+                      <styleBinding color="$b_titc" />
+                    </condition>
+                  </conditions>
+                </label>
+                <label value="$tit_s2" lines="1">
+                  <styleBinding>
+                    <attribute name="height" value="80"/>
+                    <attribute name="lineHeight" value="90"/>
+                    <attribute name="fontSize" value="20"/>
+                    <attribute name="color" value="#ffffff"/>
+                    <attribute name="marginLeft" value="10"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$s_titc" right="null">
+                      <styleBinding color="$s_titc" />
+                    </condition>
+                  </conditions>
+                </label>
+              </subViews>
+              <events>
+                <event type="click">
+                  <actions>
+                    <userTrack>
+                      <utParams>
+                        <params>
+                          <param name="wp_p" value="1"/>
+                        </params>
+                      </utParams>
+                    </userTrack>
+                    <openURL url="$url_2"/>
+                  </actions>
+                </event>
+              </events>
+            </container>
+            <!--展开折叠按钮-->
+            <container>
+              <layout type="absoluteLayout" />
+              <styleBinding>
+                <attribute name="width" value="80"/>
+                <attribute name="height" value="80"/>
+                <attribute name="position" value="absolute"/>
+                <attribute name="top" value="0"/>
+                <attribute name="right" value="0"/>
+              </styleBinding>
+              <subViews>  
+                <!--展开按钮-->
+                <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN011dQqAxLHp1P9HPf_!!800803731.png" viewId="MODULE_KEY_PLACE_HOLDER_m_4_hideView">
+                  <styleBinding>
+                    <attribute name="width" value="80"/>
+                    <attribute name="height" value="80"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$type2" right="false">
+                      <styleBinding width="0"/>
+                    </condition>
+                  </conditions>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="0"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_4_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0}
+                            </param> 
+                          </params>
+                        </changeStyle>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_5_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":80} 
+                            </param> 
+                          </params>
+                        </changeStyle>
+
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_4_hideView"/>
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_5_hideView"/>
+                        <!--让对应的大图显示，其他大图隐藏-->
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_2_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":608} 
+                            </param> 
+                          </params> 
+                        </changeStyle>
+                        <!--刷新所有大图状态,break-->
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_2_hideView" isBreak="true"/>
+                      </actions>
+                    </event>
+                  </events> 
+                </image>
+                <!--折叠按钮-->
+                <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN011dQqAx8vLHTO65e_!!800803731.png" viewId="MODULE_KEY_PLACE_HOLDER_m_5_hideView">
+                  <styleBinding>
+                    <attribute name="width" value="0"/>
+                    <attribute name="height" value="80"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$type2" right="false" executionType="1">
+                      <styleBinding width="80"/>
+                    </condition>
+                  </conditions>
+                  <events>
+                  <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="0"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_5_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0,}
+                            </param> 
+                          </params>
+                        </changeStyle>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_4_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":80} 
+                            </param> 
+                          </params>
+                        </changeStyle>
+
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_4_hideView"/>
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_5_hideView"/>
+                        <!--让对应的大图显示，其他大图隐藏-->
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_2_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0} 
+                            </param> 
+                          </params> 
+                        </changeStyle>
+                        <!--刷新所有大图状态,break-->
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_2_hideView" isBreak="true"/>
+                      </actions>
+                    </event>
+                  </events> 
+                </image>
+              </subViews>
+            </container>
+            <!--折叠展开的内容-->
+            <container viewId="MODULE_KEY_PLACE_HOLDER_2_hideView">
+              <layout type="linearLayout" />
+              <styleBinding>
+                <attribute name="width" value="0"/>
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$type2" right="false" executionType="1">
+                  <styleBinding width="608"/>
+                </condition>
+              </conditions>
+              <subViews>
+                <!-- 1行3列 -->
+                <grid unScroll="true" gridColumn="3" needDownRefresh="false" needNextPage="false" dataSource="$itemArray2">
+                  <styleBinding>
+                    <attribute name="width" value="582"/>
+                    <attribute name="marginBottom" value="24" />
+                    <attribute name="marginLeft" value="1" />
+                  </styleBinding>
+                  <conditions>
+                    <condition type="==" left="$itemArray2._size_" right="0" executionType="1">
+                      <styleBinding height="0" marginBottom="0"/>
+                    </condition>
+                  </conditions>
+                  <array value="$itemArray2"/>
+                  <cell>
+                    <container>
+                      <layout type="linearLayout" />
+                      <styleBinding>
+                        <attribute name="width" value="170" />
+                        <attribute name="height" value="50"/>
+                        <attribute name="marginTop" value="24"/>
+                        <attribute name="marginLeft" value="24"/>
+                      </styleBinding>
+                      <subViews>
+                        <label value="$itemArray2.[?].title" lines="1"> 
+                          <styleBinding>
+                            <attribute name="width" value="170"/>
+                            <attribute name="height" value="50"/>
+                            <attribute name="textAlign" value="center"/>
+                            <attribute name="lineHeight" value="50"/>
+                            <attribute name="fontSize" value="22"/>
+                            <attribute name="color" value="#709ccb"/>
+                            <attribute name="backgroundColor" value="#ffffff"/>
+                            <attribute name="borderRadius" value="16"/>
+                          </styleBinding>
+                          <conditions>   
+                            <condition type="!=" left="$subBg2" right="null" executionType="1">
+                              <styleBinding backgroundColor="$subBg2"/>
+                            </condition>                 
+                            <condition type="!=" left="$subColor2" right="null" executionType="1">
+                              <styleBinding color="$subColor2"/>
+                            </condition>
+                          </conditions>
+                        </label>
+                      </subViews>
+                      <events>
+                        <event type="click">
+                          <actions>
+                            <userTrack>
+                              <utParams>
+                                <params>
+                                  <param name="wp_p" value="1"/>
+                                </params>
+                              </utParams>
+                            </userTrack>
+                            <openURL url="$itemArray2.[?].url"/>
+                          </actions>
+                        </event>
+                      </events>
+                    </container>
+                  </cell>
+                </grid>
+              </subViews>
+            </container>
+          </subViews>
+        </container>
+
+        <!--第4组分类-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="608"/>
+            <attribute name="backgroundColor" value="#ffd2dd"/>
+            <attribute name="borderRadius" value="16"/>
+            <attribute name="marginTop" value="8"/> 
+            <attribute name="marginLeft" value="16"/>  
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$subItemBg3" right="null" executionType="1">
+              <styleBinding backgroundColor="$subItemBg3"/>
+            </condition>
+            <condition type="==" left="$itemDis3" right="true">
+              <styleBinding width="0" height="0" marginBottom="0"/>
+            </condition>
+          </conditions>
+          <subViews>
+            <!-- 标题 -->
+            <container>
+              <layout type="linearLayout" orientation="horizontal" />
+              <styleBinding>
+                <attribute name="width" value="608"/>
+                <attribute name="height" value="80"/>
+                <attribute name="borderTopLeftRadius" value="16" />
+                <attribute name="borderTopRightRadius" value="16" />
+                <attribute name="backgroundColor" value="#ff8ba7"/>
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$subTitleBg3" right="null" executionType="1">
+                  <styleBinding backgroundColor="$subTitleBg3"/>
+                </condition>
+              </conditions>
+              <subViews>
+                <!-- 图片标题 -->
+                <image url="https://img.alicdn.com/imgextra/i2/800803731/O1CN011dQqAvTVN8E6GFq_!!800803731.png" >
+                  <styleBinding>
+                    <attribute name="width" value="50"/>
+                    <attribute name="height" value="50"/>
+                    <attribute name="marginTop" value="15" />        
+                    <attribute name="marginLeft" value="15" />  
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$img3" right="null">
+                      <dataBinding>
+                        <data name="url" value="$img3"/>
+                      </dataBinding>
+                    </condition>
+                  </conditions>
+                </image>
+                <label value="$tit_b3" lines="1">
+                  <styleBinding>
+                    <attribute name="height" value="80"/>
+                    <attribute name="lineHeight" value="80"/>
+                    <attribute name="fontSize" value="32"/>
+                    <attribute name="color" value="#ffffff"/>
+                    <attribute name="marginLeft" value="10"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$b_titc" right="null" executionType="1">
+                      <styleBinding color="$b_titc" />
+                    </condition>
+                  </conditions>
+                </label>
+                <label value="$tit_s3" lines="1">
+                  <styleBinding>
+                    <attribute name="height" value="80"/>
+                    <attribute name="lineHeight" value="90"/>
+                    <attribute name="fontSize" value="20"/>
+                    <attribute name="color" value="#ffffff"/>
+                    <attribute name="marginLeft" value="10"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$s_titc" right="null">
+                      <styleBinding color="$s_titc" />
+                    </condition>
+                  </conditions>
+                </label>
+              </subViews>
+              <events>
+                <event type="click">
+                  <actions>
+                    <userTrack>
+                      <utParams>
+                        <params>
+                          <param name="wp_p" value="1"/>
+                        </params>
+                      </utParams>
+                    </userTrack>
+                    <openURL url="$url_3"/>
+                  </actions>
+                </event>
+              </events>
+            </container>
+            <!--展开折叠按钮-->
+            <container>
+              <layout type="absoluteLayout" />
+              <styleBinding>
+                <attribute name="width" value="80"/>
+                <attribute name="height" value="80"/>
+                <attribute name="position" value="absolute"/>
+                <attribute name="top" value="0"/>
+                <attribute name="right" value="0"/>
+              </styleBinding>
+              <subViews>  
+                <!--展开按钮-->
+                <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN011dQqAxLHp1P9HPf_!!800803731.png" viewId="MODULE_KEY_PLACE_HOLDER_m_6_hideView">
+                  <styleBinding>
+                    <attribute name="width" value="80"/>
+                    <attribute name="height" value="80"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$type3" right="false">
+                      <styleBinding width="0"/>
+                    </condition>
+                  </conditions>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="0"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_6_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0}
+                            </param> 
+                          </params>
+                        </changeStyle>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_7_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":80} 
+                            </param> 
+                          </params>
+                        </changeStyle>
+
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_6_hideView"/>
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_7_hideView"/>
+                        <!--让对应的大图显示，其他大图隐藏-->
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_3_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":608} 
+                            </param> 
+                          </params> 
+                        </changeStyle>
+                        <!--刷新所有大图状态,break-->
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_3_hideView" isBreak="true"/>
+                      </actions>
+                    </event>
+                  </events> 
+                </image>
+                <!--折叠按钮-->
+                <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN011dQqAx8vLHTO65e_!!800803731.png" viewId="MODULE_KEY_PLACE_HOLDER_m_7_hideView">
+                  <styleBinding>
+                    <attribute name="width" value="0"/>
+                    <attribute name="height" value="80"/>
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$type3" right="false" executionType="1">
+                      <styleBinding width="80"/>
+                    </condition>
+                  </conditions>
+                  <events>
+                  <event type="click">
+                      <actions>
+                        <userTrack>
+                          <utParams>
+                            <params>
+                              <param name="wp_p" value="0"/>
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_7_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0,}
+                            </param> 
+                          </params>
+                        </changeStyle>
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_6_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":80} 
+                            </param> 
+                          </params>
+                        </changeStyle>
+
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_6_hideView"/>
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_7_hideView"/>
+                        <!--让对应的大图显示，其他大图隐藏-->
+                        <changeStyle> 
+                          <params> 
+                            <param name="viewId" value="MODULE_KEY_PLACE_HOLDER_3_hideView"/> 
+                            <param name="styleBinding" type="json"> 
+                            {"width":0} 
+                            </param> 
+                          </params> 
+                        </changeStyle>
+                        <!--刷新所有大图状态,break-->
+                        <refreshView viewId="MODULE_KEY_PLACE_HOLDER_3_hideView" isBreak="true"/>
+                      </actions>
+                    </event>
+                  </events> 
+                </image>
+              </subViews>
+            </container>
+            <!--折叠展开的内容-->
+            <container viewId="MODULE_KEY_PLACE_HOLDER_3_hideView">
+              <layout type="linearLayout" />
+              <styleBinding>
+                <attribute name="width" value="0"/>
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$type3" right="false" executionType="1">
+                  <styleBinding width="608"/>
+                </condition>
+              </conditions>
+              <subViews>
+                <!-- 1行3列 -->
+                <grid unScroll="true" gridColumn="3" needDownRefresh="false" needNextPage="false" dataSource="$itemArray3">
+                  <styleBinding>
+                    <attribute name="width" value="582"/>
+                    <attribute name="marginBottom" value="24" />
+                    <attribute name="marginLeft" value="1" />
+                  </styleBinding>
+                  <conditions>
+                    <condition type="==" left="$itemArray3._size_" right="0" executionType="1">
+                      <styleBinding height="0" marginBottom="0"/>
+                    </condition>
+                  </conditions>
+                  <array value="$itemArray3"/>
+                  <cell>
+                    <container>
+                      <layout type="linearLayout" />
+                      <styleBinding>
+                        <attribute name="width" value="170" />
+                        <attribute name="height" value="50"/>
+                        <attribute name="marginTop" value="24"/>
+                        <attribute name="marginLeft" value="24"/>
+                      </styleBinding>
+                      <subViews>
+                        <label value="$itemArray3.[?].title" lines="1"> 
+                          <styleBinding>
+                            <attribute name="width" value="170"/>
+                            <attribute name="height" value="50"/>
+                            <attribute name="textAlign" value="center"/>
+                            <attribute name="lineHeight" value="50"/>
+                            <attribute name="fontSize" value="22"/>
+                            <attribute name="color" value="#ff8ba7"/>
+                            <attribute name="backgroundColor" value="#ffffff"/>
+                            <attribute name="borderRadius" value="16"/>
+                          </styleBinding>
+                          <conditions>   
+                            <condition type="!=" left="$subBg3" right="null" executionType="1">
+                              <styleBinding backgroundColor="$subBg3"/>
+                            </condition>                 
+                            <condition type="!=" left="$subColor3" right="null" executionType="1">
+                              <styleBinding color="$subColor3"/>
+                            </condition>
+                          </conditions>
+                        </label>
+                      </subViews>
+                      <events>
+                        <event type="click">
+                          <actions>
+                            <userTrack>
+                              <utParams>
+                                <params>
+                                  <param name="wp_p" value="1"/>
+                                </params>
+                              </utParams>
+                            </userTrack>
+                            <openURL url="$itemArray3.[?].url"/>
+                          </actions>
+                        </event>
+                      </events>
+                    </container>
+                  </cell>
+                </grid>
+              </subViews>
+            </container>
+          </subViews>
+        </container>
+
+        <!--下间距-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="640"/>
+            <attribute name="height" value="8"/>
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$marginBottom" right="null" executionType="1">
+              <styleBinding height="$marginBottom"/>
+            </condition>
+          </conditions>
+        </container>
+      </subViews>
+    </container>              
+</view>
+</ui>

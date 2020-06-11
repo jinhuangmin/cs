@@ -1,0 +1,978 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ui>
+<view>
+<container>
+	<layout type="linearLayout" orientation="vertical"/>
+		<editProperty>
+		<dataDefines>
+			<dataDefine name="lbWidth" type="radio"  isNull="true" propertyName="★ 轮播宽度" >
+				<config type="sync">
+					<data text="608" value="608" defaultSelect="true"/>
+					<data text="640" value="640" defaultSelect="false"/>
+				</config>
+			</dataDefine>
+			<dataDefine name="lbHeight" type="text" isNull="true" propertyName="轮播高度(默认320)"/>
+			<dataDefine name="lbArray" type="jsonArray" min="1" max="4" propertyName="★ 轮播设置"  isNull="true">
+				<param name="image" type="image" isNull="true"  propertyName="┏图片选择" />
+				<param name="title" type="text" isNull="true"  propertyName="┣图片标题" />
+				<param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true"  propertyName="┣链接地址" />
+    			<param name="imgUrl" type="text"  propertyName="┗图片地址(填写后会显示该图,支持gif)" isNull="true"/>
+			</dataDefine>
+			<dataDefine name="radius" type="radio"  isNull="true" propertyName="图片圆角效果" >
+	            <config type="sync">
+	              <data text="小圆角" value="1" defaultSelect="true"/>
+	              <data text="大圆角" value="2" defaultSelect="false"/>
+	              <data text="方形" value="0" defaultSelect="false"/>
+	            </config>
+          	</dataDefine>
+			<dataDefine name="mk_style" type="radio"  isNull="true" propertyName="★ 自定义模块样式" >
+				<config type="sync">
+					<data text="收起设置" value="false" defaultSelect="true"/>
+					<data text="展开设置" value="true" defaultSelect="false"/>
+				</config>
+			</dataDefine>
+			<dataDefine name="mkBg" type="text" isNull="true"  propertyName="模块背景颜色(如：#ffffff)" refer="mk_style:true"/>
+			<dataDefine name="defBg" type="text" isNull="true"  propertyName="标题默认背景颜色(如：#ffffff)" refer="mk_style:true"/>
+			<dataDefine name="defColor" type="text" isNull="true"  propertyName="标题默认文字颜色(如：#ffffff)" refer="mk_style:true"/>
+			<dataDefine name="hoverImg" type="image" isNull="true" propertyName="标题选中背景(尺寸140*56)" refer="mk_style:true"/>
+			<dataDefine name="hoverColor" type="text" isNull="true"  propertyName="标题选中文字颜色(如：#ffffff)" refer="mk_style:true"/>
+			<dataDefine name="marginTop" type="text" isNull="true"  propertyName="模块上间距(默认0)" refer="mk_style:true"/>
+          	<dataDefine name="marginBottom" type="text" isNull="true"  propertyName="模块下间距(默认40)" refer="mk_style:true"/>
+		</dataDefines>				
+	</editProperty>
+	
+	<styleBinding>
+		<attribute name="width" value="640"/>
+		<attribute name="backgroundColor" value="#f5f5f5"/>
+	</styleBinding>
+	<conditions>
+		<condition type="!=" left="$mkBg" right="null">
+			<styleBinding backgroundColor="$mkBg"/>
+		</condition>
+	</conditions>
+	<subViews>
+		<!--上间距-->
+		<container>
+			<layout type="linearLayout"/>
+			<styleBinding>
+			  <attribute name="width" value="640"/>
+			  <attribute name="height" value="0"/>
+			</styleBinding>
+			<conditions>
+			  <condition type="!=" left="$marginTop" right="null" executionType="1">
+			    <styleBinding height="$marginTop"/>
+			  </condition>
+			</conditions>
+		</container>
+		<!-- 主题内容-->
+		<container>
+			<layout type="linearLayout"/>
+			<styleBinding>
+				<attribute name="width" value="608"/>
+          		<attribute name="marginLeft" value="16"/>
+			</styleBinding>
+			<conditions>
+			  <condition type="==" left="$lbWidth" right="640" executionType="1">
+			    <styleBinding width="640" marginLeft="0"/>
+			  </condition>
+			</conditions>
+			<subViews>					
+				<!--大图-->
+				<container>
+					<layout type="linearLayout"/>
+					<styleBinding>
+						<attribute name="width" value="608"/>
+						<attribute name="height" value="320"/>
+					</styleBinding>
+					<conditions>
+					  <condition type="==" left="$lbWidth" right="640" executionType="1">
+					    <styleBinding width="640"/>
+					  </condition>
+					  <condition type="!=" left="$lbHeight" right="null" executionType="1">
+					    <styleBinding height="$lbHeight"/>
+					  </condition>
+					</conditions>
+					<subViews>
+						<!--第0个图-->
+						<image url="$lbArray.[0].image" viewId="MODULE_KEY_PLACE_HOLDER_0_hideView">
+							<styleBinding>
+								<attribute name="width" value="608"/>
+								<attribute name="height" value="320"/>
+								<attribute name="borderRadius" value="0"/> 
+							</styleBinding>
+							<conditions>
+								<condition type="!=" left="$lbArray.[0].imgUrl" right="null" executionType="1">
+			                        <dataBinding>
+			                          <data name="url" value="$lbArray.[0].imgUrl"/>
+			                        </dataBinding>
+			                    </condition>
+			                    <condition type="==" left="$lbWidth" right="640" executionType="1">
+								    <styleBinding width="640"/>
+								</condition>
+								<condition type="!=" left="$lbHeight" right="null" executionType="1">
+								    <styleBinding height="$lbHeight"/>
+								</condition>
+								<condition type="==" left="$radius" right="1" executionType="1">
+									<styleBinding borderRadius="16"/>        
+								</condition>
+								<condition type="==" left="$radius" right="2" executionType="1">
+									<styleBinding borderRadius="24"/>        
+								</condition>
+			                </conditions>
+			                <events>
+					            <event type="click">
+					              <actions>
+					                <userTrack  utType="Image" utName="image">
+					                  <utParams>
+					                    <params>
+					                    <param name="wp_p" value="1"/>
+					                  </params>
+					                </utParams>
+					              </userTrack>
+					              <openURL url="$lbArray.[0].url"/>
+					            </actions>
+					          </event>
+					        </events>
+						</image>
+						<!--第1个图-->
+						<image url="$lbArray.[1].image" viewId="MODULE_KEY_PLACE_HOLDER_1_hideView">
+							<styleBinding>
+								<attribute name="width" value="608"/>
+								<attribute name="height" value="320"/>
+								<attribute name="borderRadius" value="0"/>
+								<attribute name="invisible" value="true"/>
+							</styleBinding>
+							<conditions>
+								<condition type="!=" left="$lbArray.[1].imgUrl" right="null" executionType="1">
+			                        <dataBinding>
+			                          <data name="url" value="$lbArray.[1].imgUrl"/>
+			                        </dataBinding>
+			                    </condition>
+			                    <condition type="==" left="$lbWidth" right="640" executionType="1">
+								    <styleBinding width="640"/>
+								</condition>
+								<condition type="!=" left="$lbHeight" right="null" executionType="1">
+								    <styleBinding height="$lbHeight"/>
+								</condition>
+								<condition type="==" left="$radius" right="1" executionType="1">
+									<styleBinding borderRadius="16"/>        
+								</condition>
+								<condition type="==" left="$radius" right="2" executionType="1">
+									<styleBinding borderRadius="24"/>        
+								</condition>
+			                </conditions>
+			                <events>
+					            <event type="click">
+					              <actions>
+					                <userTrack  utType="Image" utName="image">
+					                  <utParams>
+					                    <params>
+					                    <param name="wp_p" value="1"/>
+					                  </params>
+					                </utParams>
+					              </userTrack>
+					              <openURL url="$lbArray.[1].url"/>
+					            </actions>
+					          </event>
+					        </events>
+						</image>
+						<!--第2个图-->
+						<image url="$lbArray.[2].image" viewId="MODULE_KEY_PLACE_HOLDER_2_hideView">
+							<styleBinding>
+								<attribute name="width" value="608"/>
+								<attribute name="height" value="320"/>
+								<attribute name="borderRadius" value="0"/>
+								<attribute name="invisible" value="true"/>
+							</styleBinding>
+							<conditions>
+								<condition type="!=" left="$lbArray.[2].imgUrl" right="null" executionType="1">
+			                        <dataBinding>
+			                          <data name="url" value="$lbArray.[2].imgUrl"/>
+			                        </dataBinding>
+			                    </condition>
+			                    <condition type="==" left="$lbWidth" right="640" executionType="1">
+								    <styleBinding width="640"/>
+								</condition>
+								<condition type="!=" left="$lbHeight" right="null" executionType="1">
+								    <styleBinding height="$lbHeight"/>
+								</condition>
+								<condition type="==" left="$radius" right="1" executionType="1">
+									<styleBinding borderRadius="16"/>        
+								</condition>
+								<condition type="==" left="$radius" right="2" executionType="1">
+									<styleBinding borderRadius="24"/>        
+								</condition>
+			                </conditions>
+			                <events>
+					            <event type="click">
+					              <actions>
+					                <userTrack  utType="Image" utName="image">
+					                  <utParams>
+					                    <params>
+					                    <param name="wp_p" value="1"/>
+					                  </params>
+					                </utParams>
+					              </userTrack>
+					              <openURL url="$lbArray.[2].url"/>
+					            </actions>
+					          </event>
+					        </events>
+						</image>
+						<!--第3个图-->
+						<image url="$lbArray.[3].image" viewId="MODULE_KEY_PLACE_HOLDER_3_hideView">
+							<styleBinding>
+								<attribute name="width" value="608"/>
+								<attribute name="height" value="320"/>
+								<attribute name="borderRadius" value="0"/>
+								<attribute name="invisible" value="true"/>
+							</styleBinding>
+							<conditions>
+								<condition type="!=" left="$lbArray.[3].imgUrl" right="null" executionType="1">
+			                        <dataBinding>
+			                          <data name="url" value="$lbArray.[3].imgUrl"/>
+			                        </dataBinding>
+			                    </condition>
+			                    <condition type="==" left="$lbWidth" right="640" executionType="1">
+								    <styleBinding width="640"/>
+								</condition>
+								<condition type="!=" left="$lbHeight" right="null" executionType="1">
+								    <styleBinding height="$lbHeight"/>
+								</condition>
+								<condition type="==" left="$radius" right="1" executionType="1">
+									<styleBinding borderRadius="16"/>        
+								</condition>
+								<condition type="==" left="$radius" right="2" executionType="1">
+									<styleBinding borderRadius="24"/>        
+								</condition>
+			                </conditions>
+			                <events>
+					            <event type="click">
+					              <actions>
+					                <userTrack  utType="Image" utName="image">
+					                  <utParams>
+					                    <params>
+					                    <param name="wp_p" value="1"/>
+					                  </params>
+					                </utParams>
+					              </userTrack>
+					              <openURL url="$lbArray.[3].url"/>
+					            </actions>
+					          </event>
+					        </events>
+						</image>
+					</subViews>
+				</container>
+				<!--大图end-->
+		
+				<!--小图-->
+				<container>
+					<layout type="linearLayout"  orientation="horizontal"/>
+					<styleBinding>
+						<attribute name="width" value="608"/>
+						<attribute name="height" value="56"/>
+						<attribute name="marginTop" value="16"/>
+						<attribute name="justifyContent" value="center" />
+					</styleBinding>
+					<conditions>
+					  <condition type="==" left="$lbWidth" right="640" executionType="1">
+					    <styleBinding width="640"/>
+					  </condition>
+					</conditions>
+					<subViews>	
+						<!--第0个图-->
+						<container>
+							<layout type="absoluteLayout" />
+							<styleBinding>
+								<attribute name="width" value="140"/>
+								<attribute name="height" value="56"/>
+							</styleBinding>
+							<subViews>	
+								<label value="$lbArray.[0].title" lines="1">
+									<styleBinding>
+										<attribute name="width" value="140"/>
+										<attribute name="height" value="50"/>
+										<attribute name="textAlign" value="center"/>
+										<attribute name="lineHeight" value="50"/>
+										<attribute name="fontSize" value="24"/>
+										<attribute name="fontWeight" value="600"/>
+										<attribute name="color" value="#333333"/>
+										<attribute name="marginTop" value="6"/>
+										<attribute name="backgroundColor" value="#ffffff"/>
+									</styleBinding>
+									<conditions>
+										<condition type="!=" left="$defColor" right="null" executionType="1">
+											<styleBinding color="$defColor" />
+										</condition>
+										<condition type="!=" left="$defBg" right="null">
+											<styleBinding backgroundColor="$defBg" />
+										</condition>
+									</conditions>
+								</label>
+								<!--触发背景-->
+								<container viewId="MODULE_KEY_PLACE_HOLDER_m_0_hideView">
+									<layout type="absoluteLayout"/>
+									<styleBinding>
+										<attribute name="width" value="140"/>
+										<attribute name="height" value="56"/>
+										<attribute name="marginTop" value="0"/>
+										<attribute name="marginLeft" value="0"/>
+									</styleBinding>
+									<subViews>
+										<image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01YtsOaD1dQqFwxzA0s_!!800803731.png">
+											<styleBinding>
+												<attribute name="width" value="140"/>
+												<attribute name="height" value="56"/>
+											</styleBinding>
+											<conditions>
+												<condition type="!=" left="$hoverImg" right="null">
+													<dataBinding>
+														<data name="url" value="$hoverImg"/>
+													</dataBinding>
+												</condition>													
+											</conditions>
+										</image>
+										<label value="$lbArray.[0].title" lines="1">
+											<styleBinding>
+												<attribute name="width" value="140"/>
+												<attribute name="height" value="50"/>
+												<attribute name="textAlign" value="center"/>
+												<attribute name="lineHeight" value="50"/>
+												<attribute name="fontSize" value="24"/>
+												<attribute name="fontWeight" value="600"/>
+												<attribute name="color" value="#ffffff"/>
+												<attribute name="marginTop" value="6"/>
+											</styleBinding>
+											<conditions>
+												<condition type="!=" left="$hoverColor" right="null">
+													<styleBinding color="$hoverColor" />
+												</condition>
+											</conditions>
+										</label>
+									</subViews>
+								</container>
+								<!--触发背景end-->
+							</subViews>
+							<events>
+								<event type="click">
+									<actions>
+										<userTrack>
+											<utParams>
+												<params>
+													<param name="wp_p" value="0"/>
+												</params>
+											</utParams>
+										</userTrack>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":56,"width":140}
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0} 
+												</param> 
+											</params>
+										</changeStyle>
+
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/>
+										
+										<!--让对应的大图显示，其他大图隐藏-->
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_0_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":false} 
+												</param> 
+											</params> 
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_1_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_2_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_3_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params>
+										</changeStyle>
+										<!--刷新所有大图状态,break-->
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_0_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_1_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_2_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_3_hideView" isBreak="true"/>
+
+									</actions>
+								</event>
+							</events>
+						</container>
+						
+						<!--第1个图-->
+						<container>
+							<layout type="absoluteLayout" />
+							<styleBinding>
+								<attribute name="width" value="140"/>
+								<attribute name="height" value="56"/>
+								<attribute name="marginLeft" value="16"/>
+							</styleBinding>
+							<conditions>
+							  <condition type="&lt;" left="$lbArray._size_" right="2" executionType="1">
+							    <styleBinding width="0" height="0" marginLeft="0"/>
+							  </condition>
+							</conditions>
+							<subViews>	
+								<label value="$lbArray.[1].title" lines="1">
+									<styleBinding>
+										<attribute name="width" value="140"/>
+										<attribute name="height" value="50"/>
+										<attribute name="textAlign" value="center"/>
+										<attribute name="lineHeight" value="50"/>
+										<attribute name="fontSize" value="24"/>
+										<attribute name="fontWeight" value="600"/>
+										<attribute name="color" value="#333333"/>
+										<attribute name="marginTop" value="6"/>
+										<attribute name="backgroundColor" value="#ffffff"/>
+									</styleBinding>
+									<conditions>
+										<condition type="!=" left="$defColor" right="null" executionType="1">
+											<styleBinding color="$defColor" />
+										</condition>
+										<condition type="!=" left="$defBg" right="null">
+											<styleBinding backgroundColor="$defBg" />
+										</condition>
+									</conditions>
+								</label>
+								<!--触发背景-->
+								<container viewId="MODULE_KEY_PLACE_HOLDER_m_1_hideView">
+									<layout type="absoluteLayout"/>
+									<styleBinding>
+										<attribute name="width" value="140"/>
+										<attribute name="height" value="0"/>
+										<attribute name="marginTop" value="0"/>
+										<attribute name="marginLeft" value="0"/>
+									</styleBinding>
+									<subViews>
+										<image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01YtsOaD1dQqFwxzA0s_!!800803731.png">
+											<styleBinding>
+												<attribute name="width" value="140"/>
+												<attribute name="height" value="56"/>
+											</styleBinding>
+											<conditions>
+												<condition type="!=" left="$hoverImg" right="null">
+													<dataBinding>
+														<data name="url" value="$hoverImg"/>
+													</dataBinding>
+												</condition>													
+											</conditions>
+										</image>
+										<label value="$lbArray.[1].title" lines="1">
+											<styleBinding>
+												<attribute name="width" value="140"/>
+												<attribute name="height" value="50"/>
+												<attribute name="textAlign" value="center"/>
+												<attribute name="lineHeight" value="50"/>
+												<attribute name="fontSize" value="24"/>
+												<attribute name="fontWeight" value="600"/>
+												<attribute name="color" value="#ffffff"/>
+												<attribute name="marginTop" value="6"/>
+											</styleBinding>
+											<conditions>
+												<condition type="!=" left="$hoverColor" right="null">
+													<styleBinding color="$hoverColor" />
+												</condition>
+											</conditions>
+										</label>
+									</subViews>
+								</container>
+								<!--触发背景end-->
+							</subViews>
+							<events>
+								<event type="click">
+									<actions>
+										<userTrack>
+											<utParams>
+												<params>
+													<param name="wp_p" value="1"/>
+												</params>
+											</utParams>
+										</userTrack>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0}
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":56,"width":140}
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0} 
+												</param> 
+											</params>
+										</changeStyle>
+
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/>
+										
+										<!--让对应的大图显示，其他大图隐藏-->
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_0_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params> 
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_1_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":false} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_2_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_3_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params>
+										</changeStyle>
+										<!--刷新所有大图状态,break-->
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_0_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_1_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_2_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_3_hideView" isBreak="true"/>
+									</actions>
+								</event>
+							</events>
+						</container>
+
+						<!--第2个图-->
+						<container>
+							<layout type="absoluteLayout" />
+							<styleBinding>
+								<attribute name="width" value="140"/>
+								<attribute name="height" value="56"/>
+								<attribute name="marginLeft" value="16"/>
+							</styleBinding>
+							<conditions>
+							  <condition type="&lt;" left="$lbArray._size_" right="3" executionType="1">
+							    <styleBinding width="0" height="0" marginLeft="0"/>
+							  </condition>
+							</conditions>
+							<subViews>	
+								<label value="$lbArray.[2].title" lines="1">
+									<styleBinding>
+										<attribute name="width" value="140"/>
+										<attribute name="height" value="50"/>
+										<attribute name="textAlign" value="center"/>
+										<attribute name="lineHeight" value="50"/>
+										<attribute name="fontSize" value="24"/>
+										<attribute name="fontWeight" value="600"/>
+										<attribute name="color" value="#333333"/>
+										<attribute name="marginTop" value="6"/>
+										<attribute name="backgroundColor" value="#ffffff"/>
+									</styleBinding>
+									<conditions>
+										<condition type="!=" left="$defColor" right="null" executionType="1">
+											<styleBinding color="$defColor" />
+										</condition>
+										<condition type="!=" left="$defBg" right="null">
+											<styleBinding backgroundColor="$defBg" />
+										</condition>
+									</conditions>
+								</label>
+								<!--触发背景-->
+								<container viewId="MODULE_KEY_PLACE_HOLDER_m_2_hideView">
+									<layout type="absoluteLayout"/>
+									<styleBinding>
+										<attribute name="width" value="140"/>
+										<attribute name="height" value="0"/>
+										<attribute name="marginTop" value="0"/>
+										<attribute name="marginLeft" value="0"/>
+									</styleBinding>
+									<subViews>
+										<image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01YtsOaD1dQqFwxzA0s_!!800803731.png">
+											<styleBinding>
+												<attribute name="width" value="140"/>
+												<attribute name="height" value="56"/>
+											</styleBinding>
+											<conditions>
+												<condition type="!=" left="$hoverImg" right="null">
+													<dataBinding>
+														<data name="url" value="$hoverImg"/>
+													</dataBinding>
+												</condition>													
+											</conditions>
+										</image>
+										<label value="$lbArray.[2].title" lines="1">
+											<styleBinding>
+												<attribute name="width" value="140"/>
+												<attribute name="height" value="50"/>
+												<attribute name="textAlign" value="center"/>
+												<attribute name="lineHeight" value="50"/>
+												<attribute name="fontSize" value="24"/>
+												<attribute name="fontWeight" value="600"/>
+												<attribute name="color" value="#ffffff"/>
+												<attribute name="marginTop" value="6"/>
+											</styleBinding>
+											<conditions>
+												<condition type="!=" left="$hoverColor" right="null">
+													<styleBinding color="$hoverColor" />
+												</condition>
+											</conditions>
+										</label>
+									</subViews>
+								</container>
+								<!--触发背景end-->
+							</subViews>
+							<events>
+								<event type="click">
+									<actions>
+										<userTrack>
+											<utParams>
+												<params>
+													<param name="wp_p" value="2"/>
+												</params>
+											</utParams>
+										</userTrack>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0}
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0}
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":56,"width":140}
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0} 
+												</param> 
+											</params>
+										</changeStyle>
+
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/>
+										
+										<!--让对应的大图显示，其他大图隐藏-->
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_0_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params> 
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_1_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_2_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":false} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_3_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params>
+										</changeStyle>
+										<!--刷新所有大图状态,break-->
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_0_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_1_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_2_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_3_hideView" isBreak="true"/>
+									</actions>
+								</event>
+							</events>
+						</container>
+
+						<!--第3个图-->
+						<container>
+							<layout type="absoluteLayout" />
+							<styleBinding>
+								<attribute name="width" value="140"/>
+								<attribute name="height" value="56"/>
+								<attribute name="marginLeft" value="16"/>
+							</styleBinding>
+							<conditions>
+							  <condition type="&lt;" left="$lbArray._size_" right="4" executionType="1">
+							    <styleBinding width="0" height="0" marginLeft="0"/>
+							  </condition>
+							</conditions>
+							<subViews>	
+								<label value="$lbArray.[3].title" lines="1">
+									<styleBinding>
+										<attribute name="width" value="140"/>
+										<attribute name="height" value="50"/>
+										<attribute name="textAlign" value="center"/>
+										<attribute name="lineHeight" value="50"/>
+										<attribute name="fontSize" value="24"/>
+										<attribute name="fontWeight" value="600"/>
+										<attribute name="color" value="#333333"/>
+										<attribute name="marginTop" value="6"/>
+										<attribute name="backgroundColor" value="#ffffff"/>
+									</styleBinding>
+									<conditions>
+										<condition type="!=" left="$defColor" right="null" executionType="1">
+											<styleBinding color="$defColor" />
+										</condition>
+										<condition type="!=" left="$defBg" right="null">
+											<styleBinding backgroundColor="$defBg" />
+										</condition>
+									</conditions>
+								</label>
+								<!--触发背景-->
+								<container viewId="MODULE_KEY_PLACE_HOLDER_m_3_hideView">
+									<layout type="absoluteLayout"/>
+									<styleBinding>
+										<attribute name="width" value="140"/>
+										<attribute name="height" value="0"/>
+										<attribute name="marginTop" value="0"/>
+										<attribute name="marginLeft" value="0"/>
+									</styleBinding>
+									<subViews>
+										<image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01YtsOaD1dQqFwxzA0s_!!800803731.png">
+											<styleBinding>
+												<attribute name="width" value="140"/>
+												<attribute name="height" value="56"/>
+											</styleBinding>
+											<conditions>
+												<condition type="!=" left="$hoverImg" right="null">
+													<dataBinding>
+														<data name="url" value="$hoverImg"/>
+													</dataBinding>
+												</condition>													
+											</conditions>
+										</image>
+										<label value="$lbArray.[3].title" lines="1">
+											<styleBinding>
+												<attribute name="width" value="140"/>
+												<attribute name="height" value="50"/>
+												<attribute name="textAlign" value="center"/>
+												<attribute name="lineHeight" value="50"/>
+												<attribute name="fontSize" value="24"/>
+												<attribute name="fontWeight" value="600"/>
+												<attribute name="color" value="#ffffff"/>
+												<attribute name="marginTop" value="6"/>
+											</styleBinding>
+											<conditions>
+												<condition type="!=" left="$hoverColor" right="null">
+													<styleBinding color="$hoverColor" />
+												</condition>
+											</conditions>
+										</label>
+									</subViews>
+								</container>
+								<!--触发背景end-->
+							</subViews>
+							<events>
+								<event type="click">
+									<actions>
+										<userTrack>
+											<utParams>
+												<params>
+													<param name="wp_p" value="3"/>
+												</params>
+											</utParams>
+										</userTrack>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0}
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0}
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":0,"width":0}
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"height":56,"width":140}
+												</param> 
+											</params>
+										</changeStyle>
+
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_0_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_1_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_2_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_m_3_hideView"/>
+										
+										<!--让对应的大图显示，其他大图隐藏-->
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_0_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params> 
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_1_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_2_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":true} 
+												</param> 
+											</params>
+										</changeStyle>
+										<changeStyle> 
+											<params> 
+												<param name="viewId" value="MODULE_KEY_PLACE_HOLDER_3_hideView"/> 
+												<param name="styleBinding" type="json"> 
+												{"invisible":false} 
+												</param> 
+											</params>
+										</changeStyle>
+										<!--刷新所有大图状态,break-->
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_0_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_1_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_2_hideView"/>
+										<refreshView viewId="MODULE_KEY_PLACE_HOLDER_3_hideView" isBreak="true"/>
+									</actions>
+								</event>
+							</events>
+						</container>
+
+					</subViews>
+				</container>
+				<!--小图end-->	
+			</subViews>
+		</container>
+		<!--下间距-->            
+		<container>
+		<layout type="linearLayout"/>        
+			<styleBinding>
+			  <attribute name="width" value="640"/>        
+			  <attribute name="height" value="40"/>        
+			</styleBinding>
+			<conditions>
+			  <condition type="!=" left="$marginBottom" right="null" executionType="1">
+			    <styleBinding height="$marginBottom"/>        
+			  </condition>
+			</conditions>
+		</container>
+	</subViews>
+</container>
+</view>
+</ui>

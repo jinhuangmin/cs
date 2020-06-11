@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="GB2312"?>
+<ui>
+  <view>
+    <container>
+      <layout type="linearLayout" />
+      <editProperty>
+        <dataDefines>
+          <dataDefine name="imgType" type="radio" isNull="true" propertyName="★ 排版方式" >
+            <config type="sync">
+              <data text="图1居左" value="left" defaultSelect="true"/>
+              <data text="图1居右" value="right" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="image_1" type="image" propertyName="┏图片1设置(宽330，高250)" isNull="true" />
+          <dataDefine name="url_1" type="url" validateType="taokeurl||wirelessurl" propertyName="┣链接地址" isNull="true" />
+          <dataDefine name="image_url1" type="text" isNull="true" propertyName="┗图片地址(填写后会显示该图,支持gif)"/>
+         
+          <dataDefine name="image_2" type="image" propertyName="┏图片2设置(宽260，高117)" isNull="true" />
+          <dataDefine name="url_2" type="url" validateType="taokeurl||wirelessurl" propertyName="┣链接地址" isNull="true" />
+          <dataDefine name="image_url2" type="text" isNull="true"  propertyName="┗图片地址(填写后会显示该图,支持gif)"/>
+          
+          <dataDefine name="image_3" type="image" propertyName="┏图片3设置(宽260，高117)" isNull="true" />
+          <dataDefine name="url_3" type="url" validateType="taokeurl||wirelessurl" propertyName="┣链接地址" isNull="true" />
+          <dataDefine name="image_url3" type="text" isNull="true"  propertyName="┗图片地址(填写后会显示该图,支持gif)"/>
+          
+          <dataDefine name="picRadius" type="radio"  isNull="true" propertyName="图片圆角效果">
+            <config type="sync">
+              <data text="小圆角" value="1" defaultSelect="true"/>
+              <data text="大圆角" value="2" defaultSelect="false"/>
+              <data text="直角" value="0" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="mk_style" type="radio"  isNull="true"  propertyName="★ 自定义模块样式">
+            <config type="sync">
+              <data text="收起设置" value="true" defaultSelect="true"/>
+              <data text="展开设置" value="false" defaultSelect="false"/>
+            </config>
+          </dataDefine>
+          <dataDefine name="mkBg" type="text" isNull="true"  propertyName="模块背景颜色(如：#ffffff)" refer="mk_style:false"/>
+          <dataDefine name="marginTop" type="text" isNull="true"  propertyName="模块上间距(默认0)" refer="mk_style:false"/>
+          <dataDefine name="marginBottom" type="text" isNull="true"  propertyName="模块下间距(默认40)" refer="mk_style:false"/>
+        </dataDefines>
+      </editProperty>
+
+      <styleBinding>
+        <attribute name="width" value="640"/>
+        <attribute name="backgroundColor" value="#f5f5f5"/>
+      </styleBinding>
+      <conditions>
+        <condition type="!=" left="$mkBg" right="null">
+          <styleBinding backgroundColor="$mkBg"/>
+        </condition>
+      </conditions>
+      <subViews>
+        <!--上间距-->
+        <container>
+          <layout type="linearLayout"/>
+          <styleBinding>
+            <attribute name="width" value="640"/>
+            <attribute name="height" value="0"/>
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$marginTop" right="null" executionType="1">
+              <styleBinding height="$marginTop"/>
+            </condition>
+          </conditions>
+        </container>
+
+        <container>
+          <layout type="absoluteLayout"/>
+          <styleBinding>
+            <attribute name="width" value="608"/>
+            <attribute name="height" value="250"/>
+            <attribute name="marginLeft" value="16" />
+          </styleBinding>
+          <subViews>
+            <!-- 第1张图片 -->
+            <image url="https://img.alicdn.com/imgextra/i2/800803731/O1CN01W9pQRA1dQqFpCNKzk_!!800803731.png">
+              <styleBinding>
+                <attribute name="width" value="330"/>
+                <attribute name="height" value="250"/>
+                <attribute name="marginTop" value="0" />
+                <attribute name="marginLeft" value="0" />
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$image_1" right="null" executionType="1">
+                  <dataBinding>
+                    <data name="url" value="$image_1"/>
+                  </dataBinding>
+                </condition>
+                <condition type="!=" left="$image_url1" right="null" executionType="1">
+                  <dataBinding>
+                    <data name="url" value="$image_url1"/>
+                  </dataBinding>
+                </condition>
+                <condition type="==" left="$imgType" right="right" executionType="1" >
+                  <styleBinding marginLeft="278" />
+                </condition>
+                <condition type="==" left="$picRadius" right="1" executionType="1">
+                  <styleBinding borderRadius="16" />
+                </condition>
+                <condition type="==" left="$picRadius" right="2" executionType="1">
+                  <styleBinding borderRadius="24" />
+                </condition>
+              </conditions>
+              <events>
+                <event type="click">
+                  <actions>
+                    <userTrack  utType="Image" utName="image">
+                      <utParams>
+                        <params>
+                        <param name="wp_p" value="1"/>
+                      </params>
+                    </utParams>
+                  </userTrack>
+                  <openURL url="$url_1"/>
+                </actions>
+              </event>
+            </events>
+          </image>
+          <!-- 第2张图片 -->
+          <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01WtObU21dQqFnDsbcj_!!800803731.png">
+            <styleBinding>
+              <attribute name="width" value="260"/>
+              <attribute name="height" value="117"/>
+              <attribute name="marginTop" value="0" />
+              <attribute name="marginLeft" value="348" />
+            </styleBinding>
+            <conditions>
+              <condition type="!=" left="$image_2" right="null" executionType="1">
+                <dataBinding>
+                  <data name="url" value="$image_2"/>
+                </dataBinding>
+              </condition>
+              <condition type="!=" left="$image_url2" right="null" executionType="1">
+                <dataBinding>
+                  <data name="url" value="$image_url2"/>
+                </dataBinding>
+              </condition>
+              <condition type="==" left="$imgType" right="right" executionType="1" >
+                <styleBinding marginLeft="0" />
+              </condition>
+              <condition type="==" left="$picRadius" right="1" executionType="1">
+                <styleBinding borderRadius="16" />
+              </condition>
+              <condition type="==" left="$picRadius" right="2" executionType="1">
+                <styleBinding borderRadius="24" />
+              </condition>
+            </conditions>
+            <events>
+              <event type="click">
+                <actions>
+                  <userTrack  utType="Image" utName="image">
+                    <utParams>
+                      <params>
+                      <param name="wp_p" value="1"/>
+                    </params>
+                  </utParams>
+                </userTrack>
+                <openURL url="$url_2"/>
+              </actions>
+            </event>
+          </events>
+        </image>
+        <!-- 第3张图片 -->
+        <image url="https://img.alicdn.com/imgextra/i2/800803731/O1CN01qOTdhZ1dQqFnDrfRH_!!800803731.png">
+          <styleBinding>
+            <attribute name="width" value="260"/>
+            <attribute name="height" value="117"/>
+            <attribute name="marginTop" value="133" />
+            <attribute name="marginLeft" value="348" />
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$image_3" right="null" executionType="1">
+              <dataBinding>
+                <data name="url" value="$image_3"/>
+              </dataBinding>
+            </condition>
+            <condition type="!=" left="$image_url3" right="null" executionType="1">
+              <dataBinding>
+                <data name="url" value="$image_url3"/>
+              </dataBinding>
+            </condition>
+            <condition type="==" left="$imgType" right="right" executionType="1" >
+              <styleBinding marginLeft="0" />
+            </condition>
+            <condition type="==" left="$picRadius" right="1" executionType="1">
+              <styleBinding borderRadius="16" />
+            </condition>
+            <condition type="==" left="$picRadius" right="2" executionType="1">
+              <styleBinding borderRadius="24" />
+            </condition>
+          </conditions>
+          <events>
+            <event type="click">
+              <actions>
+                <userTrack  utType="Image" utName="image">
+                  <utParams>
+                    <params>
+                    <param name="wp_p" value="1"/>
+                  </params>
+                </utParams>
+              </userTrack>
+              <openURL url="$url_3"/>
+            </actions>
+          </event>
+        </events>
+      </image>
+    </subViews>
+  </container>
+
+  <!--下间距-->
+  <container>
+    <layout type="linearLayout"/>
+    <styleBinding>
+      <attribute name="width" value="640"/>
+      <attribute name="height" value="40"/>
+    </styleBinding>
+    <conditions>
+      <condition type="!=" left="$marginBottom" right="null" executionType="1">
+        <styleBinding height="$marginBottom"/>
+      </condition>
+    </conditions>
+  </container>
+
+</subViews>
+</container>
+</view>
+</ui>
