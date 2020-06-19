@@ -1,1 +1,42 @@
-The company attaches great importance to theresearchand development of new products, constantly developing new styles, adding new functions and developing product series.New products are launched every quarter to meet the needs of different customers,so that consumers have the intention of repeated consumption.Our rich product line gives consumers more choices and agents more opportunities to make money.Most of our products have a short lead time and can easily meet customers requirements for quick delivery.In logistics, we have international logistics companies for many years, to provide customers with fast, safe logistics services.Our sales staff have many years of international trade experience, can provide customers with the most reasonable product recommen-dations and sales solutions, so that customers in the cooperation with our company to get fast, accurate,thoughtful service.
+import { React, ReactDOM, openSdk, Button } from '@alife/icbu-mod-lib';
+	import './index.scss';
+  
+  
+  const TitleDom = (p) => {
+    if (true) {
+      return (<div style={{fontSize:48,color:'#ff0000'}}>{JSON.stringify(p)}</div>);
+    }
+  }
+	class IntlIcbuSmodDemo extends React.Component {
+	
+	  constructor(props) {
+	    super(props);
+	    this.state = {
+	      hasData: false
+	    }
+	  }
+	
+	  componentWillMount() {
+	    const moduleData = this.props.moduleData;
+	    const { mds, gdc }  = moduleData;
+	    //如果是从API上取数据
+	    const fetch = openSdk.fetch('icbu.data.common.minisite', {bizId:gdc.bizId,productIds:[60738071807,60736303506],strategyName:'manuallySelect'});
+	    fetch.then((data)=>{
+	    })
+	
+	  }
+	
+	  render() {
+	    const {hasData, moduleTitle} = this.state;
+	    const {mds} = this.props.moduleData;
+	    return (
+	      <div className={'module-demo'}>
+	        <div className={'big-title'}>模块{JSON.stringify(mds)}</div>
+          <TitleDom title={mds.moduleData.title}/>
+	      </div>
+	    );
+	  }
+	};
+	
+	export default IntlIcbuSmodDemo;
+	
