@@ -42,19 +42,21 @@ class IntlIcbuSmodDemo extends React.Component {
 
     var imgitem = [];
     for (var i = 0; i < 6; i++) {
-      imgitem.push(<a target={target} href={eval('url' + i)} className={'item item' + eval(i) + ' fl'}>
-        <img className="trans03s" src={eval('mds.moduleData.img' + mk_w + '_' + i) ? eval('mds.moduleData.img' + mk_w + '_' + i) : imgInfo[i]} />
-        <span className="trans03s" style={{ background: mds.moduleData.kgd_bg }}></span>
-      </a>
+      imgitem.push(<div className={'item item' + eval(i) + ' fl pic-style-' + mds.moduleData.animat}>
+        <a target={target} href={eval('url' + i)}>
+          <img className="trans03s" src={eval('mds.moduleData.img1440_' + i) ? eval('mds.moduleData.img1440_' + i) : imgInfo[i]} />
+          <span></span>
+        </a>
+      </div>
       );
     }
 
     return (
-      <div className={'wm1920 wmitem_show cf mk_tx' + (mds.moduleData.mk_tx)} style={{ background: 'url("' + (mk_bgDis == '1' ? (mds.moduleData.mk_bgImg ? mds.moduleData.mk_bgImg : '') : '') + '") center top no-repeat ' + mk_bgXg, backgroundColor: mds.moduleData.mk_bg ? mds.moduleData.mds.moduleData.mk_bg : '#ffffff', paddingTop: paddingTop, paddingBottom: paddingBottom }}>
+      <div className={'wm1920 wmitem_show cf'} style={{ background: 'url("' + (mk_bgDis == '1' ? (mds.moduleData.mk_bgImg ? mds.moduleData.mk_bgImg : '') : '') + '") center top no-repeat ' + mk_bgXg, backgroundColor: mds.moduleData.mk_bg ? mds.moduleData.mds.moduleData.mk_bg : '#ffffff', paddingTop: paddingTop, paddingBottom: paddingBottom }}>
         {mds.moduleData.btitle && <div className='btitle' style={{ color: mds.moduleData.mk_titc, fontFamily: mds.moduleData.mk_titf, fontSize: mk_tits }}>{mds.moduleData.btitle}</div>}
         {mds.moduleData.btitle && <div className='stitle' style={{ color: mds.moduleData.mk_titc2 }}>{mds.moduleData.stitle ? mds.moduleData.stitle : 'welcome to our shop'}</div>}
 
-        <div className={'mk_bd cf mk_bd' + mk_w}>
+        <div className={'fl_box cf'}>
           {imgitem}
         </div>
       </div>
