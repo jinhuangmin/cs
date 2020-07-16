@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ui>
+    <view>
+        <container>
+            <layout type="linearLayout" />
+            <editProperty>
+                <dataDefines>
+                    <dataDefine name="line_num" type="radio" isNull="true" propertyName="每屏显示数量">
+                        <config type="sync">
+                            <data text="2个" value="2" defaultSelect="false" />
+                            <data text="2个半" value="2.5" defaultSelect="false" />
+                            <data text="3个" value="3" defaultSelect="true" />
+                            <data text="3个半" value="3.5" defaultSelect="false" />
+                        </config>
+                    </dataDefine>
+                    <dataDefine name="title" type="text" isNull="true" propertyName="优惠券文字，例RMB" />
+                    <dataDefine name="yhqArray" type="jsonArray" min="1" max="8" propertyName="★ 优惠券设置" isNull="true">
+                        <param name="number" type="text" isNull="true" propertyName="┏ 优惠券金额" />
+                        <param name="tj" type="text" isNull="true" propertyName="┣ 使用条件" />
+                        <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true" propertyName="┗ 跳转链接(点击右侧图标选择)" />
+                    </dataDefine>
+                    <dataDefine name="mkType" type="radio" isNull="true" propertyName="▼ 模块样式设置 ▼ -----------------------------------------------">
+                        <config type="sync">
+                            <data text="收起设置" value="false" defaultSelect="true" />
+                            <data text="展开设置" value="true" defaultSelect="false" />
+                        </config>
+                    </dataDefine>
+                    <dataDefine name="mkBg" type="text" isNull="true" propertyName="模块背景颜色，例#000000" refer="mkType:true" />
+                    <dataDefine name="yhjBg" type="text" isNull="true" propertyName="优惠券背景颜色，例#000000" refer="mkType:true" />
+                    <dataDefine name="numberColor" type="text" isNull="true" propertyName="优惠券金额颜色，例#000000" refer="mkType:true" />
+                    <dataDefine name="textColor" type="text" isNull="true" propertyName="优惠券文字颜色，例#000000" refer="mkType:true" />
+                    <dataDefine name="marginTop" type="text" isNull="true" propertyName="模块上间距(默认20)" refer="mkType:true" />
+                    <dataDefine name="marginBottom" type="text" isNull="true" propertyName="模块下间距(默认20)" refer="mkType:true" />
+                </dataDefines>
+            </editProperty>
+            <styleBinding>
+                <attribute name="width" value="640" />
+                <attribute name="backgroundColor" value="#ffffff" />
+            </styleBinding>
+            <conditions>
+                <condition type="!=" left="$mkBg" right="null" executionType="1">
+                    <styleBinding backgroundColor="$mkBg" />
+                </condition>
+            </conditions>
+            <subViews>
+                <!--上间距-->
+                <container>
+                    <layout type="linearLayout" />
+                    <styleBinding>
+                        <attribute name="width" value="640" />
+                        <attribute name="height" value="20" />
+                    </styleBinding>
+                    <conditions>
+                        <condition type="!=" left="$marginTop" right="null" executionType="1">
+                            <styleBinding height="$marginTop" />
+                        </condition>
+                    </conditions>
+                </container>
+                <!--走马灯-->
+                <container>
+                    <layout type="linearLayout" orientation="horizontal" scroll="2" />
+                    <styleBinding>
+                        <attribute name="width" value="608" />
+                        <attribute name="height" value="140" />
+                        <attribute name="marginLeft" value="16" />
+                    </styleBinding>
+                    <foreach start="0" step="1">
+                        <array value="$yhqArray" />
+                        <template>
+                            <container>
+                                <layout type="linearLayout" orientation="vertical" />
+                                <styleBinding>
+                                    <attribute name="width" value="192" />
+                                    <attribute name="height" value="140" />
+                                    <attribute name="marginRight" value="16" />
+                                    <attribute name="borderRadius" value="16" />
+                                    <attribute name="justifyContent" value="center" />
+                                    <attribute name="alignItems" value="center" />
+                                </styleBinding>
+                                <conditions>
+                                    <condition type="==" left="$line_num" right="2" executionType="1">
+                                        <styleBinding width="296" />
+                                    </condition>
+                                    <condition type="==" left="$line_num" right="2.5" executionType="1">
+                                        <styleBinding width="230" />
+                                    </condition>
+                                    <condition type="==" left="$line_num" right="3.5" executionType="1">
+                                        <styleBinding width="160" />
+                                    </condition>
+                                    <condition type="!=" left="$yhjBg" right="null" executionType="1">
+                                        <styleBinding backgroundColor="$yhjBg" />
+                                    </condition>
+                                </conditions>
+                                <subViews>
+                                    <label value="RMB" lines="1">
+                                        <styleBinding>
+                                            <attribute name="lineHeight" value="30" />
+                                            <attribute name="textAlign" value="center" />
+                                            <attribute name="fontSize" value="16" />
+                                            <attribute name="color" value="#444444" />
+                                        </styleBinding>
+                                        <conditions>
+                                            <condition type="!=" left="$title" right="null" executionType="1">
+                                                <dataBinding>
+                                                    <data name="value" value="$title" />
+                                                </dataBinding>
+                                            </condition>
+                                            <condition type="!=" left="$textColor" right="null" executionType="1">
+                                                <styleBinding color="$textColor" />
+                                            </condition>
+                                        </conditions>
+                                    </label>
+                                    <label value="10" lines="1">
+                                        <styleBinding>
+                                            <attribute name="height" value="70" />
+                                            <attribute name="lineHeight" value="70" />
+                                            <attribute name="fontSize" value="68" />
+                                            <attribute name="color" value="#000000" />
+                                            <attribute name="fontWeight" value="700" />
+                                        </styleBinding>
+                                        <conditions>
+                                            <condition type="!=" left="$yhqArray.[?].number" right="null" executionType="1">
+                                                <dataBinding>
+                                                    <data name="value" value="$yhqArray.[?].number" />
+                                                </dataBinding>
+                                            </condition>
+                                            <condition type="!=" left="$numberColor" right="null" executionType="1">
+                                                <styleBinding color="$numberColor" />
+                                            </condition>
+                                            <condition type="==" left="$line_num" right="3" executionType="1">
+                                                <styleBinding fontSize="60" />
+                                            </condition>
+                                            <condition type="==" left="$line_num" right="3.5" executionType="1">
+                                                <styleBinding fontSize="54" />
+                                            </condition>
+                                        </conditions>
+                                    </label>
+                                    <label value="无门槛" lines="1">
+                                        <styleBinding>
+                                            <attribute name="textAlign" value="center" />
+                                            <attribute name="lineHeight" value="20" />
+                                            <attribute name="fontSize" value="20" />
+                                            <attribute name="color" value="#444444" />
+                                        </styleBinding>
+                                        <conditions>
+                                            <condition type="!=" left="$yhqArray.[?].tj" right="null" executionType="1">
+                                                <dataBinding>
+                                                    <data name="value" value="$yhqArray.[?].tj" />
+                                                </dataBinding>
+                                            </condition>
+                                            <condition type="!=" left="$textColor" right="null">
+                                                <styleBinding color="$textColor" />
+                                            </condition>
+                                        </conditions>
+                                    </label>
+                                </subViews>
+                                <events>
+                                    <event type="click">
+                                        <actions>
+                                            <userTrack>
+                                                <utParams>
+                                                    <params>
+                                                        <param name="wp_p" value="1" />
+                                                    </params>
+                                                </utParams>
+                                            </userTrack>
+                                            <openURL url="$yhqArray.[?].url" />
+                                        </actions>
+                                    </event>
+                                </events>
+                            </container>
+                        </template>
+                    </foreach>
+                </container>
+                <!--下间距-->
+                <container>
+                    <layout type="linearLayout" />
+                    <styleBinding>
+                        <attribute name="width" value="640" />
+                        <attribute name="height" value="20" />
+                    </styleBinding>
+                    <conditions>
+                        <condition type="!=" left="$marginBottom" right="null" executionType="1">
+                            <styleBinding height="$marginBottom" />
+                        </condition>
+                    </conditions>
+                </container>
+            </subViews>
+        </container>
+    </view>
+</ui>

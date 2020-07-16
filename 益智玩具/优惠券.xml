@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ui>
+  <view>
+    <container>
+      <layout type="linearLayout" />
+      <editProperty>
+        <dataDefines>
+          <dataDefine name="line_num" type="radio" isNull="true" propertyName="每屏显示数量">
+            <config type="sync">
+              <data text="2个" value="2" defaultSelect="false" />
+              <data text="2个半" value="2.5" defaultSelect="false" />
+              <data text="3个" value="3" defaultSelect="true" />
+              <data text="3个半" value="3.5" defaultSelect="false" />
+            </config>
+          </dataDefine>
+          <dataDefine name="title" type="text" isNull="true" propertyName="优惠券文字，例RMB" />
+          <dataDefine name="yhqArray" type="jsonArray" min="1" max="8" propertyName="★ 优惠券设置" isNull="true">
+            <param name="number" type="text" isNull="true" propertyName="┏ 优惠券金额" />
+            <param name="tj" type="text" isNull="true" propertyName="┣ 使用条件" />
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true" propertyName="┗ 跳转链接(点击右侧图标选择)" />
+          </dataDefine>
+          <dataDefine name="mkType" type="radio" isNull="true" propertyName="▼ 模块样式设置 ▼ ------------------------------------------------">
+            <config type="sync">
+              <data text="收起设置" value="false" defaultSelect="true" />
+              <data text="展开设置" value="true" defaultSelect="false" />
+            </config>
+          </dataDefine>
+          <dataDefine name="mkBg" type="text" isNull="true" propertyName="模块背景颜色，例#000000" refer="mkType:true" />
+          <dataDefine name="yhqBgImg" type="image" isNull="true" propertyName="优惠券背景图片(宽190，高130)" refer="mkType:true" />
+          <dataDefine name="numberColor" type="text" isNull="true" propertyName="优惠券金额颜色，例#000000" refer="mkType:true" />
+          <dataDefine name="textColor" type="text" isNull="true" propertyName="优惠券文字颜色，例#000000" refer="mkType:true" />
+          <dataDefine name="yhqBtn" type="image" isNull="true" propertyName="优惠券按钮图片(宽110，高32)" refer="mkType:true" />
+          <dataDefine name="marginTop" type="text" isNull="true" propertyName="模块上间距(默认20)" refer="mkType:true" />
+          <dataDefine name="marginBottom" type="text" isNull="true" propertyName="模块下间距(默认20)" refer="mkType:true" />
+        </dataDefines>
+      </editProperty>
+      <styleBinding>
+        <attribute name="width" value="640" />
+        <attribute name="backgroundColor" value="#f5f5f5" />
+      </styleBinding>
+      <conditions>
+        <condition type="!=" left="$mkBg" right="null" executionType="1">
+          <styleBinding backgroundColor="$mkBg" />
+        </condition>
+      </conditions>
+      <subViews>
+        <!--上间距-->
+        <container>
+          <layout type="linearLayout" />
+          <styleBinding>
+            <attribute name="width" value="640" />
+            <attribute name="height" value="20" />
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$marginTop" right="null" executionType="1">
+              <styleBinding height="$marginTop" />
+            </condition>
+          </conditions>
+        </container>
+        <!--走马灯-->
+        <container>
+          <layout type="linearLayout" orientation="horizontal" scroll="2" />
+          <styleBinding>
+            <attribute name="width" value="608" />
+            <attribute name="marginLeft" value="16" />
+          </styleBinding>
+          <foreach start="0" step="1">
+            <array value="$yhqArray" />
+            <template>
+              <container>
+                <layout type="linearLayout" orientation="vertical" />
+                <styleBinding>
+                  <attribute name="width" value="190" />
+                  <attribute name="height" value="146" />
+                  <attribute name="marginRight" value="20" />
+                  <attribute name="borderRadius" value="16" />
+                  <attribute name="justifyContent" value="center" />
+                  <attribute name="alignItems" value="center" />
+                </styleBinding>
+                <conditions>
+                  <condition type="==" left="$line_num" right="2" executionType="1">
+                    <styleBinding width="294" height="217"/>
+                  </condition>
+                  <condition type="==" left="$line_num" right="2.5" executionType="1">
+                    <styleBinding width="227" height="171"/>
+                  </condition>
+                  <condition type="==" left="$line_num" right="3.5" executionType="1">
+                    <styleBinding width="158" height="124"/>
+                  </condition>
+                </conditions>
+                <subViews>
+                  <!-- 优惠券背景 -->
+                  <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01drimuQ1dQqKamY0si_!!800803731.png">
+                    <styleBinding>
+                      <attribute name="width" value="190" />
+                      <attribute name="height" value="130" />
+                      <attribute name="position" value="absolute" />
+                      <attribute name="top" value="0" />
+                    </styleBinding>
+                    <conditions>
+                      <condition type="==" left="$line_num" right="2" executionType="1">
+                        <styleBinding width="294" height="201" />
+                      </condition>
+                      <condition type="==" left="$line_num" right="2.5" executionType="1">
+                        <styleBinding width="227" height="155"/>
+                      </condition>
+                      <condition type="==" left="$line_num" right="3.5" executionType="1">
+                        <styleBinding width="158" height="108"/>
+                      </condition>
+                      <condition type="!=" left="$yhqBgImg" right="null" executionType="1">
+                        <dataBinding>
+                          <data name="url" value="$yhqBgImg" />
+                        </dataBinding>
+                      </condition>
+                    </conditions>
+                  </image>
+                  <container>
+                    <layout type="linearLayout" orientation="horizontal" />
+                    <styleBinding>
+                      <attribute name="alignItems" value="flex-end" />
+                      <attribute name="marginTop" value="-30" />
+                    </styleBinding>
+                    <conditions>
+                      <condition type="==" left="$line_num" right="3.5" executionType="1">
+                        <styleBinding marginTop="-35" />
+                      </condition>
+                    </conditions>
+                    <subViews>
+                      <label value="￥" lines="1">
+                        <styleBinding>
+                          <attribute name="lineHeight" value="30" />
+                          <attribute name="textAlign" value="left" />
+                          <attribute name="fontSize" value="24" />
+                          <attribute name="color" value="#ffffff" />
+                        </styleBinding>
+                        <conditions>
+                          <condition type="!=" left="$title" right="null" executionType="1">
+                            <dataBinding>
+                              <data name="value" value="$title" />
+                            </dataBinding>
+                          </condition>
+                          <condition type="!=" left="$textColor" right="null" executionType="1">
+                            <styleBinding color="$textColor" />
+                          </condition>
+                        </conditions>
+                      </label>
+                      <label value="5" lines="1">
+                        <styleBinding>
+                          <attribute name="height" value="50" />
+                          <attribute name="lineHeight" value="50" />
+                          <attribute name="fontSize" value="52" />
+                          <attribute name="color" value="#ffffff" />
+                          <attribute name="fontWeight" value="700" />
+                        </styleBinding>
+                        <conditions>
+                          <condition type="!=" left="$yhqArray.[?].number" right="null" executionType="1">
+                            <dataBinding>
+                              <data name="value" value="$yhqArray.[?].number" />
+                            </dataBinding>
+                          </condition>
+                          <condition type="!=" left="$numberColor" right="null" executionType="1">
+                            <styleBinding color="$numberColor" />
+                          </condition>
+                          <condition type="==" left="$line_num" right="2" executionType="1">
+                            <styleBinding fontSize="68" height="60" lineHeight="60"/>
+                          </condition>
+                          <condition type="==" left="$line_num" right="2.5" executionType="1">
+                            <styleBinding fontSize="60" />
+                          </condition>
+                          <condition type="==" left="$line_num" right="3" executionType="1">
+                            <styleBinding fontSize="52" />
+                          </condition>
+                          <condition type="==" left="$line_num" right="3.5" executionType="1">
+                            <styleBinding fontSize="48" height="45" lineHeight="45"/>
+                          </condition>
+                        </conditions>
+                      </label>
+                    </subViews>
+                  </container>
+                  <label value="满100元使用" lines="1">
+                    <styleBinding>
+                      <attribute name="textAlign" value="center" />
+                      <attribute name="lineHeight" value="20" />
+                      <attribute name="fontSize" value="18" />
+                      <attribute name="color" value="#ffffff" />
+                      <attribute name="marginTop" value="15" />
+                    </styleBinding>
+                    <conditions>
+                      <condition type="==" left="$line_num" right="2" executionType="1">
+                        <styleBinding marginTop="25" fontSize="24" lineHeight="30"/>
+                      </condition>
+                      <condition type="==" left="$line_num" right="2.5" executionType="1">
+                        <styleBinding marginTop="20" fontSize="20"/>
+                      </condition>
+                      <condition type="==" left="$line_num" right="3.5" executionType="1">
+                        <styleBinding marginTop="5"/>
+                      </condition>
+                      <condition type="!=" left="$textColor" right="null" executionType="1">
+                        <styleBinding color="$textColor" />
+                      </condition>
+                      <condition type="!=" left="$yhqArray.[?].tj" right="null" executionType="1">
+                        <dataBinding>
+                          <data name="value" value="$yhqArray.[?].tj" />
+                        </dataBinding>
+                      </condition>
+                    </conditions>
+                  </label>
+                  <!-- 按钮 -->
+                  <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN016CkL4m1dQqKamXkFL_!!800803731.png">
+                    <styleBinding>
+                      <attribute name="width" value="110" />
+                      <attribute name="height" value="32" />
+                      <attribute name="position" value="absolute" />
+                      <attribute name="bottom" value="0" />
+                    </styleBinding>
+                    <conditions>
+                      <condition type="!=" left="$yhqBtn" right="null" executionType="1">
+                        <dataBinding>
+                          <data name="url" value="$yhqBtn" />
+                        </dataBinding>
+                      </condition>
+                    </conditions>
+                  </image>
+                </subViews>
+                <events>
+                  <event type="click">
+                    <actions>
+                      <userTrack>
+                        <utParams>
+                          <params>
+                            <param name="wp_p" value="1" />
+                          </params>
+                        </utParams>
+                      </userTrack>
+                      <openURL url="$yhqArray.[?].url" />
+                    </actions>
+                  </event>
+                </events>
+              </container>
+            </template>
+          </foreach>
+        </container>
+        <!--下间距-->
+        <container>
+          <layout type="linearLayout" />
+          <styleBinding>
+            <attribute name="width" value="640" />
+            <attribute name="height" value="20" />
+          </styleBinding>
+          <conditions>
+            <condition type="!=" left="$marginBottom" right="null" executionType="1">
+              <styleBinding height="$marginBottom" />
+            </condition>
+          </conditions>
+        </container>
+      </subViews>
+    </container>
+  </view>
+</ui>
