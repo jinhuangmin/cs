@@ -1,0 +1,47 @@
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * 
+	 * wdragUI
+	 * 配套css
+	 * 操控器样式
+	 * 
+	 */
+	.wdraggable-ui{ position: absolute; cursor: move;}
+	.wdraggable-ui pre{ width: 100%; height: 100%; overflow: hidden; white-space: pre-wrap; margin: 0; font-family: inherit; font-size: 1em;}
+	.jedit-border{ position: absolute; display: none; z-index: 10; }
+	.jedit-hover,.jedit-SHOW{ display: block;}
+	.jedit-border .jui-shandler{position: absolute;overflow: hidden;font-size: 0; line-height: 0;z-index: 1;}
+	.jedit-border .jui-shandler-n{cursor: n-resize; border:none; background: url(../img/xian_x.gif) center bottom repeat-x;} 
+	.jedit-border .jui-shandler-e{cursor: e-resize; border:none; background: url(../img/xian_y.gif) center left repeat-y;} 
+	.jedit-border .jui-shandler-s{cursor: s-resize; border:none; background: url(../img/xian_x.gif) center top repeat-x;} 
+	.jedit-border .jui-shandler-w{cursor: w-resize; border:none; background: url(../img/xian_y.gif) center right repeat-y;} 
+	.jedit-border .jui-shandler-bl{cursor: sw-resize;} 
+	.jedit-border .jui-shandler-br{cursor: se-resize;} 
+	.jedit-border .jui-shandler-tl{cursor: nw-resize;} 
+	.jedit-border .jui-shandler-tr{cursor: ne-resize;} 
+	.jedit-hover .jui-shandler-bl,.jedit-hover .jui-shandler-br,.jedit-hover .jui-shandler-tl,.jedit-hover .jui-shandler-tr{ display: none;}
+	.jedit-border .jui-shandler-bl,.jedit-border .jui-shandler-br,.jedit-border .jui-shandler-tl,.jedit-border .jui-shandler-tr{border-radius: 100%; background: #ffffff;border: 1px solid #3089dc;width: 9px;height: 9px;}
+	.jedit-hover .jui-shandler-n{border-bottom:1px dashed #3089dc; background: none;} 
+	.jedit-hover .jui-shandler-e{border-left:1px dashed #3089dc; background: none;} 
+	.jedit-hover .jui-shandler-s{border-top:1px dashed #3089dc; background: none;} 
+	.jedit-hover .jui-shandler-w{border-right:1px dashed #3089dc; background: none;} 
+	/*
+	* 锁定
+	*/
+	.jedit-locking .jui-shandler-bl,.jedit-locking .jui-shandler-br,.jedit-locking .jui-shandler-tl,.jedit-locking .jui-shandler-tr{ display: none; }
+	.jedit-locking .jui-shandler-n{border-bottom:1px dashed #aaa; background:none;cursor: move;} 
+	.jedit-locking .jui-shandler-e{border-left:1px dashed #aaa; background:none;cursor: move;} 
+	.jedit-locking .jui-shandler-s{border-top:1px dashed #aaa; background:none;cursor: move;} 
+	.jedit-locking .jui-shandler-w{border-right:1px dashed #aaa; background:none;cursor: move;} 
+	.jedit-disabledResizable .jui-shandler-bl,.jedit-disabledResizable .jui-shandler-br,.jedit-disabledResizable .jui-shandler-tl,.jedit-disabledResizable .jui-shandler-tr{ display: none;}
+	.jedit-disabledResizable .jui-shandler-n{cursor: move;} 
+	.jedit-disabledResizable .jui-shandler-e{cursor: move;} 
+	.jedit-disabledResizable .jui-shandler-s{cursor: move;} 
+	.jedit-disabledResizable .jui-shandler-w{cursor: move;} 
+	

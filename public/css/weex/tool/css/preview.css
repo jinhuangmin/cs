@@ -1,0 +1,5 @@
+
+style{display: none;}
+.wdraggable-ui{ position: absolute;}
+.pageBox{ position: relative; top: 0; left: 0; right: 0; padding-top: 0;}
+.pageBox .hot-box .appLink{background: rgba(0, 0, 0, 0);}
