@@ -1,188 +1,513 @@
-<?xml version="1.0" encoding="GB2312"?>
-<ui>
-	<view> 
-		<container>
-			<layout type="linearLayout" />
-			<styleBinding> 
-				<attribute name="width" value="750" />
-  				<attribute name="backgroundColor" value="#f5f5f5" />
-  				<attribute name="paddingTop" value="0"/> 
-				<attribute name="paddingBottom" value="20"/>
-			</styleBinding>
-			<conditions>
-				<condition type="!=" left="$mkBg" right="null" executionType="1">
-					<styleBinding backgroundColor="$mkBg" />
-				</condition> 
-                <condition type="!=" left="$marginTop" right="null" executionType="1"> 
-                    <styleBinding paddingTop="$marginTop"/>
-                </condition>
-                <condition type="!=" left="$marginBottom" right="null" executionType="1"> 
-                    <styleBinding paddingBottom="$marginBottom"/>
-                </condition>
-			</conditions>
-			<subViews>
-       <!-- 文字标题 -->
-			<container>
-				<layout type="linearLayout" />
-				<styleBinding>
-					<attribute name="width" value="750"/> 
-					<attribute name="paddingBottom" value="10"/>
-				</styleBinding>
-				<subViews>
-					<label value="$bTitle" lines="1">
-						<styleBinding>
-							<attribute name="height" value="40"/>
-							<attribute name="width" value="750"/>
-							<attribute name="textAlign" value="center"/>
-							<attribute name="lineHeight" value="40"/>
-							<attribute name="fontSize" value="32"/>
-							<attribute name="color" value="#010101"/>
-							<attribute name="marginTop" value="36"/>
-							<attribute name="fontWeight" value="700"/>
-						</styleBinding>
-						<conditions>
-							<condition type="!=" left="$hdColor" right="null" executionType="1">
-								<styleBinding color="$hdColor" />
-							</condition>
-							<condition type="!=" left="$hdSize" right="null" executionType="1">
-								<styleBinding fontSize="$hdSize" />
-							</condition>
-						</conditions>
-					</label>
-					<label value="$sTitle" lines="1">
-						<styleBinding>
-							<attribute name="height" value="30"/>
-							<attribute name="width" value="750"/>
-							<attribute name="textAlign" value="center"/>
-							<attribute name="lineHeight" value="30"/>
-							<attribute name="fontSize" value="22"/>
-							<attribute name="color" value="#444444"/>
-							<attribute name="marginTop" value="10"/>
-						</styleBinding>
-						<conditions>
-							<condition type="==" left="$sTitle" right="null" executionType="1">
-								<styleBinding marginTop="0" height="0" />
-							</condition>
-							<condition type="!=" left="$hdColor2" right="null" executionType="1">
-								<styleBinding color="$hdColor2" />
-							</condition>
-						</conditions>
-					</label>
-				</subViews>
-			</container>
-				<!--内容-->
-				<container>
-					<layout type="linearLayout" />
-					<styleBinding>
-						<attribute name="width" value="750" />
-					</styleBinding>
-					<subViews>
-						<!-- 1行2列 -->
-						<grid gridColumn="2" unScroll="true" needDownRefresh="false" needNextPage="false" dataSource="$images">
-							<styleBinding>
-								<attribute name="width" value="710" />
-								<attribute name="marginLeft" value="20" />
-							</styleBinding>
-							<array value="$images" />
-							<cell>
-								<!--海报-->
-								<container>
-									<layout type="absoluteLayout" />
-									<styleBinding>
-										<attribute name="width" value="350" />
-										<attribute name="height" value="270" />
-										<attribute name="backgroundColor" value="#f5f5f5" />
-										<attribute name="marginTop" value="10" />
-										<attribute name="marginRigth" value="10" />
-										<attribute name="position" value="relative" />
-									</styleBinding>
-									<subViews>
-										<!-- 背景图片 -->
-										<image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01uaScE71dQqETKKbsT_!!800803731.jpg">
-											<styleBinding>
-												<attribute name="width" value="350" />
-												<attribute name="height" value="270" />
-												<attribute name="position" value="absolute" />
-											</styleBinding>
-											<conditions>
-												<condition type="!=" left="$images.[?].imgBg" right="null">
-													<dataBinding>
-														<data name="url" value="$images.[?].imgBg"/>
-													</dataBinding>
-												</condition>
-											</conditions>
-										</image>
-										<!-- 图片 -->
-										<image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN01xhju6U1dQqES0hs97_!!800803731.png">
-											<styleBinding>
-												<attribute name="width" value="70" />
-												<attribute name="height" value="70" />
-												<attribute name="marginLeft" value="140" />
-												<attribute name="marginTop" value="80" />
-											</styleBinding>
-											<conditions> 
-												<condition type="!=" left="$images.[?].img" right="null">
-													<dataBinding>
-														<data name="url" value="$images.[?].img"/>
-													</dataBinding>
-												</condition>
-											</conditions>
-										</image>
-										<!-- 标题 -->
-										<label value="High Quality" lines="1">
-											<styleBinding>
-												<attribute name="width" value="310"/>
-												<attribute name="lineHeight" value="50"/>
-												<attribute name="fontSize" value="22"/>
-												<attribute name="fontWeight" value="600"/>
-												<attribute name="marginTop" value="150"/>
-												<attribute name="marginLeft" value="20" />
-												<attribute name="color" value="#ffffff"/>
-												<attribute name="textAlign" value="center"/>
-											</styleBinding>
-											<conditions>
-												<condition type="!=" left="$images.[?].title" right="null" executionType="1">
-													<dataBinding>
-														<data name="value" value="$images.[?].title"/>
-													</dataBinding>
-												</condition>
-												<condition type="!=" left="$iconColor" right="null">
-													<styleBinding color="$iconColor"/>
-												</condition>
-											</conditions> 
-										</label> 
+<?xml version="1.0" encoding="utf-8"?>
 
-									</subViews> 
-                                    <events>
-                                      <event type="click">
-                                        <actions>
-                                          <userTrack utType="Image" utName="image">
-                                            <utParams>
-                                              <params>
-                                              <param name="wp_app" value="weapp" />
-                                              <param name="wp_p" value="$wp_pk" />
-                                              <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
-                                            </params>
-                                          </utParams>
-                                        </userTrack>
-                                        <openURL url="$images.[?].url">
-                                          <params>
-                                          <param name="wp_app" value="weapp" />
-                                          <param name="wp_pk" value="$wp_pk" />
-                                          <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
-                                        </params>
-                                      </openURL>
-                                    </actions>
-                                  </event>
-                                </events>
-								</container>
+<ui> 
+  <view> 
+    <container> 
+      <layout type="linearLayout"/>  
+      <editProperty> 
+        <dataDefines> 
+          <dataDefine name="bgImg" type="radio" isNull="true" propertyName="★ 背景大图设置"> 
+            <config type="sync"> 
+              <data text="显示" value="1" defaultSelect="true"/>  
+              <data text="不显示" value="2" defaultSelect="false"/>  
+            </config> 
+          </dataDefine> 
+          <dataDefine name="mkBgImg" type="image" isNull="true" propertyName="模块背景图片(宽640，高250)" refer="bgImg:1"/> 
+          <dataDefine name="itemLeft" type="text" isNull="true" propertyName="分类区域左侧距离(默认80)" refer="bgImg:1"/>  
 
-							</cell>
-						</grid>
-					</subViews>
-				</container>
+          <dataDefine name="itemArray" type="jsonArray" min="3" max="30" propertyName="★ 分类内容设置" isNull="true"> 
+            <param name="title" type="text" isNull="true" propertyName="┏ 分类文字"/> 
+            <param name="url" type="url" validateType="taokeurl||wirelessurl" isNull="true" propertyName="┗ 跳转链接(点击右侧图标选择)"/>  
+            <param name="bg" type="text" isNull="true" propertyName=" 背景颜色，例#000000"/>  
+            <param name="color" type="text" isNull="true" propertyName=" 文字颜色，例#000000"/>  
+          </dataDefine>  
+          <dataDefine name="picRadius" type="radio" isNull="true" propertyName="分类圆角效果"> 
+            <config type="sync"> 
+              <data text="无圆角" value="0" defaultSelect="false"/> 
+              <data text="小圆角" value="8" defaultSelect="false"/>  
+              <data text="中圆角" value="16" defaultSelect="false"/>  
+              <data text="大圆角" value="40" defaultSelect="true"/>  
+            </config> 
+          </dataDefine>   
 
-			</subViews>
-		</container>
-	</view>
+          <dataDefine name="mkType" type="radio" isNull="true" propertyName="★ 模块样式设置"> 
+            <config type="sync"> 
+              <data text="收起设置" value="false" defaultSelect="true"/>  
+              <data text="展开设置" value="true" defaultSelect="false"/> 
+            </config> 
+          </dataDefine>    
+          <dataDefine name="moreImg" type="text" isNull="true" propertyName="右侧更多gif动图地址(宽40，高250，请生成短连接)" refer="mkType:true"/>  
+          <dataDefine name="mkBg" type="text" isNull="true" propertyName="模块背景颜色，例#000000" refer="mkType:true"/>  
+          <dataDefine name="itemBg" type="text" isNull="true" propertyName="分类背景颜色，例#000000" refer="mkType:true"/>  
+          <dataDefine name="titleColor" type="text" isNull="true" propertyName="分类文字颜色，例#000000" refer="mkType:true"/>  
+          <dataDefine name="weight" type="radio" isNull="true" propertyName="分类文字粗细" refer="mkType:true"> 
+            <config type="sync"> 
+              <data text="加粗" value="700" defaultSelect="false"/>  
+              <data text="不加粗" value="400" defaultSelect="true"/> 
+            </config> 
+          </dataDefine>  
+          <dataDefine name="marginTop" type="text" isNull="true" propertyName="模块上间距(默认10)" refer="mkType:true"/>  
+          <dataDefine name="marginBottom" type="text" isNull="true" propertyName="模块下间距(默认10)" refer="mkType:true"/> 
+        </dataDefines> 
+      </editProperty>  
+      <styleBinding> 
+        <attribute name="width" value="640"/>  
+        <attribute name="backgroundColor" value="#f5f5f5"/> 
+      </styleBinding>  
+      <conditions> 
+        <condition type="!=" left="$mkBg" right="null"> 
+          <styleBinding backgroundColor="$mkBg"/> 
+        </condition> 
+      </conditions>  
+      <subViews> 
+        <!--上间距-->  
+        <container> 
+          <layout type="linearLayout"/>  
+          <styleBinding> 
+            <attribute name="width" value="640"/>  
+            <attribute name="height" value="10"/> 
+          </styleBinding>  
+          <conditions> 
+            <condition type="!=" left="$marginTop" right="null" executionType="1"> 
+              <styleBinding height="$marginTop"/> 
+            </condition> 
+          </conditions> 
+        </container> 
+
+        <container> 
+          <layout type="linearLayout" />  
+          <styleBinding> 
+            <attribute name="width" value="640"/>
+            <attribute name="height" value="250"/>
+          </styleBinding>  
+          <subViews> 
+            <!-- 背景图 -->  
+            <image url="https://img.alicdn.com/imgextra/i4/800803731/O1CN016FpufL1dQqKS92sXP_!!800803731.png"> 
+              <styleBinding> 
+                <attribute name="width" value="640"/>  
+                <attribute name="height" value="250"/> 
+                <attribute name="position" value="absolute"/> 
+              </styleBinding>  
+              <conditions> 
+                <condition type="!=" left="$mkBgImg" right="null" executionType="1"> 
+                  <dataBinding> 
+                    <data name="url" value="$mkBgImg"/> 
+                  </dataBinding> 
+                </condition> 
+                <condition type="==" left="$bgImg" right="2" executionType="1"> 
+                  <styleBinding width="0" height="0"/>  
+                </condition>   
+              </conditions>  
+            </image>  
+            
+            <!-- 滑动内容3排-->
+            <container>
+              <layout type="linearLayout"/>
+              <styleBinding>
+                <attribute name="height" value="250"/>
+                <attribute name="marginRight" value="40"/>
+                <attribute name="marginLeft" value="80"/> 
+              </styleBinding>
+              <conditions>
+                <condition type="!=" left="$itemLeft" right="null" executionType="1"> 
+                  <styleBinding marginLeft="$itemLeft"/>  
+                </condition>   
+                <condition type="==" left="$bgImg" right="2" executionType="1"> 
+                  <styleBinding marginLeft="16"/>  
+                </condition>  
+              </conditions>  
+              <subViews> 
+                <container>
+                  <layout type="linearLayout" orientation="horizontal" scroll="2"/>
+                  <styleBinding>
+                    <attribute name="height" value="250"/>
+                  </styleBinding>
+                  <subViews> 
+                    <container>
+                      <layout type="linearLayout"/>
+                      <styleBinding>
+                        <attribute name="height" value="250"/>
+                      </styleBinding> 
+                      <subViews> 
+                        <!-- 第一排 --> 
+                        <container>
+                          <layout type="linearLayout" orientation="horizontal"/>
+                          <styleBinding>
+                            <attribute name="height" value="40"/> 
+                            <attribute name="marginTop" value="40"/> 
+                          </styleBinding> 
+                          <foreach start="0" step="1" >
+                            <array value="$itemArray"/>
+                            <template>
+                              <container> 
+                                <layout type="linearLayout"/>  
+                                <styleBinding> 
+                                  <attribute name="width" value="0"/> 
+                                  <attribute name="height" value="40"/> 
+                                  <attribute name="marginRight" value="30"/> 
+                                  <attribute name="paddingRight" value="30"/> 
+                                  <attribute name="paddingLeft" value="30"/> 
+                                  <attribute name="backgroundColor" value="#ffffff"/> 
+                                </styleBinding>  
+                                <conditions> 
+                                  <condition type="==" left="$picRadius" right="8" executionType="1"> 
+                                    <styleBinding borderRadius="8"/> 
+                                  </condition>  
+                                  <condition type="==" left="$picRadius" right="16" executionType="1"> 
+                                    <styleBinding borderRadius="16"/> 
+                                  </condition>  
+                                  <condition type="==" left="$picRadius" right="40" executionType="1"> 
+                                    <styleBinding borderRadius="40"/> 
+                                  </condition>     
+                                  <condition type="!=" left="$itemBg" right="null" executionType="1"> 
+                                    <styleBinding backgroundColor="$itemBg"/> 
+                                  </condition>
+                                  <condition type="!=" left="$itemArray.[?].bg" right="null" executionType="1"> 
+                                    <styleBinding backgroundColor="$itemArray.[?].bg"/> 
+                                  </condition> 
+
+                                  <condition type="==" left="$_component_.foreachIndex" right="1" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="4" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition> 
+                                  <condition type="==" left="$_component_.foreachIndex" right="7" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition> 
+                                  <condition type="==" left="$_component_.foreachIndex" right="10" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition> 
+                                  <condition type="==" left="$_component_.foreachIndex" right="13" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="16" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="19" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="22" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="25" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="28" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                </conditions> 
+                                <subViews> 
+                                  <label value="新品上市" lines="1"> 
+                                    <styleBinding> 
+                                      <attribute name="height" value="40"/>  
+                                      <attribute name="lineHeight" value="40"/>  
+                                      <attribute name="fontSize" value="24"/>  
+                                      <attribute name="color" value="#333333"/>  
+                                    </styleBinding>  
+                                    <conditions> 
+                                      <condition type="!=" left="$itemArray.[?].title" right="null" executionType="1">
+                                        <dataBinding>
+                                          <data name="value" value="$itemArray.[?].title"/>
+                                        </dataBinding>
+                                      </condition>  
+                                      <condition type="!=" left="$titleColor" right="null" executionType="1"> 
+                                        <styleBinding color="$titleColor"/> 
+                                      </condition> 
+                                      <condition type="==" left="$weight" right="700" executionType="1"> 
+                                        <styleBinding fontWeight="700"/> 
+                                      </condition>  
+                                      <condition type="!=" left="$itemArray.[?].color" right="null" executionType="1"> 
+                                        <styleBinding color="$itemArray.[?].color"/> 
+                                      </condition>  
+                                    </conditions> 
+                                  </label> 
+                                </subViews>  
+                                <events> 
+                                  <event type="click"> 
+                                    <actions type="openURL"> 
+                                      <userTrack> 
+                                        <utParams> 
+                                          <params> 
+                                            <param name="wp_p" value="1"/> 
+                                          </params> 
+                                        </utParams> 
+                                      </userTrack>  
+                                      <openURL url="$itemArray.[?].url"/> 
+                                    </actions> 
+                                  </event> 
+                                </events> 
+                              </container> 
+                            </template>
+                          </foreach>
+                        </container>
+                        <!-- 第二排 -->  
+                        <container>
+                          <layout type="linearLayout" orientation="horizontal"/>
+                          <styleBinding>
+                            <attribute name="marginTop" value="25"/>
+                            <attribute name="marginLeft" value="16"/> 
+                            <attribute name="height" value="40"/> 
+                          </styleBinding> 
+                          <foreach start="0" step="1" >
+                            <array value="$itemArray"/>
+                            <template>
+                              <container> 
+                                <layout type="linearLayout"/>  
+                                <styleBinding> 
+                                  <attribute name="width" value="0"/> 
+                                  <attribute name="height" value="40"/> 
+                                  <attribute name="marginRight" value="30"/> 
+                                  <attribute name="paddingRight" value="30"/> 
+                                  <attribute name="paddingLeft" value="30"/> 
+                                  <attribute name="backgroundColor" value="#ffffff"/> 
+                                </styleBinding>  
+                                <conditions> 
+                                  <condition type="==" left="$picRadius" right="8" executionType="1"> 
+                                    <styleBinding borderRadius="8"/> 
+                                  </condition>  
+                                  <condition type="==" left="$picRadius" right="16" executionType="1"> 
+                                    <styleBinding borderRadius="16"/> 
+                                  </condition>  
+                                  <condition type="==" left="$picRadius" right="40" executionType="1"> 
+                                    <styleBinding borderRadius="40"/> 
+                                  </condition>     
+                                  <condition type="!=" left="$itemBg" right="null" executionType="1"> 
+                                    <styleBinding backgroundColor="$itemBg"/> 
+                                  </condition>
+                                  <condition type="!=" left="$itemArray.[?].bg" right="null" executionType="1"> 
+                                    <styleBinding backgroundColor="$itemArray.[?].bg"/> 
+                                  </condition> 
+
+                                  <condition type="==" left="$_component_.foreachIndex" right="2" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="5" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition> 
+                                  <condition type="==" left="$_component_.foreachIndex" right="8" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition> 
+                                  <condition type="==" left="$_component_.foreachIndex" right="11" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition> 
+                                  <condition type="==" left="$_component_.foreachIndex" right="14" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="17" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="20" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="23" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="26" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="29" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                </conditions> 
+                                <subViews> 
+                                  <label value="爆款热卖" lines="1"> 
+                                    <styleBinding> 
+                                      <attribute name="height" value="40"/>  
+                                      <attribute name="lineHeight" value="40"/>  
+                                      <attribute name="fontSize" value="24"/>  
+                                      <attribute name="color" value="#333333"/>  
+                                    </styleBinding>  
+                                    <conditions> 
+                                      <condition type="!=" left="$itemArray.[?].title" right="null" executionType="1">
+                                        <dataBinding>
+                                          <data name="value" value="$itemArray.[?].title"/>
+                                        </dataBinding>
+                                      </condition>  
+                                      <condition type="!=" left="$titleColor" right="null" executionType="1"> 
+                                        <styleBinding color="$titleColor"/> 
+                                      </condition> 
+                                      <condition type="==" left="$weight" right="700" executionType="1"> 
+                                        <styleBinding fontWeight="700"/> 
+                                      </condition>  
+                                      <condition type="!=" left="$itemArray.[?].color" right="null" executionType="1"> 
+                                        <styleBinding color="$itemArray.[?].color"/> 
+                                      </condition>  
+                                    </conditions> 
+                                  </label> 
+                                </subViews>  
+                                <events> 
+                                  <event type="click"> 
+                                    <actions type="openURL"> 
+                                      <userTrack> 
+                                        <utParams> 
+                                          <params> 
+                                            <param name="wp_p" value="1"/> 
+                                          </params> 
+                                        </utParams> 
+                                      </userTrack>  
+                                      <openURL url="$itemArray.[?].url"/> 
+                                    </actions> 
+                                  </event> 
+                                </events> 
+                              </container> 
+                            </template>
+                          </foreach>
+                        </container>
+                        <!-- 第三排 -->
+                        <container>
+                          <layout type="linearLayout" orientation="horizontal"/>
+                          <styleBinding>
+                            <attribute name="marginTop" value="25"/> 
+                            <attribute name="height" value="40"/> 
+                          </styleBinding> 
+                          <foreach start="0" step="1" >
+                            <array value="$itemArray"/>
+                            <template>
+                              <container> 
+                                <layout type="linearLayout"/>  
+                                <styleBinding> 
+                                  <attribute name="width" value="0"/> 
+                                  <attribute name="height" value="40"/> 
+                                  <attribute name="marginRight" value="30"/> 
+                                  <attribute name="paddingRight" value="30"/> 
+                                  <attribute name="paddingLeft" value="30"/> 
+                                  <attribute name="backgroundColor" value="#ffffff"/> 
+                                </styleBinding>  
+                                <conditions> 
+                                  <condition type="==" left="$picRadius" right="8" executionType="1"> 
+                                    <styleBinding borderRadius="8"/> 
+                                  </condition>  
+                                  <condition type="==" left="$picRadius" right="16" executionType="1"> 
+                                    <styleBinding borderRadius="16"/> 
+                                  </condition>  
+                                  <condition type="==" left="$picRadius" right="40" executionType="1"> 
+                                    <styleBinding borderRadius="40"/> 
+                                  </condition>     
+                                  <condition type="!=" left="$itemBg" right="null" executionType="1"> 
+                                    <styleBinding backgroundColor="$itemBg"/> 
+                                  </condition>
+                                  <condition type="!=" left="$itemArray.[?].bg" right="null" executionType="1"> 
+                                    <styleBinding backgroundColor="$itemArray.[?].bg"/> 
+                                  </condition> 
+
+                                  <condition type="==" left="$_component_.foreachIndex" right="3" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="6" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition> 
+                                  <condition type="==" left="$_component_.foreachIndex" right="9" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition> 
+                                  <condition type="==" left="$_component_.foreachIndex" right="12" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition> 
+                                  <condition type="==" left="$_component_.foreachIndex" right="15" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="18" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="21" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="24" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="27" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                  <condition type="==" left="$_component_.foreachIndex" right="30" executionType="1"> 
+                                    <styleBinding width="auto"/> 
+                                  </condition>
+                                </conditions> 
+                                <subViews> 
+                                  <label value="199选3件" lines="1"> 
+                                    <styleBinding> 
+                                      <attribute name="height" value="40"/>  
+                                      <attribute name="lineHeight" value="40"/>  
+                                      <attribute name="fontSize" value="24"/>  
+                                      <attribute name="color" value="#333333"/>  
+                                    </styleBinding>  
+                                    <conditions> 
+                                      <condition type="!=" left="$itemArray.[?].title" right="null" executionType="1">
+                                        <dataBinding>
+                                          <data name="value" value="$itemArray.[?].title"/>
+                                        </dataBinding>
+                                      </condition>  
+                                      <condition type="!=" left="$titleColor" right="null" executionType="1"> 
+                                        <styleBinding color="$titleColor"/> 
+                                      </condition> 
+                                      <condition type="==" left="$weight" right="700" executionType="1"> 
+                                        <styleBinding fontWeight="700"/> 
+                                      </condition>  
+                                      <condition type="!=" left="$itemArray.[?].color" right="null" executionType="1"> 
+                                        <styleBinding color="$itemArray.[?].color"/> 
+                                      </condition>  
+                                    </conditions> 
+                                  </label> 
+                                </subViews>  
+                                <events> 
+                                  <event type="click"> 
+                                    <actions type="openURL"> 
+                                      <userTrack> 
+                                        <utParams> 
+                                          <params> 
+                                            <param name="wp_p" value="1"/> 
+                                          </params> 
+                                        </utParams> 
+                                      </userTrack>  
+                                      <openURL url="$itemArray.[?].url"/> 
+                                    </actions> 
+                                  </event> 
+                                </events> 
+                              </container> 
+                            </template>
+                          </foreach>
+                        </container>
+                      </subViews>
+                    </container>
+                  </subViews>
+                </container>
+              </subViews>
+            </container>
+
+            <!-- 更多图 -->  
+            <image url="https://tb.cn/XT817gv"> 
+              <styleBinding> 
+                <attribute name="width" value="40"/>  
+                <attribute name="height" value="250"/> 
+                <attribute name="position" value="absolute"/> 
+                <attribute name="top" value="0"/> 
+                <attribute name="right" value="0"/> 
+              </styleBinding>  
+              <conditions> 
+                <condition type="!=" left="$moreImg" right="null" executionType="1"> 
+                  <dataBinding> 
+                    <data name="url" value="$moreImg"/> 
+                  </dataBinding> 
+                </condition>  
+              </conditions>  
+            </image>
+
+          </subViews>
+        </container>
+
+        <!--下间距-->  
+        <container> 
+          <layout type="linearLayout"/>  
+          <styleBinding> 
+            <attribute name="width" value="640"/>  
+            <attribute name="height" value="10"/> 
+          </styleBinding>  
+          <conditions> 
+            <condition type="!=" left="$marginBottom" right="null" executionType="1"> 
+              <styleBinding height="$marginBottom"/> 
+            </condition> 
+          </conditions> 
+        </container> 
+      </subViews> 
+    </container> 
+  </view> 
 </ui>

@@ -1,4 +1,4 @@
-import { React, ReactDOM, openSdk, Button } from '@alife/icbu-mod-lib';
+import { React, ReactDOM, openSdk, Button, Slider } from '@alife/icbu-mod-lib';
 import './index.scss';
 
 class IntlIcbuSmodDemo extends React.Component {
@@ -6,62 +6,99 @@ class IntlIcbuSmodDemo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      hasData: false
+      hasData: false,
+      result: [],
+      auto: true
     }
   }
 
   componentWillMount() {
     const moduleData = this.props.moduleData;
     const { mds, gdc } = moduleData;
-    const fetch = openSdk.fetch('icbu.data.common.multilang.minisite', { bizId: gdc.bizId, productIds: [], strategyName: 'manuallySelect' });
+    //如果是从API上取数据
+    const fetch = openSdk.fetch('icbu.data.product.list', { bizId: gdc.bizId, strategyName: mds.strategyName, countNumber: mds.countNumber, products: mds.products });
+    fetch.then((data) => {
+      this.setState({
+        hasData: true,
+        result: data.success ? data.result : []
+      })
+    })
   }
-
+  autoplay = (a) => {
+    this.setState({
+      auto: a
+    })
+  }
   render() {
-    const { hasData, moduleTitle } = this.state;
     const { mds } = this.props.moduleData;
-    var { url0, url1, url2, url3, url4, url5 } = mds.moduleData;
+    const { auto } = this.state;
     var paddingTop = mds.moduleData.paddingTop ? Number.parseInt(mds.moduleData.paddingTop) : '';
     var paddingBottom = mds.moduleData.paddingBottom ? Number.parseInt(mds.moduleData.paddingBottom) : '';
-    var mk_tits = mds.moduleData.mk_tits ? Number.parseInt(mds.moduleData.mk_tits) : '';
-    var mk_bgDis = mds.moduleData.mk_bgDis == null || mds.moduleData.mk_bgDis == '1' ? 1 : '2';
-    var mk_bgXg = mds.moduleData.mk_bgXg == null || mds.moduleData.mk_bgXg == 'scroll' ? 'scroll' : 'fixed';
+    var scroll_num = mds.moduleData.scroll_num ? Number.parseInt(mds.moduleData.scroll_num) : 1;
     if (mds.moduleData.target === true) {
       var target = "_blank";
     } else {
       var target = "_self";
     }
-    var mk_w = mds.moduleData.mk_w ? mds.moduleData.mk_w : 1440;  
+    var slider_num;
+    if (mds.moduleData.mk_w == 1920) {
+      slider_num = 6;
+    } else if (mds.moduleData.mk_w == 1200) {
+      slider_num = 5;
+    } else {
+      slider_num = 6;
+    }
 
-    var imgInfo = ['https://img.alicdn.com/imgextra/i1/800803731/O1CN01PNUAOj1dQqGwJ9LLv_!!800803731.jpg',
-      'https://img.alicdn.com/imgextra/i1/800803731/O1CN01CnwysF1dQqGwIsxz8_!!800803731.jpg',
-      'https://img.alicdn.com/imgextra/i3/800803731/O1CN01ACz4Kq1dQqGzJ4oQ8_!!800803731.jpg',
-      'https://img.alicdn.com/imgextra/i2/800803731/O1CN01cbauxe1dQqGuNqG5h_!!800803731.jpg',
-      'https://img.alicdn.com/imgextra/i2/800803731/O1CN01xCWhfq1dQqGwJBgp3_!!800803731.jpg',
-      'https://img.alicdn.com/imgextra/i3/800803731/O1CN01CPAsNy1dQqGuNrCGo_!!800803731.jpg'];
+    var gd_zdy = mds.moduleData.gd_zdy ? mds.moduleData.gd_zdy : [{ "img": "", "url": "" }];
 
-
-    var imgitem = [];
-    for (var i = 0; i < 6; i++) {
-      imgitem.push(<div className={'item item' + eval(i) + ' fl pic-style-'+mds.moduleData.animat}>
-        <a target={target} href={eval('url' + i)}>
-          <img className="trans03s" src={eval('mds.moduleData.img1440_' + i) ? eval('mds.moduleData.img1440_' + i) : imgInfo[i]} />
-          <span></span>
+    var itemList = [];
+    if (this.state.result.length != 0) {
+      {
+        this.state.result.map((item, index) => (
+          itemList.push(<a target={target} href={item.productUrl} className={'item'} onMouseEnter={this.autoplay.bind(null, false)} onMouseLeave={this.autoplay.bind(null, true)}>
+            <div className={'big'} style={{ background: mds.moduleData.gd_bg }}>
+              <div className='item_bd' >
+                <div className='img'><img src={gd_zdy[index] && gd_zdy[index].img ? gd_zdy[index].img : item.productImage.url.x350} /></div>
+              </div>
+              <div className={'item_title'} style={{ color: mds.moduleData.gd_titc, height: (mds.moduleData.btn_dis == null || mds.moduleData.btn_dis) ? 20 : 40 }}>{gd_zdy[index] && gd_zdy[index].title ? gd_zdy[index].title : item.productSubject}</div>
+              <div className='item_price' style={{ color: mds.moduleData.ct_bg }}>{item.fobPriceWithoutUnit}</div>
+              {(mds.moduleData.btn_dis == null || mds.moduleData.btn_dis) && <div className='item_btn' style={{ background: mds.moduleData.ct_bg, color: mds.moduleData.gd_btnColor }}>{mds.moduleData.gd_btnText ? mds.moduleData.gd_btnText : 'Inquire Now'}</div>}
+            </div>
+          </a>
+          )
+        ))
+      }
+    } else {
+      for (var i = 0; i < 6; i++) {
+        itemList.push(<a className={'item'} onMouseEnter={this.autoplay.bind(null, false)} onMouseLeave={this.autoplay.bind(null, true)}>
+          <div className={'big'} style={{ background: mds.moduleData.gd_bg }}>
+            <div className='item_bd'>
+              <div className='img'><img src={'https://img.alicdn.com/imgextra/i4/800803731/O1CN01Ihf4EI1dQqKfLVHSn_!!800803731.jpg'} /></div>
+            </div> 
+            <div className={'item_title'} style={{ color: mds.moduleData.gd_titc, height: (mds.moduleData.btn_dis == null || mds.moduleData.btn_dis) ? 20 : 40 }}>Edit Display Product Name Price</div>
+            <div className='item_price' style={{ color: mds.moduleData.ct_bg }}>US $ 6.0 -9.0</div>
+            {(mds.moduleData.btn_dis == null || mds.moduleData.btn_dis) && <div className='item_btn' style={{ background: mds.moduleData.ct_bg, color: mds.moduleData.gd_btnColor }}>{mds.moduleData.gd_btnText ? mds.moduleData.gd_btnText : 'Inquire Now'}</div>}
+          </div>
         </a>
-      </div>
-      );
+        )
+      }
     }
 
     return (
-      <div className={'wm1920 wmitem_show cf'} style={{ background: 'url("' + (mk_bgDis == '1' ? (mds.moduleData.mk_bgImg ? mds.moduleData.mk_bgImg : '') : '') + '") center top no-repeat ' + mk_bgXg, backgroundColor: mds.moduleData.mk_bg ? mds.moduleData.mds.moduleData.mk_bg : '#ffffff', paddingTop: paddingTop, paddingBottom: paddingBottom }}>
-        {mds.moduleData.btitle && <div className='btitle' style={{ color: mds.moduleData.mk_titc, fontFamily: mds.moduleData.mk_titf, fontSize: mk_tits }}>{mds.moduleData.btitle}</div>}
-        {mds.moduleData.btitle && <div className='stitle' style={{ color: mds.moduleData.mk_titc2 }}>{mds.moduleData.stitle ? mds.moduleData.stitle : 'welcome to our shop'}</div>}
-
-        <div className={'fl_box cf'}>
-          {imgitem}
+      <div className={'wm1920'} style={{ backgroundColor: mds.moduleData.mk_bg, paddingTop: paddingTop, paddingBottom: paddingBottom }}>
+        <div className={'mk_bd cf mk_bd' + mds.moduleData.mk_w} style={{ background: mds.moduleData.ct_bg }}>
+          <div className={'mk_w cf mk_w' + mds.moduleData.mk_w}>
+            <div className='tit_box'>
+              <div className='title_icon'><img src={mds.moduleData.title_icon ? mds.moduleData.title_icon : 'https://img.alicdn.com/imgextra/i1/800803731/O1CN01GToSLC1dQqFwsHSCk_!!800803731.png'} /></div>
+              <div className='stitle' style={{ color: mds.moduleData.mk_titc2, fontFamily: mds.moduleData.mk_titf }}>{mds.moduleData.stitle ? mds.moduleData.stitle : 'Product Showcase'}</div>
+              <div className='btitle' style={{ color: mds.moduleData.mk_titc, fontFamily: mds.moduleData.mk_titf }}>{mds.moduleData.btitle ? mds.moduleData.btitle : 'Super Deal!'}</div>
+            </div>
+            <Slider slidesToShow={slider_num} slidesToScroll={scroll_num} autoplaySpeed='5000' autoplay={itemList.length > slider_num ? auto : false} dots='true' className={'item_box cf '}>{itemList}</Slider>
+          </div>
         </div>
       </div>
     );
   }
 };
 
-export default IntlIcbuSmodDemo;  
+export default IntlIcbuSmodDemo; 
