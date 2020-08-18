@@ -1,31 +1,115 @@
-﻿<!DOCTYPE html>
-
-<html>
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <title>js获取鼠标位置</title>
-
-    <script type="text/javascript">
-
-        document.onmousemove = function(e) {
-
-            var loc = "当前位置 x:" + e.pageX + ",y:" + e.pageY
-            console.log(e);
-            document.getElementById("point-loc").innerHTML = loc;
-
-        }
-
-    </script>
-
-</head>
-
-<body>
-
-    <div id="point-loc"></div>
-
-</body>
-
-</html>
+﻿<div class="head">
+    <div class="logo2">
+        <a href="https://www.cnzoom.com">
+            <img src="../public/images/logo/home_logo.png">
+        </a>
+    </div>
+    <div class="nnnna">
+        <ul id="ddmenu">
+            <li class="dflli home">
+                <a target="_blank" class="d-menu" href="https://www.cnzoom.com"><em class='f15'>首页</em></a>
+            </li>
+            <li class="dflli submenu">
+                <a target="_blank" href="https://www.cnzoom.com/weex" class="d-menu"><em class='f15'>无线Weex定制</em></a>
+            </li>
+            <li class="dflli submenu">
+                <a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?designerId=1016893" class="d-menu">
+                    <em class='f15'>PC/无线模板</em>
+                    <svg class="iconfont-symbol " aria-hidden="true" style="position: relative;left: 2px;">
+                        <use xlink:href="#iconsanjiaoxing"></use>
+                    </svg>
+                </a>
+                <ul class="xflul" style="display: none;">
+                    <li class="xflli">
+                        <a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?=&designerId=1016893&productType=0&site=3&price=50-100" class="x-menu">
+                            <svg class="iconfont-symbol " aria-hidden="true"
+                                style="position: relative;left: 2px;top: -1px;transform: scale(0.6);">
+                                <use xlink:href="#iconL"></use>
+                            </svg>
+                            天猫PC端模板
+                        </a>
+                    </li>
+                    <li class="xflli">
+                        <a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?spm=a215h.7721252.1998546510.6.qvSIcI&designerId=1016893&productType=0&site=1003" class="x-menu">
+                            <svg class="iconfont-symbol " aria-hidden="true"
+                                style="position: relative;left: 2px;top: -1px;transform: scale(0.6);">
+                                <use xlink:href="#iconL"></use>
+                            </svg>
+                            天猫、淘宝无线模板
+                        </a>
+                    </li>
+                    <li class="xflli">
+                        <a target="_blank" href="https://zxn.taobao.com/designer_detail.htm?&designerId=1016893&productType=0&site=2" class="x-menu">
+                            <svg class="iconfont-symbol " aria-hidden="true"
+                                style="position: relative;left: 2px;top: -1px;transform: scale(0.6);">
+                                <use xlink:href="#iconL"></use>
+                            </svg>
+                            淘宝PC端模板
+                        </a>
+                    </li>
+                    <li class="xflli">
+                        <a target="_blank" href="https://zhuangxiu.alibaba.com/list.html?viewMarket=icbuzxAll&key=%E6%B2%83%E5%A7%86PC&pageSize=20&startPrice=&endPrice=&sort=sale-show&market=icbuzx" class="x-menu">
+                            <svg class="iconfont-symbol " aria-hidden="true"
+                                style="position: relative;left: 2px;top: -1px;transform: scale(0.6);">
+                                <use xlink:href="#iconL"></use>
+                            </svg>
+                            Alibaba外贸模板
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dflli submenu"><a target="_blank" class="d-menu"><em class='f15'>装修工具</em>
+                    <svg class="iconfont-symbol " aria-hidden="true" style="position: relative;left: 2px;">
+                        <use xlink:href="#iconsanjiaoxing"></use>
+                    </svg>
+                </a>
+                <ul class="xflul" style="display: none;">
+                    <li class="xflli">
+                        <a target="_blank" href="https://cnzoom.com/3.0/" class="x-menu">
+                            <svg class="iconfont-symbol " aria-hidden="true"
+                                style="position: relative;left: 2px;top: -1px;transform: scale(0.6);">
+                                <use xlink:href="#iconL"></use>
+                            </svg>
+                            PC装修辅助工具
+                        </a>
+                    </li>
+                    <li class="xflli">
+                        <a target="_blank" href="https://cnzoom.com/weex/tool/" class="x-menu">
+                            <svg class="iconfont-symbol " aria-hidden="true"
+                                style="position: relative;left: 2px;top: -1px;transform: scale(0.6);">
+                                <use xlink:href="#iconL"></use>
+                            </svg>
+                            无线装修工具（定制）
+                        </a>
+                    </li>
+                    <li class="xflli">
+                        <a target="_blank" href="https://cnzoom.com/gm" class="x-menu">
+                            <svg class="iconfont-symbol " aria-hidden="true"
+                                style="position: relative;left: 2px;top: -1px;transform: scale(0.6);">
+                                <use xlink:href="#iconL"></use>
+                            </svg>
+                            无线连接转换工具
+                        </a>
+                    </li>
+                    <li class="xflli">
+                        <a target="_blank" href="https://www.cnzoom.com/zxn/color" class="x-menu">
+                            <svg class="iconfont-symbol " aria-hidden="true"
+                                style="position: relative;left: 2px;top: -1px;transform: scale(0.6);">
+                                <use xlink:href="#iconL"></use>
+                            </svg>
+                            颜色值获取工具
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dflli"><a target="_blank" href="https://www.cnzoom.com/case" class="d-menu f15">案例展示</a></li>
+            <li class="dflli"><a target="_blank" href="https://www.cnzoom.com/guide" class="d-menu f15">教程帮助</a></li>
+        </ul>
+    </div>
+    <a target="_blank" href="https://www.cnzoom.com/contact" class='contact f15'>
+        <svg class="iconfont-symbol " aria-hidden="true" style="font-size: 22px;position: relative;top: 3px;">
+            <use xlink:href="#iconicon-test"></use>
+        </svg>
+        联系我们
+    </a>
+</div>
