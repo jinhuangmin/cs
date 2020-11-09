@@ -8,7 +8,7 @@ $(function() {
 									<div class="nnnna">
 											<ul id="ddmenu">
 													<li class="dflli home">
-															<a target="_blank" class="d-menu" href="https://www.cnzoom.com"><em class='f15'>首页</em></a>
+															<a  class="d-menu" href="https://www.cnzoom.com"><em class='f15'>首页</em></a>
 													</li>
 													<li class="dflli submenu">
 															<a target="_blank" href="https://www.cnzoom.com/weex" class="d-menu"><em class='f15'>无线Weex定制</em></a>
@@ -103,11 +103,11 @@ $(function() {
 																	</li>
 															</ul>
 													</li>
-													<li class="dflli"><a target="_blank" href="https://www.cnzoom.com/case" class="d-menu f15">案例展示</a></li>
-													<li class="dflli"><a target="_blank" href="https://www.cnzoom.com/guide" class="d-menu f15">教程帮助</a></li>
+													<li class="dflli"><a  href="https://www.cnzoom.com/case" class="d-menu f15">案例展示</a></li>
+													<li class="dflli"><a  href="https://www.cnzoom.com/guide" class="d-menu f15">帮助教程</a></li>
 											</ul>
 									</div>
-									<a target="_blank" href="https://www.cnzoom.com/contact" class='contact f15'>
+									<a  href="https://www.cnzoom.com/contact" class='contact f15'>
 											<svg class="iconfont-symbol " aria-hidden="true" style="font-size: 22px;position: relative;top: 3px;">
 													<use xlink:href="#iconicon-test"></use>
 											</svg>
@@ -128,12 +128,12 @@ $(function() {
 		'<li>' +
 		'    <span style="float: left;color:#9b9ea0;">淘宝天猫服务</span>' +
 		'    <a target="_blank" href="https://www.taobao.com/webww/ww.php?ver=3&touid=%E6%B2%83%E5%A7%86%E8%AE%BE%E8%AE%A1&siteid=cntaobao&status=1&charset=utf-8" style="background:url(https://img.alicdn.com/imgextra/i4/800803731/O1CN01Eo4Zhm1dQqENdaQiF_!!800803731.png) left center no-repeat;margin:4px 0 0 15px;width:20px;height:20px;display:block;float: left;"></a>' +
-		'    <a target="blank" href="https://wpa.qq.com/msgrd?V=3&uin=11627067&Site=QQ客服&Menu=yes" style="width: 20px;height:21px;margin:2px 0 0 15px;display:block;float: left;"><img src="https://img.alicdn.com/imgextra/i1/800803731/O1CN010bT9wD1dQqEMphL7t_!!800803731.png" alt="点击这里给我发消息"></a>' +
+		'    <a target="blank" href="https://wpa.qq.com/msgrd?V=3&uin=11627067&Site=QQ客服&Menu=yes" style="width: 20px;height:21px;margin:-3px 0 0 15px;display:block;float: left;"><img src="https://img.alicdn.com/imgextra/i1/800803731/O1CN010bT9wD1dQqEMphL7t_!!800803731.png" alt="点击这里给我发消息"></a>' +
 		'</li>' +
 		' <li>' +
 		'    <span style="float: left;color:#9b9ea0;">阿里国际站服务</span>' +
 		'    <a target="_blank" href="https://amos.alicdn.com/msg.aw?v=2&amp;uid=沃姆设计&amp;site=enaliint&amp;s=24&amp;charset=UTF-8" style="background:url(https://img.alicdn.com/imgextra/i4/800803731/O1CN01Eo4Zhm1dQqENdaQiF_!!800803731.png) left center no-repeat;margin:4px 0 0 15px;width:20px;height:20px;display:block;float: left;"></a>' +
-		'    <a target="blank" href="https://wpa.qq.com/msgrd?V=3&uin=79001768&Site=QQ客服&Menu=yes" style="width: 20px;height:21px;margin:2px 0 0 15px;display:block;float: left;"><img src="https://img.alicdn.com/imgextra/i1/800803731/O1CN010bT9wD1dQqEMphL7t_!!800803731.png" alt="点击这里给我发消息"></a>' +
+		'    <a target="blank" href="https://wpa.qq.com/msgrd?V=3&uin=79001768&Site=QQ客服&Menu=yes" style="width: 20px;height:21px;margin:-3px 0 0 15px;display:block;float: left;"><img src="https://img.alicdn.com/imgextra/i1/800803731/O1CN010bT9wD1dQqEMphL7t_!!800803731.png" alt="点击这里给我发消息"></a>' +
 		'</li>' +
 		'<li>' +
 		'    <span style="float: left;color:#9b9ea0;font-size: 12px;">工作时间：周一至周五 9:00--18:00</span>' +

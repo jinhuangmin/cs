@@ -3,7 +3,7 @@ body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legen
 
 html,input{font:12px/1.5 tahoma,arial,\5b8b\4f53,sans-serif;}
 
-body{  font: 14px/1.2 -apple-system,PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Helvetica Neue,sans-serif;background:#f2f3f5;height:100%}
+body{  font: 14px/1.2 -apple-system,PingFang SC,Hiragino Sans GB,Arial,Microsoft YaHei,Helvetica Neue,sans-serif;background:#eceff8;height:100%}
 
 table{border-collapse:collapse;border-spacing:0;}img{border:none}
 
@@ -46,6 +46,7 @@ ul,ol,li,a,button,input,textarea:focus {
             outline: none;
 
        }
+.ml25{margin-left:25px;}
 .mt30{margin-top:30px;}.mt40{margin-top:40px;} .mt50{margin-top:50px;}
 .f12{font-size: 12px}.f13{font-size: 13px}.f14{font-size: 14px}.f15{font-size: 15px}.f16{font-size: 16px}.f18{font-size:18px}.f20{font-size:20px}
 
@@ -128,10 +129,10 @@ ul,ol,li,a,button,input,textarea:focus {
 .footer .mid {height: 50px;}
 .footer .mid > div {height: 100%;border-bottom: 1px solid #4b5054;}
 .footer .mid > .row > ul {height: 50px;line-height: 50px;}
-.footer .mid > .row > ul li {float: left;padding: 0 10px;margin-right: 4%;}
+.footer .mid > .row > ul li {float: left;padding: 0 10px;margin-right: 3%;}
 .footer .mid > .row > ul li {color: #73777a;font-size: 14px;height: 50px;line-height: 50px;}
 .footer .bot {padding: 20px;height: 110px;}
-.footer .bot > div {color: #73777a;font-size: 14px;}
+.footer .bot > div {color: #73777a;font-size: 12px;}
 .footer .bot p {font-weight: bolder;}
 .footer .bot .row a {display: inline-block;height: 20px;line-height: 20px;}
 .footer .bot .row a img {float: left;width: 20px;}
