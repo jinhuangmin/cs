@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="GB2312" ?>
+<?xml version="1.0" encoding="GB2312"?>
 <ui>
   <view>
-    <!-- 一行1个宝贝 begin -->
     <container>
       <layout type="linearLayout" />
       <styleBinding>
         <attribute name="width" value="750" />
         <attribute name="backgroundColor" value="#f5f5f5" />
         <attribute name="paddingTop" value="0" />
-        <attribute name="paddingBottom" value="50" />
+        <attribute name="paddingBottom" value="20" />
       </styleBinding>
       <conditions>
-        <condition type="!=" left="$mkBg" right="null">
+        <condition type="!=" left="$mkBg" right="null" executionType="1">
           <styleBinding backgroundColor="$mkBg" />
         </condition>
         <condition type="!=" left="$marginTop" right="null" executionType="1">
@@ -21,24 +20,14 @@
           <styleBinding paddingBottom="$marginBottom" />
         </condition>
       </conditions>
-
       <subViews>
-
-        <!-- 文字标题 -->
+        <!--文字标题-->
         <container>
           <layout type="linearLayout" />
           <styleBinding>
             <attribute name="width" value="750" />
-            <attribute name="paddingBottom" value="10" />
+            <attribute name="paddingBottom" value="20" />
           </styleBinding>
-          <conditions>
-            <condition type="!=" left="$hdType" right="1" executionType="1">
-              <styleBinding paddingBottom="0" height="0" invisible="true" />
-            </condition>
-            <condition type="==" left="$bTitle" right=""  executionType="1">
-              <styleBinding paddingBottom="0" height="0" invisible="true" />
-            </condition>
-          </conditions>
           <subViews>
             <label value="$bTitle" lines="1">
               <styleBinding>
@@ -81,851 +70,443 @@
             </label>
           </subViews>
         </container>
-
-        <!-- 图片标题  -->
-        <image url="">
-          <styleBinding>
-            <attribute name="width" value="750" />
-            <attribute name="height" value="350" />
-          </styleBinding>
-          <conditions>
-            <condition type="!=" left="$hdImg" right="null" executionType="1">
-              <dataBinding>
-                <data name="url" value="$hdImg" />
-              </dataBinding>
-            </condition>
-            <condition type="!=" left="$pic_h" right="null" executionType="1">
-              <styleBinding height="$pic_h" />
-            </condition>
-            <condition type="!=" left="$hdType" right="2" executionType="1">
-              <styleBinding invisible="true" width="0" height="0" />
-            </condition>
-          </conditions>
-          <events>
-            <event type="click">
-              <actions>
-                <userTrack utType="Image" utName="image">
-                  <utParams>
-                    <params>
-                      <param name="wp_p" value="1" />
-                    </params>
-                  </utParams>
-                </userTrack> 
-                <openURL url="$hdImgUrl" />
-              </actions>
-            </event>
-          </events>
-        </image>
-
-        <!-- 1行1列宝贝 -->
+        <!--内容-->
         <container>
           <layout type="linearLayout" />
           <styleBinding>
-            <attribute name="width" value="730" />
-            <attribute name="marginLeft" value="20" />
-            <attribute name="marginTop" value="20" />
+            <attribute name="width" value="750" />
           </styleBinding>
-          <!-- 数据绑定 -->
-          <dataBinding>
-            <api apiName="icbu.data.product.list" apiAlias="shopInfo" needLogin="false">
-              <params>
-                <param name="bizId" value="$bizId" />
-                <!--宝贝选择个数-->
-                <param name="countNumber" value="$item_countNumber" />
-
-                <!--宝贝展示策略（分为四个：modifyTimeDesc、companyHot、showcase、manuallySelect）-->
-                <param name="strategyName" value="$item_strategyName" />
-
-                <!--手动选择传参-->
-                <param name="products" value="$item_productIds" />
-
-                <!--扩展进一步的配置-->
-                <param name="otherParameter" value="$item_otherParameter" />
-              </params>
-            </api>
-          </dataBinding>
           <subViews>
-            <!-- 第1个宝贝 -->
             <container>
               <layout type="absoluteLayout" />
               <styleBinding>
                 <attribute name="width" value="710" />
-                <attribute name="height" value="355" />
-                <attribute name="backgroundColor" value="#eeeeee" />
+                <attribute name="height" value="600" />
+                <attribute name="marginLeft" value="20" />
               </styleBinding>
-              <conditions>
-                <condition type="&lt;" left="${shopInfo}.result._size_" right="1" executionType="1">
-                  <styleBinding>
-                    <attribute name="height" value="0" />
-                    <attribute name="width" value="0" />
-                  </styleBinding>
-                </condition>
-                <condition type="!=" left="$goodsBg" right="null">
-                  <styleBinding backgroundColor="$goodsBg" />
-                </condition>
-              </conditions>
               <subViews>
-                <!--宝贝图-->
-                <image url="${shopInfo}.result.[0].productImage.url.x350">
+                <!--卖点1-->
+                <container>
+                  <layout type="absoluteLayout" />
                   <styleBinding>
                     <attribute name="width" value="355" />
-                    <attribute name="height" value="355" />
-                    <attribute name="backgroundColor" value="#ffffff" />
+                    <attribute name="height" value="300" />
+                    <attribute name="backgroundColor" value="#aacdad" />
+                    <attribute name="position" value="relative" />
+                    <attribute name="marginTop" value="0" />
+                    <attribute name="marginLeft" value="0" />
+                  </styleBinding>
+                  <conditions>
+                    <condition type="!=" left="$ct_bg" right="null">
+                      <styleBinding backgroundColor="$ct_bg" />
+                    </condition>
+                  </conditions>
+                  <subViews>
+                    <!--图片-->
+                    <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN01Hnh1nj1dQqMGcRJLZ_!!800803731.png">
+                      <styleBinding>
+                        <attribute name="width" value="105" />
+                        <attribute name="height" value="105" />
+                        <attribute name="marginLeft" value="125" />
+                        <attribute name="marginTop" value="33" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[0].img" right="null">
+                          <dataBinding>
+                            <data name="url" value="$images.[0].img" />
+                          </dataBinding>
+                        </condition>
+                      </conditions>
+                    </image>
+                    <!--标题-->
+                    <label value="OEM/ODM" lines="1">
+                      <styleBinding>
+                        <attribute name="width" value="315" />
+                        <attribute name="height" value="30" />
+                        <attribute name="lineHeight" value="30" />
+                        <attribute name="fontSize" value="24" />
+                        <attribute name="fontWeight" value="700" />
+                        <attribute name="marginTop" value="155" />
+                        <attribute name="marginLeft" value="20" />
+                        <attribute name="color" value="#ffffff" />
+                        <attribute name="textAlign" value="center" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[0].tit" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$images.[0].tit" />
+                          </dataBinding>
+                        </condition>
+                        <condition type="!=" left="$tit_c" right="null">
+                          <styleBinding color="$tit_c" />
+                        </condition>
+                      </conditions>
+                    </label>
+                    <!--描述-->
+                    <label value="We can accept OEM/ODM orders the customer can give to our style and requirements" lines="3">
+                      <styleBinding>
+                        <attribute name="width" value="315" />
+                        <attribute name="lineHeight" value="25" />
+                        <attribute name="fontSize" value="16" />
+                        <attribute name="marginTop" value="195" />
+                        <attribute name="marginLeft" value="20" />
+                        <attribute name="color" value="#ffffff" />
+                        <attribute name="textAlign" value="center" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[0].ms" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$images.[0].ms" />
+                          </dataBinding>
+                        </condition>
+                        <condition type="!=" left="$iconColor" right="null">
+                          <styleBinding color="$iconColor" />
+                        </condition>
+                      </conditions>
+                    </label>
+
+                  </subViews>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack utType="Image" utName="image">
+                          <utParams>
+                            <params>
+                              <param name="wp_app" value="weapp" />
+                              <param name="wp_p" value="$wp_pk" />
+                              <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <openURL url="$images.[0].url">
+                          <params>
+                            <param name="wp_app" value="weapp" />
+                            <param name="wp_pk" value="$wp_pk" />
+                            <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
+                          </params>
+                        </openURL>
+                      </actions>
+                    </event>
+                  </events>
+                </container>
+                <!--卖点2-->
+                <container>
+                  <layout type="absoluteLayout" />
+                  <styleBinding>
+                    <attribute name="width" value="355" />
+                    <attribute name="height" value="300" />
+                    <attribute name="backgroundColor" value="#8eb191" />
+                    <attribute name="position" value="relative" />
+                    <attribute name="marginTop" value="0" />
                     <attribute name="marginLeft" value="355" />
                   </styleBinding>
                   <conditions>
-                    <condition type="!=" left="$itemArray.[0].itemImage" right="null">
-                      <dataBinding>
-                        <data name="url" value="$itemArray.[0].itemImage" />
-                      </dataBinding>
+                    <condition type="!=" left="$ct_bg1" right="null">
+                      <styleBinding backgroundColor="$ct_bg1" />
                     </condition>
                   </conditions>
-                </image>
-                <!-- 标题 -->
-                <label value="${shopInfo}.result.[0].productSubject" lines="2">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="70" />
-                    <attribute name="lineHeight" value="35" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="marginTop" value="60" />
-                    <attribute name="marginLeft" value="15" />
-                    <attribute name="color" value="#666666" />
-                    <attribute name="textAlign" value="center" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$itemArray.[0].itemTitle" right="null" executionType="1">
-                      <dataBinding>
-                        <data name="value" value="$itemArray.[0].itemTitle" />
-                      </dataBinding>
-                    </condition>
-                    <condition type="!=" left="$titleColor" right="null" executionType="1">
-                      <styleBinding color="$titleColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 价格 -->
-                <label value="${shopInfo}.result.[0].fobPrice" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="150" />
-                    <attribute name="marginLeft" value="15" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="fontWeight" value="700" />
-                    <attribute name="color" value="#333333" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$priceColor" right="null">
-                      <styleBinding color="$priceColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 最小订单 -->
-                <label value="${shopInfo}.result.[0].moq" suffix="(Min.Order)" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="210" />
-                    <attribute name="marginLeft" value="15" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="20" />
-                    <attribute name="color" value="#999999" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$orderColor" right="null">
-                      <styleBinding color="$orderColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!--按钮-->
-                <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01LBjxA91dQqLy8CfbL_!!800803731.png">
-                  <styleBinding>
-                    <attribute name="width" value="145" />
-                    <attribute name="height" value="34" />
-                    <attribute name="marginTop" value="260" />
-                    <attribute name="marginLeft" value="105" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$btnImg" right="null">
-                      <dataBinding>
-                        <data name="url" value="$btnImg" />
-                      </dataBinding>
-                    </condition>
-                  </conditions>
-                </image>
-              </subViews>
-              <!-- 点击事件 -->
-              <events>
-                <event type="click">
-                  <actions type="openURL">
-                    <userTrack utType="Button" utName="Item">
-                      <utParams>
-                        <params>
-                          <param name="wp_p" value="${shopInfo}.result.[0].productId" />
-                          <param name="itemId" value="${shopInfo}.result.[0].productId" />
-                        </params>
-                      </utParams>
-                    </userTrack>
-                    <openURL url="${shopInfo}.result.[0].productUrl" />
-                  </actions>
-                </event>
-              </events>
-            </container>
-            <!-- 第2个宝贝 -->
-            <container>
-              <layout type="absoluteLayout" />
-              <styleBinding>
-                <attribute name="width" value="710" />
-                <attribute name="height" value="355" />
-                <attribute name="backgroundColor" value="#eeeeee" />
-              </styleBinding>
-              <conditions>
-                <condition type="&lt;" left="${shopInfo}.result._size_" right="2" executionType="1">
-                  <styleBinding>
-                    <attribute name="height" value="0" />
-                    <attribute name="width" value="0" />
-                  </styleBinding>
-                </condition>
-                <condition type="!=" left="$goodsBg" right="null">
-                  <styleBinding backgroundColor="$goodsBg" />
-                </condition>
-              </conditions>
-              <subViews>
-                <!--宝贝图-->
-                <image url="${shopInfo}.result.[1].productImage.url.x350">
+                  <subViews>
+                    <!--图片-->
+                    <image url="https://img.alicdn.com/imgextra/i3/800803731/O1CN01Ldqh9R1dQqMDZL4VV_!!800803731.png">
+                      <styleBinding>
+                        <attribute name="width" value="105" />
+                        <attribute name="height" value="105" />
+                        <attribute name="marginLeft" value="125" />
+                        <attribute name="marginTop" value="33" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[1].img" right="null">
+                          <dataBinding>
+                            <data name="url" value="$images.[1].img" />
+                          </dataBinding>
+                        </condition>
+                      </conditions>
+                    </image>
+                    <!--标题-->
+                    <label value="High Quality " lines="1">
+                      <styleBinding>
+                        <attribute name="width" value="315" />
+                        <attribute name="height" value="30" />
+                        <attribute name="lineHeight" value="30" />
+                        <attribute name="fontSize" value="24" />
+                        <attribute name="fontWeight" value="700" />
+                        <attribute name="marginTop" value="155" />
+                        <attribute name="marginLeft" value="20" />
+                        <attribute name="color" value="#ffffff" />
+                        <attribute name="textAlign" value="center" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[1].tit" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$images.[1].tit" />
+                          </dataBinding>
+                        </condition>
+                        <condition type="!=" left="$tit_c" right="null">
+                          <styleBinding color="$tit_c" />
+                        </condition>
+                      </conditions>
+                    </label>
+                    <!--描述-->
+                    <label value="Our quality inspectors strictly control the quality of each product and are responsible to customers" lines="3">
+                      <styleBinding>
+                        <attribute name="width" value="315" />
+                        <attribute name="lineHeight" value="25" />
+                        <attribute name="fontSize" value="16" />
+                        <attribute name="marginTop" value="195" />
+                        <attribute name="marginLeft" value="20" />
+                        <attribute name="color" value="#ffffff" />
+                        <attribute name="textAlign" value="center" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[1].ms" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$images.[1].ms" />
+                          </dataBinding>
+                        </condition>
+                        <condition type="!=" left="$iconColor" right="null">
+                          <styleBinding color="$iconColor" />
+                        </condition>
+                      </conditions>
+                    </label>
+
+                  </subViews>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack utType="Image" utName="image">
+                          <utParams>
+                            <params>
+                              <param name="wp_app" value="weapp" />
+                              <param name="wp_p" value="$wp_pk" />
+                              <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <openURL url="$images.[1].url">
+                          <params>
+                            <param name="wp_app" value="weapp" />
+                            <param name="wp_pk" value="$wp_pk" />
+                            <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
+                          </params>
+                        </openURL>
+                      </actions>
+                    </event>
+                  </events>
+                </container>
+                <!--卖点3-->
+                <container>
+                  <layout type="absoluteLayout" />
                   <styleBinding>
                     <attribute name="width" value="355" />
-                    <attribute name="height" value="355" />
-                    <attribute name="backgroundColor" value="#ffffff" />
+                    <attribute name="height" value="300" />
+                    <attribute name="backgroundColor" value="#8eb191" />
+                    <attribute name="position" value="relative" />
+                    <attribute name="marginTop" value="300" />
+                    <attribute name="marginLeft" value="0" />
                   </styleBinding>
                   <conditions>
-                    <condition type="!=" left="$itemArray.[1].itemImage" right="null">
-                      <dataBinding>
-                        <data name="url" value="$itemArray.[1].itemImage" />
-                      </dataBinding>
+                    <condition type="!=" left="$ct_bg1" right="null">
+                      <styleBinding backgroundColor="$ct_bg1" />
                     </condition>
                   </conditions>
-                </image>
-                <!-- 标题 -->
-                <label value="${shopInfo}.result.[1].productSubject" lines="2">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="70" />
-                    <attribute name="lineHeight" value="35" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="marginTop" value="60" />
-                    <attribute name="marginLeft" value="370" />
-                    <attribute name="color" value="#666666" />
-                    <attribute name="textAlign" value="center" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$itemArray.[1].itemTitle" right="null" executionType="1">
-                      <dataBinding>
-                        <data name="value" value="$itemArray.[1].itemTitle" />
-                      </dataBinding>
-                    </condition>
-                    <condition type="!=" left="$titleColor" right="null" executionType="1">
-                      <styleBinding color="$titleColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 价格 -->
-                <label value="${shopInfo}.result.[1].fobPrice" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="140" />
-                    <attribute name="marginLeft" value="370" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="fontWeight" value="700" />
-                    <attribute name="color" value="#333333" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$priceColor" right="null">
-                      <styleBinding color="$priceColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 最小订单 -->
-                <label value="${shopInfo}.result.[1].moq" suffix="(Min.Order)" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="210" />
-                    <attribute name="marginLeft" value="370" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="20" />
-                    <attribute name="color" value="#999999" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$orderColor" right="null">
-                      <styleBinding color="$orderColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!--按钮-->
-                <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01LBjxA91dQqLy8CfbL_!!800803731.png">
-                  <styleBinding>
-                    <attribute name="width" value="145" />
-                    <attribute name="height" value="34" />
-                    <attribute name="marginTop" value="260" />
-                    <attribute name="marginLeft" value="460" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$btnImg" right="null">
-                      <dataBinding>
-                        <data name="url" value="$btnImg" />
-                      </dataBinding>
-                    </condition>
-                  </conditions>
-                </image>
-              </subViews>
-              <!-- 点击事件 -->
-              <events>
-                <event type="click">
-                  <actions type="openURL">
-                    <userTrack utType="Button" utName="Item">
-                      <utParams>
-                        <params>
-                          <param name="wp_p" value="${shopInfo}.result.[1].productId" />
-                          <param name="itemId" value="${shopInfo}.result.[1].productId" />
-                        </params>
-                      </utParams>
-                    </userTrack>
-                    <openURL url="${shopInfo}.result.[1].productUrl" />
-                  </actions>
-                </event>
-              </events>
-            </container>
-            <!-- 第3个宝贝 -->
-            <container>
-              <layout type="absoluteLayout" />
-              <styleBinding>
-                <attribute name="width" value="710" />
-                <attribute name="height" value="355" />
-                <attribute name="backgroundColor" value="#eeeeee" />
-              </styleBinding>
-              <conditions>
-                <condition type="&lt;" left="${shopInfo}.result._size_" right="3" executionType="1">
-                  <styleBinding>
-                    <attribute name="height" value="0" />
-                    <attribute name="width" value="0" />
-                  </styleBinding>
-                </condition>
-                <condition type="!=" left="$goodsBg" right="null">
-                  <styleBinding backgroundColor="$goodsBg" />
-                </condition>
-              </conditions>
-              <subViews>
-                <!--宝贝图-->
-                <image url="${shopInfo}.result.[2].productImage.url.x350">
+                  <subViews>
+                    <!--图片-->
+                    <image url="https://img.alicdn.com/imgextra/i4/800803731/O1CN018qsJsi1dQqMGGvHXF_!!800803731.png">
+                      <styleBinding>
+                        <attribute name="width" value="105" />
+                        <attribute name="height" value="105" />
+                        <attribute name="marginLeft" value="125" />
+                        <attribute name="marginTop" value="33" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[2].img" right="null">
+                          <dataBinding>
+                            <data name="url" value="$images.[2].img" />
+                          </dataBinding>
+                        </condition>
+                      </conditions>
+                    </image>
+                    <!--标题-->
+                    <label value="Experience " lines="1">
+                      <styleBinding>
+                        <attribute name="width" value="315" />
+                        <attribute name="height" value="30" />
+                        <attribute name="lineHeight" value="30" />
+                        <attribute name="fontSize" value="24" />
+                        <attribute name="fontWeight" value="700" />
+                        <attribute name="marginTop" value="155" />
+                        <attribute name="marginLeft" value="20" />
+                        <attribute name="color" value="#ffffff" />
+                        <attribute name="textAlign" value="center" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[2].tit" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$images.[2].tit" />
+                          </dataBinding>
+                        </condition>
+                        <condition type="!=" left="$tit_c" right="null">
+                          <styleBinding color="$tit_c" />
+                        </condition>
+                      </conditions>
+                    </label>
+                    <!--描述-->
+                    <label value="We have more than 20 years of professional production experience,looking forward to cooperation" lines="3">
+                      <styleBinding>
+                        <attribute name="width" value="315" />
+                        <attribute name="lineHeight" value="25" />
+                        <attribute name="fontSize" value="16" />
+                        <attribute name="marginTop" value="195" />
+                        <attribute name="marginLeft" value="20" />
+                        <attribute name="color" value="#ffffff" />
+                        <attribute name="textAlign" value="center" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[2].ms" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$images.[2].ms" />
+                          </dataBinding>
+                        </condition>
+                        <condition type="!=" left="$iconColor" right="null">
+                          <styleBinding color="$iconColor" />
+                        </condition>
+                      </conditions>
+                    </label>
+
+                  </subViews>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack utType="Image" utName="image">
+                          <utParams>
+                            <params>
+                              <param name="wp_app" value="weapp" />
+                              <param name="wp_p" value="$wp_pk" />
+                              <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <openURL url="$images.[2].url">
+                          <params>
+                            <param name="wp_app" value="weapp" />
+                            <param name="wp_pk" value="$wp_pk" />
+                            <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
+                          </params>
+                        </openURL>
+                      </actions>
+                    </event>
+                  </events>
+                </container>
+                <!--卖点4-->
+                <container>
+                  <layout type="absoluteLayout" />
                   <styleBinding>
                     <attribute name="width" value="355" />
-                    <attribute name="height" value="355" />
-                    <attribute name="backgroundColor" value="#ffffff" />
+                    <attribute name="height" value="300" />
+                    <attribute name="backgroundColor" value="#aacdad" />
+                    <attribute name="position" value="relative" />
+                    <attribute name="marginTop" value="300" />
                     <attribute name="marginLeft" value="355" />
                   </styleBinding>
                   <conditions>
-                    <condition type="!=" left="$itemArray.[2].itemImage" right="null">
-                      <dataBinding>
-                        <data name="url" value="$itemArray.[2].itemImage" />
-                      </dataBinding>
+                    <condition type="!=" left="$ct_bg" right="null">
+                      <styleBinding backgroundColor="$ct_bg" />
                     </condition>
                   </conditions>
-                </image>
-                <!-- 标题 -->
-                <label value="${shopInfo}.result.[2].productSubject" lines="2">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="70" />
-                    <attribute name="lineHeight" value="35" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="marginTop" value="60" />
-                    <attribute name="marginLeft" value="15" />
-                    <attribute name="color" value="#666666" />
-                    <attribute name="textAlign" value="center" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$itemArray.[2].itemTitle" right="null" executionType="1">
-                      <dataBinding>
-                        <data name="value" value="$itemArray.[2].itemTitle" />
-                      </dataBinding>
-                    </condition>
-                    <condition type="!=" left="$titleColor" right="null" executionType="1">
-                      <styleBinding color="$titleColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 价格 -->
-                <label value="${shopInfo}.result.[2].fobPrice" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="140" />
-                    <attribute name="marginLeft" value="15" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="fontWeight" value="700" />
-                    <attribute name="color" value="#333333" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$priceColor" right="null">
-                      <styleBinding color="$priceColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 最小订单 -->
-                <label value="${shopInfo}.result.[2].moq" suffix="(Min.Order)" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="210" />
-                    <attribute name="marginLeft" value="15" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="20" />
-                    <attribute name="color" value="#999999" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$orderColor" right="null">
-                      <styleBinding color="$orderColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!--按钮-->
-                <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01LBjxA91dQqLy8CfbL_!!800803731.png">
-                  <styleBinding>
-                    <attribute name="width" value="145" />
-                    <attribute name="height" value="34" />
-                    <attribute name="marginTop" value="260" />
-                    <attribute name="marginLeft" value="105" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$btnImg" right="null">
-                      <dataBinding>
-                        <data name="url" value="$btnImg" />
-                      </dataBinding>
-                    </condition>
-                  </conditions>
-                </image>
+                  <subViews>
+                    <!--图片-->
+                    <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01o7Ap8d1dQqMFYdkXk_!!800803731.png">
+                      <styleBinding>
+                        <attribute name="width" value="105" />
+                        <attribute name="height" value="105" />
+                        <attribute name="marginLeft" value="125" />
+                        <attribute name="marginTop" value="33" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[3].img" right="null">
+                          <dataBinding>
+                            <data name="url" value="$images.[3].img" />
+                          </dataBinding>
+                        </condition>
+                      </conditions>
+                    </image>
+                    <!--标题-->
+                    <label value="Good Service" lines="1">
+                      <styleBinding>
+                        <attribute name="width" value="315" />
+                        <attribute name="height" value="30" />
+                        <attribute name="lineHeight" value="30" />
+                        <attribute name="fontSize" value="24" />
+                        <attribute name="fontWeight" value="700" />
+                        <attribute name="marginTop" value="155" />
+                        <attribute name="marginLeft" value="20" />
+                        <attribute name="color" value="#ffffff" />
+                        <attribute name="textAlign" value="center" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[3].tit" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$images.[3].tit" />
+                          </dataBinding>
+                        </condition>
+                        <condition type="!=" left="$tit_c" right="null">
+                          <styleBinding color="$tit_c" />
+                        </condition>
+                      </conditions>
+                    </label>
+                    <!--描述-->
+                    <label value="We have professional service personnel to provide one-stop customer service" lines="3">
+                      <styleBinding>
+                        <attribute name="width" value="315" />
+                        <attribute name="lineHeight" value="25" />
+                        <attribute name="fontSize" value="16" />
+                        <attribute name="marginTop" value="195" />
+                        <attribute name="marginLeft" value="20" />
+                        <attribute name="color" value="#ffffff" />
+                        <attribute name="textAlign" value="center" />
+                      </styleBinding>
+                      <conditions>
+                        <condition type="!=" left="$images.[3].ms" right="null" executionType="1">
+                          <dataBinding>
+                            <data name="value" value="$images.[3].ms" />
+                          </dataBinding>
+                        </condition>
+                        <condition type="!=" left="$iconColor" right="null">
+                          <styleBinding color="$iconColor" />
+                        </condition>
+                      </conditions>
+                    </label>
+
+                  </subViews>
+                  <events>
+                    <event type="click">
+                      <actions>
+                        <userTrack utType="Image" utName="image">
+                          <utParams>
+                            <params>
+                              <param name="wp_app" value="weapp" />
+                              <param name="wp_p" value="$wp_pk" />
+                              <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
+                            </params>
+                          </utParams>
+                        </userTrack>
+                        <openURL url="$images.[3].url">
+                          <params>
+                            <param name="wp_app" value="weapp" />
+                            <param name="wp_pk" value="$wp_pk" />
+                            <param name="wp_m" value="MODULE_KEY_PLACE_HOLDER" />
+                          </params>
+                        </openURL>
+                      </actions>
+                    </event>
+                  </events>
+                </container>
               </subViews>
-              <!-- 点击事件 -->
-              <events>
-                <event type="click">
-                  <actions type="openURL">
-                    <userTrack utType="Button" utName="Item">
-                      <utParams>
-                        <params>
-                          <param name="wp_p" value="${shopInfo}.result.[2].productId" />
-                          <param name="itemId" value="${shopInfo}.result.[2].productId" />
-                        </params>
-                      </utParams>
-                    </userTrack>
-                    <openURL url="${shopInfo}.result.[2].productUrl" />
-                  </actions>
-                </event>
-              </events>
-            </container>
-            <!-- 第4个宝贝 -->
-            <container>
-              <layout type="absoluteLayout" />
-              <styleBinding>
-                <attribute name="width" value="710" />
-                <attribute name="height" value="355" />
-                <attribute name="backgroundColor" value="#eeeeee" />
-              </styleBinding>
-              <conditions>
-                <condition type="&lt;" left="${shopInfo}.result._size_" right="4" executionType="1">
-                  <styleBinding>
-                    <attribute name="height" value="0" />
-                    <attribute name="width" value="0" />
-                  </styleBinding>
-                </condition>
-                <condition type="!=" left="$goodsBg" right="null">
-                  <styleBinding backgroundColor="$goodsBg" />
-                </condition>
-              </conditions>
-              <subViews>
-                <!--宝贝图-->
-                <image url="${shopInfo}.result.[3].productImage.url.x350">
-                  <styleBinding>
-                    <attribute name="width" value="355" />
-                    <attribute name="height" value="355" />
-                    <attribute name="backgroundColor" value="#ffffff" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$itemArray.[3].itemImage" right="null">
-                      <dataBinding>
-                        <data name="url" value="$itemArray.[3].itemImage" />
-                      </dataBinding>
-                    </condition>
-                  </conditions>
-                </image>
-                <!-- 标题 -->
-                <label value="${shopInfo}.result.[3].productSubject" lines="2">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="70" />
-                    <attribute name="lineHeight" value="35" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="marginTop" value="60" />
-                    <attribute name="marginLeft" value="370" />
-                    <attribute name="color" value="#666666" />
-                    <attribute name="textAlign" value="center" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$itemArray.[3].itemTitle" right="null" executionType="1">
-                      <dataBinding>
-                        <data name="value" value="$itemArray.[3].itemTitle" />
-                      </dataBinding>
-                    </condition>
-                    <condition type="!=" left="$titleColor" right="null" executionType="1">
-                      <styleBinding color="$titleColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 价格 -->
-                <label value="${shopInfo}.result.[3].fobPrice" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="140" />
-                    <attribute name="marginLeft" value="370" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="fontWeight" value="700" />
-                    <attribute name="color" value="#333333" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$priceColor" right="null">
-                      <styleBinding color="$priceColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 最小订单 -->
-                <label value="${shopInfo}.result.[3].moq" suffix="(Min.Order)" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="210" />
-                    <attribute name="marginLeft" value="370" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="20" />
-                    <attribute name="color" value="#999999" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$orderColor" right="null">
-                      <styleBinding color="$orderColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!--按钮-->
-                <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01LBjxA91dQqLy8CfbL_!!800803731.png">
-                  <styleBinding>
-                    <attribute name="width" value="145" />
-                    <attribute name="height" value="34" />
-                    <attribute name="marginTop" value="260" />
-                    <attribute name="marginLeft" value="460" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$btnImg" right="null">
-                      <dataBinding>
-                        <data name="url" value="$btnImg" />
-                      </dataBinding>
-                    </condition>
-                  </conditions>
-                </image>
-              </subViews>
-              <!-- 点击事件 -->
-              <events>
-                <event type="click">
-                  <actions type="openURL">
-                    <userTrack utType="Button" utName="Item">
-                      <utParams>
-                        <params>
-                          <param name="wp_p" value="${shopInfo}.result.[3].productId" />
-                          <param name="itemId" value="${shopInfo}.result.[3].productId" />
-                        </params>
-                      </utParams>
-                    </userTrack>
-                    <openURL url="${shopInfo}.result.[3].productUrl" />
-                  </actions>
-                </event>
-              </events>
-            </container>
-            <!-- 第5个宝贝 -->
-            <container>
-              <layout type="absoluteLayout" />
-              <styleBinding>
-                <attribute name="width" value="710" />
-                <attribute name="height" value="355" />
-                <attribute name="backgroundColor" value="#eeeeee" />
-              </styleBinding>
-              <conditions>
-                <condition type="&lt;" left="${shopInfo}.result._size_" right="5" executionType="1">
-                  <styleBinding>
-                    <attribute name="height" value="0" />
-                    <attribute name="width" value="0" />
-                  </styleBinding>
-                </condition>
-                <condition type="!=" left="$goodsBg" right="null">
-                  <styleBinding backgroundColor="$goodsBg" />
-                </condition>
-              </conditions>
-              <subViews>
-                <!--宝贝图-->
-                <image url="${shopInfo}.result.[4].productImage.url.x350">
-                  <styleBinding>
-                    <attribute name="width" value="355" />
-                    <attribute name="height" value="355" />
-                    <attribute name="backgroundColor" value="#ffffff" />
-                    <attribute name="marginLeft" value="355" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$itemArray.[4].itemImage" right="null">
-                      <dataBinding>
-                        <data name="url" value="$itemArray.[4].itemImage" />
-                      </dataBinding>
-                    </condition>
-                  </conditions>
-                </image>
-                <!-- 标题 -->
-                <label value="${shopInfo}.result.[4].productSubject" lines="2">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="70" />
-                    <attribute name="lineHeight" value="35" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="marginTop" value="60" />
-                    <attribute name="marginLeft" value="15" />
-                    <attribute name="color" value="#666666" />
-                    <attribute name="textAlign" value="center" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$itemArray.[4].itemTitle" right="null" executionType="1">
-                      <dataBinding>
-                        <data name="value" value="$itemArray.[4].itemTitle" />
-                      </dataBinding>
-                    </condition>
-                    <condition type="!=" left="$titleColor" right="null" executionType="1">
-                      <styleBinding color="$titleColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 价格 -->
-                <label value="${shopInfo}.result.[4].fobPrice" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="140" />
-                    <attribute name="marginLeft" value="15" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="fontWeight" value="700" />
-                    <attribute name="color" value="#333333" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$priceColor" right="null">
-                      <styleBinding color="$priceColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 最小订单 -->
-                <label value="${shopInfo}.result.[4].moq" suffix="(Min.Order)" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="210" />
-                    <attribute name="marginLeft" value="15" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="20" />
-                    <attribute name="color" value="#999999" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$orderColor" right="null">
-                      <styleBinding color="$orderColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!--按钮-->
-                <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01LBjxA91dQqLy8CfbL_!!800803731.png">
-                  <styleBinding>
-                    <attribute name="width" value="145" />
-                    <attribute name="height" value="34" />
-                    <attribute name="marginTop" value="260" />
-                    <attribute name="marginLeft" value="105" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$btnImg" right="null">
-                      <dataBinding>
-                        <data name="url" value="$btnImg" />
-                      </dataBinding>
-                    </condition>
-                  </conditions>
-                </image>
-              </subViews>
-              <!-- 点击事件 -->
-              <events>
-                <event type="click">
-                  <actions type="openURL">
-                    <userTrack utType="Button" utName="Item">
-                      <utParams>
-                        <params>
-                          <param name="wp_p" value="${shopInfo}.result.[4].productId" />
-                          <param name="itemId" value="${shopInfo}.result.[4].productId" />
-                        </params>
-                      </utParams>
-                    </userTrack>
-                    <openURL url="${shopInfo}.result.[4].productUrl" />
-                  </actions>
-                </event>
-              </events>
-            </container>
-            <!-- 第6个宝贝 -->
-            <container>
-              <layout type="absoluteLayout" />
-              <styleBinding>
-                <attribute name="width" value="710" />
-                <attribute name="height" value="355" />
-                <attribute name="backgroundColor" value="#eeeeee" />
-              </styleBinding>
-              <conditions>
-                <condition type="&lt;" left="${shopInfo}.result._size_" right="6" executionType="1">
-                  <styleBinding>
-                    <attribute name="height" value="0" />
-                    <attribute name="width" value="0" />
-                  </styleBinding>
-                </condition>
-                <condition type="!=" left="$goodsBg" right="null">
-                  <styleBinding backgroundColor="$goodsBg" />
-                </condition>
-              </conditions>
-              <subViews>
-                <!--宝贝图-->
-                <image url="${shopInfo}.result.[5].productImage.url.x350">
-                  <styleBinding>
-                    <attribute name="width" value="355" />
-                    <attribute name="height" value="355" />
-                    <attribute name="backgroundColor" value="#ffffff" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$itemArray.[5].itemImage" right="null">
-                      <dataBinding>
-                        <data name="url" value="$itemArray.[5].itemImage" />
-                      </dataBinding>
-                    </condition>
-                  </conditions>
-                </image>
-                <!-- 标题 -->
-                <label value="${shopInfo}.result.[5].productSubject" lines="2">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="70" />
-                    <attribute name="lineHeight" value="35" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="marginTop" value="60" />
-                    <attribute name="marginLeft" value="370" />
-                    <attribute name="color" value="#666666" />
-                    <attribute name="textAlign" value="center" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$itemArray.[5].itemTitle" right="null" executionType="1">
-                      <dataBinding>
-                        <data name="value" value="$itemArray.[5].itemTitle" />
-                      </dataBinding>
-                    </condition>
-                    <condition type="!=" left="$titleColor" right="null" executionType="1">
-                      <styleBinding color="$titleColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 价格 -->
-                <label value="${shopInfo}.result.[5].fobPrice" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="140" />
-                    <attribute name="marginLeft" value="370" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="24" />
-                    <attribute name="fontWeight" value="700" />
-                    <attribute name="color" value="#333333" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$priceColor" right="null">
-                      <styleBinding color="$priceColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!-- 最小订单 -->
-                <label value="${shopInfo}.result.[5].moq" suffix="(Min.Order)" lines="1">
-                  <styleBinding>
-                    <attribute name="width" value="325" />
-                    <attribute name="height" value="40" />
-                    <attribute name="marginTop" value="210" />
-                    <attribute name="marginLeft" value="370" />
-                    <attribute name="textAlign" value="center" />
-                    <attribute name="lineHeight" value="40" />
-                    <attribute name="fontSize" value="20" />
-                    <attribute name="color" value="#999999" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$orderColor" right="null">
-                      <styleBinding color="$orderColor" />
-                    </condition>
-                  </conditions>
-                </label>
-                <!--按钮-->
-                <image url="https://img.alicdn.com/imgextra/i1/800803731/O1CN01LBjxA91dQqLy8CfbL_!!800803731.png">
-                  <styleBinding>
-                    <attribute name="width" value="145" />
-                    <attribute name="height" value="34" />
-                    <attribute name="marginTop" value="260" />
-                    <attribute name="marginLeft" value="460" />
-                  </styleBinding>
-                  <conditions>
-                    <condition type="!=" left="$btnImg" right="null">
-                      <dataBinding>
-                        <data name="url" value="$btnImg" />
-                      </dataBinding>
-                    </condition>
-                  </conditions>
-                </image>
-              </subViews>
-              <!-- 点击事件 -->
-              <events>
-                <event type="click">
-                  <actions type="openURL">
-                    <userTrack utType="Button" utName="Item">
-                      <utParams>
-                        <params>
-                          <param name="wp_p" value="${shopInfo}.result.[5].productId" />
-                          <param name="itemId" value="${shopInfo}.result.[5].productId" />
-                        </params>
-                      </utParams>
-                    </userTrack>
-                    <openURL url="${shopInfo}.result.[5].productUrl" />
-                  </actions>
-                </event>
-              </events>
             </container>
           </subViews>
         </container>
+
       </subViews>
     </container>
-    <!-- 一行一个宝贝 end -->
   </view>
 </ui>
