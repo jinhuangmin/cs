@@ -191,7 +191,19 @@
             { "image": "https://img.alicdn.com//tfscom/i3/TB1NxmpzrY1gK0jSZTEXXXDQVXa", "pcId": 7627, "wxId": 8014 },
             { "image": "https://img.alicdn.com//tfscom/i1/TB1UtcHCHr1gK0jSZFDXXb9yVXa", "pcId": 7877, "wxId": 8019 },
 
-            { "image": "https://img.alicdn.com//tfscom/i3/TB1MRsPDhz1gK0jSZSgXXavwpXa", "pcId": 7901, "wxId": 8026 }
+            { "image": "https://img.alicdn.com//tfscom/i3/TB1MRsPDhz1gK0jSZSgXXavwpXa", "pcId": 7901, "wxId": 8026 },
+            { "image": "https://img.alicdn.com//tfscom/i3/TB1YYGLa9RLWu4jSZKPXXb6BpXa", "pcId": 8256, "wxId": 8270 },
+            { "image": "https://img.alicdn.com//tfscom/i3/TB1LKTZIVP7gK0jSZFjXXc5aXXa", "pcId": 8278, "wxId": 8422 },
+            { "image": "https://img.alicdn.com//tfscom/i2/TB1iNKfJoY1gK0jSZFMXXaWcVXa", "pcId": 8293, "wxId": 8434 },
+            { "image": "https://img.alicdn.com//tfscom/i1/TB1RjMuK.Y1gK0jSZFMXXaWcVXa", "pcId": 8436, "wxId": 8455 },
+            { "image": "https://img.alicdn.com//tfscom/i4/TB1t_gOM1H2gK0jSZJnXXaT1FXa", "pcId": 8572, "wxId": 8676 },
+
+            { "image": "https://img.alicdn.com//tfscom/i3/TB1Cp8AczMZ7e4jSZFOXXX7epXa", "pcId": 8685, "wxId": 8740 },
+            { "image": "https://img.alicdn.com//tfscom/i4/TB1.d88SFP7gK0jSZFjXXc5aXXa", "pcId": 8998, "wxId": 9396 },
+            { "image": "https://img.alicdn.com//tfscom/i3/TB1m.b3TEY1gK0jSZFCXXcwqXXa", "pcId": 9053, "wxId": 9596 },
+            { "image": "https://img.alicdn.com//tfscom/i2/TB13sWXTFT7gK0jSZFpXXaTkpXa", "pcId": 9067, "wxId": 9463 },
+            { "image": "https://img.alicdn.com//tfscom/i1/TB1fs0Yhkcx_u4jSZFlXXXnUFXa", "pcId": 9093, "wxId": 9628 },
+            { "image": "https://img.alicdn.com//tfscom/i1/TB1jwAvUWL7gK0jSZFBXXXZZpXa", "pcId": 9153, "wxId": 9630 }
         ];
         var html="";
         $.each(template, function(k,val) {
@@ -201,8 +213,9 @@
                     '<p>'+
                         '<a href="https://zxdesigner.alibaba.com/adminIndex#/template-detail?id='+template[k].pcId+'" target="_blank">PC:后台链接</a>'+
                         '<a href="https://zxdesigner.alibaba.com/adminIndex#/promotion-create?id='+template[k].pcId+'" target="_blank">设置促销</a>'+
-                        '<a href="https://zxdesigner.alibaba.com/adminIndex#/template-detail?id='+template[k].wxId+'" target="_blank">WX:无线后台</a>'+
-                        '<a href="https://zhuangxiu.alibaba.com/detail.html?code=izx_'+template[k].wxId+'" target="_blank">无线链接</a>'+
+                        '<a href="https://zxdesigner.alibaba.com/adminIndex#/template-detail?id='+template[k].wxId+'" target="_blank">WX:后台</a>'+
+                        '<a href="https://zxdesigner.alibaba.com/adminIndex#/promotion-create?id='+template[k].wxId+'" target="_blank">促销</a>'+
+                        '<a href="https://zhuangxiu.alibaba.com/detail.html?code=izx_'+template[k].wxId+'" target="_blank">前台</a>'+
                     '</p>'+
                 '</li>'
         });
@@ -225,8 +238,9 @@
                     '<p>'+
                         '<a href="https://zxdesigner.alibaba.com/adminIndex#/template-detail?id='+template2[k].pcId+'" target="_blank">PC:后台链接</a>'+
                         '<a href="https://zxdesigner.alibaba.com/adminIndex#/promotion-create?id='+template2[k].pcId+'" target="_blank">设置促销</a>'+
-                        '<a href="https://zxdesigner.alibaba.com/adminIndex#/template-detail?id='+template2[k].wxId+'" target="_blank">WX:无线后台</a>'+
-                        '<a href="https://zhuangxiu.alibaba.com/detail.html?code=izx_'+template2[k].wxId+'" target="_blank">无线链接</a>'+
+                        '<a href="https://zxdesigner.alibaba.com/adminIndex#/template-detail?id='+template2[k].wxId+'" target="_blank">WX:后台</a>'+
+                        '<a href="https://zxdesigner.alibaba.com/adminIndex#/promotion-create?id='+template2[k].wxId+'" target="_blank">促销</a>'+
+                        '<a href="https://zhuangxiu.alibaba.com/detail.html?code=izx_'+template2[k].wxId+'" target="_blank">前台</a>'+
                     '</p>'+
                 '</li>'
         });

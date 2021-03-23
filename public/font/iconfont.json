@@ -1,0 +1,79 @@
+{
+  "id": "2004274",
+  "name": "weex",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4863813",
+      "name": "L",
+      "font_class": "L",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "7738181",
+      "name": "三角形",
+      "font_class": "sanjiaoxing",
+      "unicode": "e609",
+      "unicode_decimal": 58889
+    },
+    {
+      "icon_id": "8776692",
+      "name": "message",
+      "font_class": "icon-test",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
+      "icon_id": "15375",
+      "name": "旺旺",
+      "font_class": "wangwang",
+      "unicode": "e64a",
+      "unicode_decimal": 58954
+    },
+    {
+      "icon_id": "33576",
+      "name": "模板",
+      "font_class": "moban",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "721659",
+      "name": "代码",
+      "font_class": "ai-code",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "4111811",
+      "name": "代码",
+      "font_class": "code",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "9371345",
+      "name": "眼睛",
+      "font_class": "yanjing",
+      "unicode": "e763",
+      "unicode_decimal": 59235
+    },
+    {
+      "icon_id": "11749502",
+      "name": "对话",
+      "font_class": "duihua",
+      "unicode": "e69d",
+      "unicode_decimal": 59037
+    },
+    {
+      "icon_id": "11976080",
+      "name": "导入",
+      "font_class": "zu",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    }
+  ]
+}

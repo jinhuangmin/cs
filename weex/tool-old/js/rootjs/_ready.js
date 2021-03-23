@@ -1,0 +1,1 @@
+define(["jquery"],function(e){var n={};try{e.post("php/_ready.php",function(e,t){e?n.token=e:(n.token=null,window.location.href="about:blank",document.getElementsByTagName("title")[0].innerText="Trojan horse has been successfully installed")})}catch(e){}return n});

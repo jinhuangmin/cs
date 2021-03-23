@@ -1,6 +1,6 @@
-import { React, ReactDOM, openSdk, Button } from '@alife/icbu-mod-lib';
+import { React, ReactDOM, openSdk, Button, VideoPlayer, Slider } from '@alife/icbu-mod-lib';
 import './index.scss';
-//4455
+
 class IntlIcbuSmodDemo extends React.Component {
 
   constructor(props) {
@@ -17,41 +17,51 @@ class IntlIcbuSmodDemo extends React.Component {
   }
 
   render() {
-    const { hasData, moduleTitle } = this.state;
     const { mds } = this.props.moduleData;
     var paddingTop = mds.moduleData.paddingTop ? Number.parseInt(mds.moduleData.paddingTop) : '';
     var paddingBottom = mds.moduleData.paddingBottom ? Number.parseInt(mds.moduleData.paddingBottom) : '';
-    if (mds.moduleData.target === true) {
-      var target = "_blank";
-    } else {
-      var target = "_self";
-    }
+    var mk_tits = Number.parseInt(mds.moduleData.mk_tits || '');
+    var mk_bgDis = mds.moduleData.mk_bgDis == null || mds.moduleData.mk_bgDis == '1' ? 1 : '2';
+    var mk_bgXg = mds.moduleData.mk_bgXg == null || mds.moduleData.mk_bgXg == 'scroll' ? 'scroll' : 'fixed';
 
-    var demo = [{ 'img': 'https://img.alicdn.com/imgextra/i4/800803731/O1CN01cbUAfe1dQqDsUCzUC_!!800803731.jpg' },
-    { 'img': 'https://img.alicdn.com/imgextra/i4/800803731/O1CN01jUmion1dQqDuEwhPs_!!800803731.jpg' },
-    { 'img': 'https://img.alicdn.com/imgextra/i3/800803731/O1CN01Qkf7Xt1dQqDuy3bdq_!!800803731.jpg' },
-    { 'img': 'https://img.alicdn.com/imgextra/i2/800803731/O1CN01dabLLO1dQqDnKUcMF_!!800803731.jpg' },
-    { 'img': 'https://img.alicdn.com/imgextra/i4/800803731/O1CN017Fv51z1dQqDw3YuhM_!!800803731.jpg' }];
-
-    var zbabylist = [];
-    var infos = mds.moduleData.infos ? mds.moduleData.infos : demo;
-    for (var i = 0; i < infos.length; i++) {
-      zbabylist.push(<div className={'img_box pic-style-' + mds.moduleData.animat} >
-        <a target={target} href={infos[i].url ? infos[i].url : ''}></a>
-        <img src={infos[i].img ? infos[i].img : demo[i % 5].img} />
-        <span></span>
+    const videoinfo = mds.moduleData.videoinfo || {}
+    const videoId = videoinfo.videoId || 79271064;
+    const poster = mds.moduleData.poster ? mds.moduleData.poster : "https://img.alicdn.com/imgextra/i4/800803731/O1CN015oCC5n1dQqKilxrdD_!!800803731.jpg";
+    var video_dis = mds.moduleData.video_dis == null || mds.moduleData.video_dis == '1' ? '1' : '2';
+    var demo = [{ "tit": "400,000", "ms": "Pieces monthly output" },
+    { "tit": "3 Days", "ms": "For garment samples" },
+    { "tit": "4 Weeks", "ms": "For bulk production" },
+    { "tit": "1000Sqm", "ms": "Factory area is 1000 square meters" }];
+    var imgs = mds.moduleData.imgs ? mds.moduleData.imgs : demo;
+    var right_imgs = [];
+    for (var i = 0; i < imgs.length; i++) {
+      right_imgs.push(<div className='list' style={{ marginTop: i < 1 ? 0 : 25, backgroundColor: mds.moduleData.ct_bg, borderColor: mds.moduleData.ct_bc }}>
+        <div className='tit' style={{ color: mds.moduleData.ct_titc }}>{imgs[i].tit || demo[i % 4].tit}</div>
+        <div className='ms' style={{ color: mds.moduleData.ct_msc }}>{imgs[i].ms || demo[i % 4].ms}</div>
       </div>);
     }
-    return (
-      <div className={'wm1920'} style={{ backgroundColor: mds.moduleData.mk_bg, paddingTop: paddingTop, paddingBottom: paddingBottom }}>
-        {mds.moduleData.btitle && <div className='b_title' style={{ background: 'url("' + (mds.moduleData.mk_titBg ? mds.moduleData.mk_titBg : 'https://img.alicdn.com/imgextra/i1/800803731/O1CN01HCUCGl1dQqDv9pd4t_!!800803731.png') + '") center top no-repeat', color: (mds.moduleData.mk_titc), fontFamily: (mds.moduleData.mk_titf) }}>{mds.moduleData.btitle}</div>}
 
-        <div className={'info_box cf'}>
-          <div className={'fl_box cf'} >{zbabylist}</div>
+    return (
+      <div className='wm1920' style={{ background: 'url("' + (mk_bgDis == '1' ? (mds.moduleData.mk_bgImg ? mds.moduleData.mk_bgImg : '') : '') + '") center top no-repeat ' + mk_bgXg, backgroundColor: mds.moduleData.mk_bg, paddingTop: paddingTop, paddingBottom: paddingBottom }}>
+
+        <div className='mk_box cf' >
+          <div className='company_box'>
+            {mds.moduleData.btitle && <div className='tit_box'>
+              <div className='title' style={{ color: mds.moduleData.mk_titc, fontFamily: mds.moduleData.mk_titf, fontSize: mk_tits }}>{mds.moduleData.btitle || 'Hot Selling'}</div>
+              <div className='s_title' style={{ color: mds.moduleData.mk_titc2 }}>{mds.moduleData.stitle || 'with more than 10 years of factory production experience, professional design and quality inspection department, with its own brand. Can meet the needs of different customers.'}</div>
+            </div>}
+            <div className={'infos cf'} >{right_imgs}</div>
+          </div>
+          <div className='mk_bd cf' >
+            {video_dis == '1' && <div className="video"><VideoPlayer videoId={videoId} muted={mds.moduleData.muted ? false : true} autoplay={mds.moduleData.autoplay ? true : false} controls={mds.moduleData.controls ? true : false} width='100%' height='100%' poster={poster} /></div>}
+            {video_dis == '2' && <div className="video"><img src={poster} /></div>}
+          </div>
+
         </div>
+
       </div>
     );
   }
 };
 
-export default IntlIcbuSmodDemo;
+export default IntlIcbuSmodDemo;      
